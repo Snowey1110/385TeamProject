@@ -71,17 +71,36 @@
         <h1>Tower Defense - Group 3</h1>
     </header>
     <main>
+        <!-- Replace 'your_youtube_video_id' with your video ID -->
+        <input type="text" id="youtubeVideoID" value="your_youtube_video_id" style="display:none">
+        <!-- Replace 'https://link_to_game' with the link to your game -->
+        <input type="text" id="gameLink" value="https://snowey1110.github.io/385TeamProject/webGL/Version%203/" style="display:none">
+
         <h2>Watch the Game Trailer</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/your_video_id" title="Tower Defense - Group 3 Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/" title="Tower Defense - Group 3 Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p>Welcome to our student project, Tower Defense - Group 3! We have developed an engaging tower defense game as a part of our course assignment. Build powerful towers, strategize and defend your base from waves of enemies. Join the fun and see if you have what it takes to become the ultimate tower defense master!</p>
-        <a href="https://link_to_game" target="_blank">Play Tower Defense - Group 3 Now!</a>
+        <a href="#" target="_blank" id="playGame">Play Tower Defense - Group 3 Now!</a>
         <h2>Source Code on GitHub</h2>
         <p>Interested in exploring our code? Check out our GitHub repository to dive into the project and see how we made this tower defense game a reality!</p>
         <a href="https://github.com/Snowey1110/385TeamProject" target="_blank">Visit the GitHub Repository</a>
     </main>
     <footer>
-        &copy; 2022 Tower Defense - Group 3. All rights reserved.
+        &copy; Made by Lixiao Kuang, Jesse Owens, Jonathan Spradlin, Jonathan Ha
     </footer>
+
+    <script>
+        // Get YouTube video ID and game link from input fields
+        const youtubeVideoID = document.getElementById('youtubeVideoID').value;
+        const gameLink = document.getElementById('gameLink').value;
+
+        // Set the YouTube video source
+        const youtubeIframe = document.querySelector('iframe');
+        youtubeIframe.setAttribute('src', `https://www.youtube.com/embed/${youtubeVideoID}`);
+
+        // Set the Play Game link
+        const playGameLink = document.getElementById('playGame');
+        playGameLink.setAttribute('href', gameLink);
+    </script>
 </body>
 
 </html>

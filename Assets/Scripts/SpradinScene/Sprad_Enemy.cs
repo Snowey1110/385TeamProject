@@ -23,7 +23,7 @@ public class Sprad_Enemy : MonoBehaviour
         //PointAtPosition(currWaypoint.GetComponent<Transform>().position, Time.deltaTime);
         transform.position = currWaypoint.transform.position;
         rb = GetComponent<Rigidbody2D>();
-        Physics.IgnoreCollision(this.GetComponent<Collider>(), GetComponent<Collider>());
+       
         speed = 500f;
         minDist = 0.05f;
     }

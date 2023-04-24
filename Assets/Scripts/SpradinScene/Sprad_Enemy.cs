@@ -34,15 +34,22 @@ public class Sprad_Enemy : MonoBehaviour
         //set public variables
         speed = 500f;
         minDist = 0.02f;
+
+        ////set enemy to random color
+        //Color temp = GetComponent<Renderer>().material.color;
+        //temp = new Color(Random.Range(0.5f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1);
+        //GetComponent<Renderer>().material.SetColor("_Color", temp);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        
+
+       
+
+
         //if current position is close to the next waypoint
-        if(Vector3.Distance(currWaypoint.GetComponent<Transform>().position,transform.position) <= minDist)
+        if (Vector3.Distance(currWaypoint.GetComponent<Transform>().position,transform.position) <= minDist)
         {
             //If not at the last waypoint
             Debug.Log("WaypointIndex: " + waypointIndex + " ArrayLength: " + waypoints.Length);

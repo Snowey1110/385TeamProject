@@ -8,11 +8,8 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-
-    //public float mp_x;
-    //public float mp_y;
-    //public float mp_z;
     public float gameStart;
+    public float health;
     public Text timeToWave;
     private MapScript map;
     public bool spawnWave = false;
@@ -21,20 +18,20 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //set public variables
+        health = 1000;
         gameStart = 5f;
         timeToWave.text = "Waves start in " + gameStart.ToString("F0") + " seconds.";
+
+        //get handle on Map object
         map = FindObjectOfType<MapScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //logging mouse position for testing 
-        //mp_x = Input.mousePosition.x;
-        //mp_y = Input.mousePosition.y;
-        //mp_z = Input.mousePosition.z;
-        //Debug.Log("x: " + mp_x + " y: " + mp_y + " z: " + mp_z);
-
+        
+        //Dont spawn waves until time has surpassed gameStart.
         gameStart -= Time.deltaTime;
         if (gameStart <= 0)
         {
@@ -45,18 +42,15 @@ public class GameController : MonoBehaviour
         {
             timeToWave.text = "Waves start in " + gameStart.ToString("F0") + " seconds.";
         }
-        
-        
-       
-
-
     }
 
-
+    //getter to give outside scripts read only access to private array of waypoints
     public GameObject[] getWaypoints()
     {
         return map.getWaypoints();
     }
+
+    //getter to give outide scripts access to spanWave boolean variable
     public bool getSpawnWave()
     {
         return spawnWave;

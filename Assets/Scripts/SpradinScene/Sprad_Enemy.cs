@@ -12,20 +12,28 @@ public class Sprad_Enemy : MonoBehaviour
     private int waypointIndex;
     private float minDist;
     public Rigidbody2D rb;
+    private GameController lgamecontroller;
+    private WaveSpawner ws;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        //When created the first waypoint is start
         waypointIndex = 0;
         currWaypoint = waypoints[waypointIndex];
-        
-        //PointAtPosition(currWaypoint.GetComponent<Transform>().position, Time.deltaTime);
         transform.position = currWaypoint.transform.position;
+        
+
+        //get a handle on the rigidbody2D component to use later
         rb = GetComponent<Rigidbody2D>();
-       
+        lgamecontroller = FindObjectOfType<GameController>();
+        ws = FindObjectOfType<WaveSpawner>();
+
+
+        //set public variables
         speed = 500f;
-        minDist = 0.05f;
+        minDist = 0.02f;
     }
 
     // Update is called once per frame
@@ -33,42 +41,30 @@ public class Sprad_Enemy : MonoBehaviour
     {
         
         
-
+        //if current position is close to the next waypoint
         if(Vector3.Distance(currWaypoint.GetComponent<Transform>().position,transform.position) <= minDist)
         {
-            if(waypointIndex < waypoints.Length)
+            //If not at the last waypoint
+            Debug.Log("WaypointIndex: " + waypointIndex + " ArrayLength: " + waypoints.Length);
+            if(waypointIndex < (waypoints.Length - 1))
             {
                 waypointIndex++;
                 currWaypoint = waypoints[waypointIndex];
             }
             else
             {
-                //notify controller than enemy made it through;
-
+                ws.destroyEnemy(this.gameObject);
             }
         }
         
+        //point to the currWaypoint and move in that direction
         transform.up = currWaypoint.GetComponent<Transform>().position - transform.position;
         rb.velocity = transform.up * speed * Time.smoothDeltaTime;
 
-       // Vector3 dir = currWaypoint.GetComponent<Transform>().position - transform.position;
-        //Debug.Log("x: " + dir.x + " y: " + dir.y + " z: " + dir.z);
-
-
-
-        //  transform.Translate(speed * Time.deltaTime * dir);
-        //  transform.localPosition = (speed * Time.deltaTime * dir);
-        //  Debug.Log("speed: " + speed + " time: " + Time.deltaTime);
-
-       //  transform.Translate(currWaypoint.GetComponent<Transform>().position * speed * Time.deltaTime, Camera.main.transform);
-        Debug.Log("x: " + transform.position.x + " y: " + transform.position.y + " z: " + transform.position.z);
+       
     }
 
-   // private void PointAtPosition(Vector3 p, float r)
-   // {
-   //     Vector3 v = p - transform.position;
-   //     transform.up = v;
-   // }
+   
 
 
 }

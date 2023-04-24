@@ -8,12 +8,16 @@ public class WaveSpawner : MonoBehaviour
     private bool spawnWave = false;
     private GameController lgamecontroller;
     private float timeSinceSpawn = 0;
-    private float spawnRate = 1f;  
+    private float spawnRate;  
 
 
     // Start is called before the first frame update
     void Start()
     {
+        //set local variables
+        spawnRate = 1.5f;
+
+        //get handle on Gamecontroller object
         lgamecontroller= FindObjectOfType<GameController>();
      
     }
@@ -22,13 +26,15 @@ public class WaveSpawner : MonoBehaviour
     void Update()
     {
         
+        //get bool from game controller to start spawning
         spawnWave = lgamecontroller.spawnWave;
-        
+
+        //get array of test points from map
         GameObject[] wayPoints = lgamecontroller.getWaypoints();
 
         if(spawnWave)
         {
-            //start the enemies;
+            //start the enemies; (This will need to become an alogorith that spawns differenty types at specific rates)
             if ((Time.time - timeSinceSpawn) > spawnRate || timeSinceSpawn == 0)
             {
                 GameObject e = Instantiate(Resources.Load("Prefabs/Sprad_Enemy") as GameObject);
@@ -36,15 +42,20 @@ public class WaveSpawner : MonoBehaviour
                 e.GetComponent<Sprad_Enemy>().waypoints = wayPoints;
                 
             }
-
-
-
-
-
         }
 
-
-
         
+
+
+
     }
+
+    public void destroyEnemy(GameObject obj)
+    {
+        lgamecontroller.health--;
+        Destroy(obj);
+
+    }
+
+
 }

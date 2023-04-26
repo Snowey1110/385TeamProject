@@ -15,7 +15,7 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         //set local variables
-        spawnRate = 0.75f;
+        spawnRate = 1f;
 
         //get handle on Gamecontroller object
         lgamecontroller= FindObjectOfType<GameController>();

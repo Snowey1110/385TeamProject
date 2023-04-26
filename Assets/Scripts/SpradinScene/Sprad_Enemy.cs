@@ -32,8 +32,8 @@ public class Sprad_Enemy : MonoBehaviour
 
 
         //set public variables
-        speed = 500f;
-        minDist = 0.02f;
+        speed = 60f;
+        minDist = 0.04f;
 
         ////set enemy to random color
         //Color temp = GetComponent<Renderer>().material.color;
@@ -65,13 +65,21 @@ public class Sprad_Enemy : MonoBehaviour
         }
         
         //point to the currWaypoint and move in that direction
-        transform.up = currWaypoint.GetComponent<Transform>().position - transform.position;
-        rb.velocity = transform.up * speed * Time.smoothDeltaTime;
+       // transform.up = currWaypoint.GetComponent<Transform>().position - transform.position;
+      //  rb.velocity = transform.up * speed * Time.smoothDeltaTime;
 
        
     }
 
-   
+    private void FixedUpdate()
+    {
+
+        //point to the currWaypoint and move in that direction
+        transform.up = currWaypoint.GetComponent<Transform>().position - transform.position;
+        rb.velocity = transform.up * speed * Time.smoothDeltaTime;
+
+    }
+
 
 
 }

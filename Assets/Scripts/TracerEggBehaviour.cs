@@ -5,7 +5,7 @@ using UnityEngine;
 public class TracerEggBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed = 5f;
+    public float speed = 10f;
     private GameObject target;
     private Vector3 targetDirection;
     void Start()

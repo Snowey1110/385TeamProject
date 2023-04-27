@@ -5,18 +5,11 @@ using UnityEngine.UI;
 
 public class HeroBehaviour : MonoBehaviour
 {
-
-
     public float tracerFireRate = 3f;
     private float tracerNextFire = 0;
-
-
+    private float tracerSpeed = 2;
 
     // Start is called before the first frame update
-
-
-
-
     void Start()
     {
 
@@ -30,11 +23,6 @@ public class HeroBehaviour : MonoBehaviour
         FireTracerEgg();
         
     }
-    
-
-
-
-
 
     public void FireTracerEgg()
     {
@@ -42,15 +30,9 @@ public class HeroBehaviour : MonoBehaviour
         {
             tracerNextFire = Time.time + tracerFireRate;
             GameObject b = Instantiate(Resources.Load("Prefabs/Tracer") as GameObject);
+            b.GetComponent<TracerEggBehaviour>().speed = tracerSpeed;
             b.transform.localPosition = transform.localPosition;
             b.transform.rotation = transform.rotation;
-            
         }
-        
     }
-
-
-
-
-
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
-    private float panSpeed = 10f;
+    private float panSpeed = 1f;
     private float panBorderThickness = 10f;
     private float zoomSpeed = 1000f;
     private float minZoom = 1f;
@@ -22,7 +22,24 @@ public class CameraController : MonoBehaviour
     {
         Vector3 pos = transform.position;
 
-        if (Input.GetKey(KeyCode.W) || Input.mousePosition.y >= Screen.height - panBorderThickness)
+        if (Input.GetKey(KeyCode.W))
+        {
+            pos.y += panSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            pos.y -= panSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            pos.x -= panSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            pos.x += panSpeed * Time.deltaTime;
+        }
+
+       /* if (Input.GetKey(KeyCode.W) || Input.mousePosition.y >= Screen.height - panBorderThickness)
         {
             pos.y += panSpeed * Time.deltaTime;
         }
@@ -38,6 +55,7 @@ public class CameraController : MonoBehaviour
         {
             pos.x += panSpeed * Time.deltaTime;
         }
+       */
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Resetting camera");

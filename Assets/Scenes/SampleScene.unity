@@ -4332,6 +4332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretPrefab: {fileID: 2072022191688568572, guid: ba0fcd48896ea0547b8e6978925ac7be, type: 3}
+  circlePrefab: {fileID: 6623839201182512691, guid: ba432e37bfcac2945a438f2e01e403ad, type: 3}
 --- !u!4 &1948958742
 Transform:
   m_ObjectHideFlags: 0

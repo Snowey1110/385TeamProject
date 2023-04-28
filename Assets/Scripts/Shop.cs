@@ -14,6 +14,14 @@ public class Shop : MonoBehaviour
     private Text textComponent;
     private int balance = 1000;
 
+    public Button buttonA;
+    public Button buttonB;
+    public Button buttonC;
+
+    private int costA = 200;
+    private int costB = 250;
+    private int costC = 500;
+
     private void Start()
     {
         textComponent = GameObject.Find("Text").GetComponent<Text>();
@@ -45,9 +53,27 @@ public class Shop : MonoBehaviour
         textComponent.text = string.Format("${0}", balance);
     }
 
-    public void OnButtonClick()
+    public void OnButtonAClick()
     {
-        if (!isPlacingTurret && balance > 0)
+        if (!isPlacingTurret && balance >= costA)
+        {
+            isPlacingTurret = true;
+            CreateTurretPreview();
+        }
+    }
+
+    public void OnButtonBClick()
+    {
+        if (!isPlacingTurret && balance >= costB)
+        {
+            isPlacingTurret = true;
+            CreateTurretPreview();
+        }
+    }
+
+    public void OnButtonCClick()
+    {
+        if (!isPlacingTurret && balance >= costC)
         {
             isPlacingTurret = true;
             CreateTurretPreview();

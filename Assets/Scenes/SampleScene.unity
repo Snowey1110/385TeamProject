@@ -1182,7 +1182,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buy turret
+  m_Text: 'Buy turret
+
+    $250'
 --- !u!222 &579648532
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1692,7 +1694,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buy turret
+  m_Text: 'Buy turret
+
+    $200'
 --- !u!222 &895574941
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2340,7 +2344,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buy turret
+  m_Text: 'Buy turret
+
+    $500'
 --- !u!222 &1245607337
 CanvasRenderer:
   m_ObjectHideFlags: 0

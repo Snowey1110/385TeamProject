@@ -13,6 +13,7 @@ public class Shop : MonoBehaviour
     
     private Text textComponent;
     private int balance = 1000;
+    private char turret = ' ';
 
     public Button buttonA;
     public Button buttonB;
@@ -41,7 +42,7 @@ public class Shop : MonoBehaviour
                 Instantiate(turretPrefab, Pos, Quaternion.identity);
                 Destroy(turretPreview);
                 isPlacingTurret = false;
-                BuyTurret();
+                BuyTurret(turret);
             }
             else if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -59,6 +60,7 @@ public class Shop : MonoBehaviour
         {
             isPlacingTurret = true;
             CreateTurretPreview();
+            turret = 'A';
         }
     }
 
@@ -68,6 +70,7 @@ public class Shop : MonoBehaviour
         {
             isPlacingTurret = true;
             CreateTurretPreview();
+            turret = 'B';
         }
     }
 
@@ -77,6 +80,7 @@ public class Shop : MonoBehaviour
         {
             isPlacingTurret = true;
             CreateTurretPreview();
+            turret = 'C';
         }
     }
 
@@ -102,8 +106,21 @@ public class Shop : MonoBehaviour
         circlePreview.transform.localScale = Vector3.one * 50f;
     }
 
-    void BuyTurret()
+    void BuyTurret(char buyTurret)
     {
-        balance -= 200;
+        if (buyTurret == 'A')
+        {
+            balance -= costA;
+        }
+
+        if (buyTurret == 'B')
+        {
+            balance -= costB;
+        }
+
+        if (buyTurret == 'C')
+        {
+            balance -= costC;
+        }
     }
 }

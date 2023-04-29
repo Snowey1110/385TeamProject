@@ -26,7 +26,7 @@ public class BaseBahavior : MonoBehaviour
         Debug.Log("Enemy Breached!");
         Destroy(collision.gameObject);
 
-        currentHealth -= 1;
+        currentHealth -= 2;
         healthBar.SetHealth(currentHealth);
     }
 }

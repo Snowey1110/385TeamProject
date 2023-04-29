@@ -17,4 +17,13 @@ public class HealthBarBehavior : MonoBehaviour
     {
         slider.value = health;
     }
+
+    public void EnemyHit(int damage)
+    {
+        slider.value -= damage;
+        if (slider.value <= 0) {
+            //Game over
+
+        }
+    }
 }

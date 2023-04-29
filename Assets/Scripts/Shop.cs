@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
@@ -9,17 +10,25 @@ public class Shop : MonoBehaviour
     public GameObject circlePrefab;
     private GameObject circlePreview;
     private bool isPlacingTurret = false;
+    
+    private Text textComponent;
+    private int balance = 1000;
+    private char turret = ' ';
 
-    public void OnButtonClick()
+    public Button buttonA;
+    public Button buttonB;
+    public Button buttonC;
+
+    private int costA = 200;
+    private int costB = 250;
+    private int costC = 500;
+
+    private void Start()
     {
-        if (!isPlacingTurret)
-        {
-            isPlacingTurret = true;
-            CreateTurretPreview();
-        }
+        textComponent = GameObject.Find("Text").GetComponent<Text>();
     }
 
-    void Update()
+    private void Update()
     {
         if (isPlacingTurret)
         {
@@ -33,12 +42,45 @@ public class Shop : MonoBehaviour
                 Instantiate(turretPrefab, Pos, Quaternion.identity);
                 Destroy(turretPreview);
                 isPlacingTurret = false;
+                BuyTurret(turret);
             }
             else if (Input.GetKeyDown(KeyCode.Escape))
             {
                 Destroy(turretPreview);
                 isPlacingTurret = false;
             }
+        }
+
+        textComponent.text = string.Format("${0}", balance);
+    }
+
+    public void OnButtonAClick()
+    {
+        if (!isPlacingTurret && balance >= costA)
+        {
+            isPlacingTurret = true;
+            CreateTurretPreview();
+            turret = 'A';
+        }
+    }
+
+    public void OnButtonBClick()
+    {
+        if (!isPlacingTurret && balance >= costB)
+        {
+            isPlacingTurret = true;
+            CreateTurretPreview();
+            turret = 'B';
+        }
+    }
+
+    public void OnButtonCClick()
+    {
+        if (!isPlacingTurret && balance >= costC)
+        {
+            isPlacingTurret = true;
+            CreateTurretPreview();
+            turret = 'C';
         }
     }
 
@@ -62,5 +104,23 @@ public class Shop : MonoBehaviour
         circlePreview.transform.localPosition = Vector3.zero;
         circlePreview.transform.parent = turretPreview.transform;
         circlePreview.transform.localScale = Vector3.one * 50f;
+    }
+
+    void BuyTurret(char buyTurret)
+    {
+        if (buyTurret == 'A')
+        {
+            balance -= costA;
+        }
+
+        if (buyTurret == 'B')
+        {
+            balance -= costB;
+        }
+
+        if (buyTurret == 'C')
+        {
+            balance -= costC;
+        }
     }
 }

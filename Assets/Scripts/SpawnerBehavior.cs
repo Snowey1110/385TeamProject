@@ -24,6 +24,7 @@ public class SpawnerBehavior : MonoBehaviour
         }
     }
 
+    //spawn regular 
     public void SpawnEnemy()
     {
         GameObject spawnedEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);

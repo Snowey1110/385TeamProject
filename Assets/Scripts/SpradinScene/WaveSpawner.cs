@@ -54,10 +54,49 @@ public class WaveSpawner : MonoBehaviour
                 else if(round_2)
                 {
                     //depending on number, spawn that type of enemy in this particular round
+                    int obj_decider = randSpawner();
+
+                    if(obj_decider == 0)
+                    {
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Sprad_Enemy") as GameObject);
+                        timeSinceSpawn = Time.time;
+                        e.GetComponent<Sprad_Enemy>().waypoints = wayPoints; 
+                    }
+                    else if(obj_decider == 1)
+                    {
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Sprad_Enemy") as GameObject);
+                        timeSinceSpawn = Time.time;
+                        e.GetComponent<Sprad_Enemy>().waypoints = wayPoints; 
+                    }
+                    else if(obj_decider == 2)
+                    {
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Sprad2_Enemy") as GameObject);
+                        timeSinceSpawn = Time.time;
+                        e.GetComponent<Sprad_Enemy>().waypoints = wayPoints; 
+                    }
                 }
                 else if(round_3)
                 {
+                    int obj_decider = randSpawner();
 
+                    if(obj_decider == 0)
+                    {
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Sprad_Enemy") as GameObject);
+                        timeSinceSpawn = Time.time;
+                        e.GetComponent<Sprad_Enemy>().waypoints = wayPoints; 
+                    }
+                    else if(obj_decider == 1)
+                    {
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Sprad2_Enemy") as GameObject);
+                        timeSinceSpawn = Time.time;
+                        e.GetComponent<Sprad_Enemy>().waypoints = wayPoints; 
+                    }
+                    else if(obj_decider == 2)
+                    {
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Sprad3_Enemy") as GameObject);
+                        timeSinceSpawn = Time.time;
+                        e.GetComponent<Sprad_Enemy>().waypoints = wayPoints; 
+                    }
                 }    
             }
         }
@@ -97,7 +136,7 @@ public class WaveSpawner : MonoBehaviour
     //picks random number between 1-3
     private int randSpawner()
     {
-        int decider_num = Random.Range(0, 4);
+        int decider_num = Random.Range(0, 3);
         return decider_num;
     }
 

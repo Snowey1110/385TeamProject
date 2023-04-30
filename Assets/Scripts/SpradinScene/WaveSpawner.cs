@@ -95,9 +95,10 @@ public class WaveSpawner : MonoBehaviour
     }
 
     //picks random number between 1-3
-    private void randSpawner()
+    private int randSpawner()
     {
-
+        int decider_num = Random.Range(0, 4);
+        return decider_num;
     }
 
 }

@@ -10,6 +10,12 @@ public class WaveSpawner : MonoBehaviour
     private float timeSinceSpawn = 0;
     private float spawnRate;  
 
+    private bool round_1 = true;
+    private bool round_2 = false;
+    private bool round_3 = false;
+
+    private int number_killed = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,36 +24,43 @@ public class WaveSpawner : MonoBehaviour
         spawnRate = 1f;
 
         //get handle on Gamecontroller object
-        lgamecontroller= FindObjectOfType<GameController>();
+        lgamecontroller = FindObjectOfType<GameController>();
      
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         //get bool from game controller to start spawning
         spawnWave = lgamecontroller.spawnWave;
 
         //get array of test points from map
         GameObject[] wayPoints = lgamecontroller.getWaypoints();
 
+        checkRound();
+
         if(spawnWave)
         {
             //start the enemies; (This will need to become an alogorith that spawns differenty types at specific rates)
             if ((Time.time - timeSinceSpawn) > spawnRate || timeSinceSpawn == 0)
             {
-                GameObject e = Instantiate(Resources.Load("Prefabs/Sprad_Enemy") as GameObject);
-                timeSinceSpawn = Time.time;
-                e.GetComponent<Sprad_Enemy>().waypoints = wayPoints;
-                
+                //checks what round/difficulty/wave we are on
+                if(round_1)
+                {
+                    GameObject e = Instantiate(Resources.Load("Prefabs/Sprad_Enemy") as GameObject);
+                    timeSinceSpawn = Time.time;
+                    e.GetComponent<Sprad_Enemy>().waypoints = wayPoints; 
+                }
+                else if(round_2)
+                {
+                    //depending on number, spawn that type of enemy in this particular round
+                }
+                else if(round_3)
+                {
+
+                }    
             }
         }
-
-        
-
-
-
     }
 
     public void destroyEnemy(GameObject obj)
@@ -55,7 +68,36 @@ public class WaveSpawner : MonoBehaviour
         lgamecontroller.health--;
         Destroy(obj);
 
+        //number of enemies killed
+        number_killed++;
     }
 
+    public void checkRound()
+    {
+        if(number_killed < 20)
+        {
+            round_1 = true;
+            round_2 = false;
+            round_3 = false;
+        }
+        else if(number_killed >= 20 && number_killed < 40)
+        {
+            round_1 = false;
+            round_2 = true;
+            round_3 = false;
+        }
+        else if(number_killed >= 40)
+        {
+            round_1 = false;
+            round_2 = false;
+            round_3 = true;
+        }
+    }
+
+    //picks random number between 1-3
+    private void randSpawner()
+    {
+
+    }
 
 }

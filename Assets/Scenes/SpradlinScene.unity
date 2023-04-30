@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 106350794}
   - component: {fileID: 106350793}
   - component: {fileID: 106350792}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Button (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 187755731}
   - component: {fileID: 187755733}
   - component: {fileID: 187755732}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 210017502}
   - component: {fileID: 210017504}
   - component: {fileID: 210017503}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 259454754}
   - component: {fileID: 259454756}
   - component: {fileID: 259454755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,7 +661,7 @@ GameObject:
   - component: {fileID: 268131839}
   - component: {fileID: 268131841}
   - component: {fileID: 268131840}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,7 +982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 466072970}
   - component: {fileID: 466072971}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1368,7 +1368,7 @@ GameObject:
   - component: {fileID: 923957439}
   - component: {fileID: 923957438}
   - component: {fileID: 923957437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Button (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1490,7 +1490,7 @@ GameObject:
   - component: {fileID: 1065783163}
   - component: {fileID: 1065783162}
   - component: {fileID: 1065783161}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Button (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1775,7 +1775,7 @@ GameObject:
   - component: {fileID: 1194930196}
   - component: {fileID: 1194930198}
   - component: {fileID: 1194930197}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1910,7 +1910,7 @@ GameObject:
   - component: {fileID: 1237234696}
   - component: {fileID: 1237234698}
   - component: {fileID: 1237234697}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2197,7 +2197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1428444885}
   - component: {fileID: 1428444884}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sidebar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2292,7 +2292,7 @@ GameObject:
   - component: {fileID: 1462478993}
   - component: {fileID: 1462478992}
   - component: {fileID: 1462478991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Button (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2414,7 +2414,7 @@ GameObject:
   - component: {fileID: 1482851544}
   - component: {fileID: 1482851543}
   - component: {fileID: 1482851542}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2535,7 +2535,7 @@ GameObject:
   - component: {fileID: 1542555847}
   - component: {fileID: 1542555849}
   - component: {fileID: 1542555848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3323,7 +3323,7 @@ GameObject:
   - component: {fileID: 1878211400}
   - component: {fileID: 1878211399}
   - component: {fileID: 1878211398}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Button (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3444,7 +3444,7 @@ GameObject:
   - component: {fileID: 1935196670}
   - component: {fileID: 1935196672}
   - component: {fileID: 1935196671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3665,7 +3665,7 @@ GameObject:
   - component: {fileID: 2104483823}
   - component: {fileID: 2104483822}
   - component: {fileID: 2104483821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Button (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3787,7 +3787,7 @@ GameObject:
   - component: {fileID: 2105654104}
   - component: {fileID: 2105654103}
   - component: {fileID: 2105654102}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Button (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

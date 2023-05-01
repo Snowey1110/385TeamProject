@@ -47,9 +47,9 @@ public class WaveSpawner : MonoBehaviour
                 //checks what round/difficulty/wave we are on
                 if(round_1)
                 {
-                    GameObject e = Instantiate(Resources.Load("Prefabs/Sprad_Enemy") as GameObject);
+                    GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
                     timeSinceSpawn = Time.time;
-                    e.GetComponent<Sprad_Enemy>().waypoints = wayPoints; 
+                    e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
                 }
                 else if(round_2)
                 {
@@ -59,22 +59,22 @@ public class WaveSpawner : MonoBehaviour
                     //60% chance of basic enemy spawning
                     if(obj_decider == 0)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Sprad_Enemy") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
-                        e.GetComponent<Sprad_Enemy>().waypoints = wayPoints; 
+                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
                     }
                     else if(obj_decider == 1)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Sprad_Enemy") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_2") as GameObject);
                         timeSinceSpawn = Time.time;
-                        e.GetComponent<Sprad_Enemy>().waypoints = wayPoints; 
+                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
                     }
                     //33% chance of second enemy type spawning
                     else if(obj_decider == 2)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Sprad2_Enemy") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_3") as GameObject);
                         timeSinceSpawn = Time.time;
-                        e.GetComponent<Sprad_Enemy>().waypoints = wayPoints; 
+                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
                     }
                 }
                 else if(round_3)
@@ -84,21 +84,21 @@ public class WaveSpawner : MonoBehaviour
                     //33% chance of all types spawning
                     if(obj_decider == 0)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Sprad_Enemy") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
-                        e.GetComponent<Sprad_Enemy>().waypoints = wayPoints; 
+                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
                     }
                     else if(obj_decider == 1)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Sprad2_Enemy") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_2") as GameObject);
                         timeSinceSpawn = Time.time;
-                        e.GetComponent<Sprad_Enemy>().waypoints = wayPoints; 
+                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
                     }
                     else if(obj_decider == 2)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Sprad3_Enemy") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_3") as GameObject);
                         timeSinceSpawn = Time.time;
-                        e.GetComponent<Sprad_Enemy>().waypoints = wayPoints; 
+                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
                     }
                 }    
             }

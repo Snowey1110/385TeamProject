@@ -6,7 +6,7 @@ using UnityEngine;
 public class MapScript : MonoBehaviour
 {
     private GameObject[] tagItems;
-    public bool showDebug = false;
+    public bool showDebug;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,7 @@ public class MapScript : MonoBehaviour
         {
             tagItem.GetComponent<Renderer>().enabled = false;
         }
+        showDebug = false;
     }
 
     // Update is called once per frame
@@ -30,16 +31,16 @@ public class MapScript : MonoBehaviour
                 foreach(GameObject tagItem in tagItems)
                 {
                     tagItem.GetComponent<Renderer>().enabled = false;
-                    showDebug = false;
                 }
+                showDebug = false;
             }
             else
             {
                 foreach (GameObject tagItem in tagItems)
                 {
                     tagItem.GetComponent<Renderer>().enabled = true;
-                    showDebug = true;
                 }
+                showDebug = true;
             }
         }
 

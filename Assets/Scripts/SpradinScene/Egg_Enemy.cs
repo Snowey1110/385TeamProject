@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sprad_Enemy : MonoBehaviour
+public class Egg_Enemy : MonoBehaviour
 {
 
     public float speed;

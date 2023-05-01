@@ -6,6 +6,7 @@ public class SpawnerBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject enemyPrefab;
+    
     public float spawnInterval = 3.0f;
     private float spawnTimer;
     void Start()

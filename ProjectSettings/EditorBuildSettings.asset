@@ -9,6 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/SpradlinScene.unity
     guid: 1c23f4a4345557140a120d7d572a7db5
+=======
+    path: Assets/Scenes/Game Over.unity
+    guid: 60d92ff1da54ba74a9d7e5b5e9385cdf
+>>>>>>> ff0a0ae2d9573165a69a9e94c7fa5bc707f094d5
   m_configObjects: {}

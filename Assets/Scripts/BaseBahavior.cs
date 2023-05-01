@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BaseBahavior : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class BaseBahavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GameState();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,5 +29,13 @@ public class BaseBahavior : MonoBehaviour
 
         currentHealth -= 2;
         healthBar.SetHealth(currentHealth);
+    }
+
+    private void GameState()
+    {
+        if (currentHealth <= 0)
+        {
+            SceneManager.LoadScene("Game Over");
+        }
     }
 }

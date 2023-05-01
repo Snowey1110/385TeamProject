@@ -56,6 +56,7 @@ public class WaveSpawner : MonoBehaviour
                     //depending on number, spawn that type of enemy in this particular round
                     int obj_decider = randSpawner();
 
+                    //60% chance of basic enemy spawning
                     if(obj_decider == 0)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Sprad_Enemy") as GameObject);
@@ -68,6 +69,7 @@ public class WaveSpawner : MonoBehaviour
                         timeSinceSpawn = Time.time;
                         e.GetComponent<Sprad_Enemy>().waypoints = wayPoints; 
                     }
+                    //33% chance of second enemy type spawning
                     else if(obj_decider == 2)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Sprad2_Enemy") as GameObject);
@@ -79,6 +81,7 @@ public class WaveSpawner : MonoBehaviour
                 {
                     int obj_decider = randSpawner();
 
+                    //33% chance of all types spawning
                     if(obj_decider == 0)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Sprad_Enemy") as GameObject);
@@ -102,6 +105,7 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
+    //destroys enemy AND depletes health
     public void destroyEnemy(GameObject obj)
     {
         lgamecontroller.health--;

@@ -1912,7 +1912,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736fbb6ce22a49e4d8ee0ef47eb1e749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretPrefab: {fileID: 0}
+  turretA: {fileID: 0}
+  turretB: {fileID: 0}
+  turretC: {fileID: 0}
   circlePrefab: {fileID: 0}
   buttonA: {fileID: 0}
   buttonB: {fileID: 0}
@@ -3713,7 +3715,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736fbb6ce22a49e4d8ee0ef47eb1e749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretPrefab: {fileID: 2072022191688568572, guid: ba0fcd48896ea0547b8e6978925ac7be, type: 3}
+  turretA: {fileID: 2072022191688568572, guid: ba0fcd48896ea0547b8e6978925ac7be, type: 3}
+  turretB: {fileID: 2072022191688568572, guid: 32f48a94036d5064b867e7878584b7b8, type: 3}
+  turretC: {fileID: 2072022191688568572, guid: 7b2d7bd064844fd4d8df8266193b7d66, type: 3}
   circlePrefab: {fileID: 6623839201182512691, guid: ba432e37bfcac2945a438f2e01e403ad, type: 3}
   buttonA: {fileID: 1953735586}
   buttonB: {fileID: 1756136940}

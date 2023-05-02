@@ -65,7 +65,7 @@ public class WaveSpawner : MonoBehaviour
                     }
                     else if(obj_decider == 1)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
                         e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
                     }
@@ -115,21 +115,25 @@ public class WaveSpawner : MonoBehaviour
         number_killed++;
     }
 
+    //TESTING PURPOSES
+    //ROUND 1 0-5 DEATHS
+    //ROUND 2 5-10 DEATHS
+    //ROUND 3 10+ DEATHS
     public void checkRound()
     {
-        if(number_killed < 20)
+        if(number_killed < 5)
         {
             round_1 = true;
             round_2 = false;
             round_3 = false;
         }
-        else if(number_killed >= 20 && number_killed < 40)
+        else if(number_killed >= 5 && number_killed < 10)
         {
             round_1 = false;
             round_2 = true;
             round_3 = false;
         }
-        else if(number_killed >= 40)
+        else if(number_killed >= 10)
         {
             round_1 = false;
             round_2 = false;

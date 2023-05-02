@@ -31,8 +31,9 @@ public class Egg_Enemy : MonoBehaviour
         ws = FindObjectOfType<WaveSpawner>();
 
 
+        //SET VARIABLES IN PREFAB MENU
         //set public variables
-        speed = 60f;
+        //speed = 60f;
         minDist = 0.04f;
 
         ////set enemy to random color
@@ -44,10 +45,6 @@ public class Egg_Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-       
-
-
         //if current position is close to the next waypoint
         if (Vector3.Distance(currWaypoint.GetComponent<Transform>().position,transform.position) <= minDist)
         {

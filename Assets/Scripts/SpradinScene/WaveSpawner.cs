@@ -65,14 +65,14 @@ public class WaveSpawner : MonoBehaviour
                     }
                     else if(obj_decider == 1)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_2") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_") as GameObject);
                         timeSinceSpawn = Time.time;
                         e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
                     }
                     //33% chance of second enemy type spawning
                     else if(obj_decider == 2)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_3") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_2") as GameObject);
                         timeSinceSpawn = Time.time;
                         e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
                     }

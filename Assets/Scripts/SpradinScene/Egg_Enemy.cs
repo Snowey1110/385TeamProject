@@ -5,8 +5,11 @@ using UnityEngine;
 public class Egg_Enemy : MonoBehaviour
 {
 
+    //Edit in prefab inspector menu
     public float speed;
     public float health;
+    public float damage;
+
     public GameObject[] waypoints;
     private GameObject currWaypoint;
     private int waypointIndex;
@@ -70,13 +73,14 @@ public class Egg_Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         //point to the currWaypoint and move in that direction
         transform.up = currWaypoint.GetComponent<Transform>().position - transform.position;
         rb.velocity = transform.up * speed * Time.smoothDeltaTime;
-
     }
 
-
+    public float GetDamage()
+    {
+        return damage;
+    }
 
 }

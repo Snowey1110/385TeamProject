@@ -108,7 +108,20 @@ public class WaveSpawner : MonoBehaviour
     //destroys enemy AND depletes health
     public void destroyEnemy(GameObject obj)
     {
-        lgamecontroller.health--;
+        //accesses the egg's method
+        Egg_Enemy enemy = obj.GetComponent<Egg_Enemy>();
+
+        //get user health
+        float user_health = lgamecontroller.health;
+
+        //subtract the enemy damage from user's health
+        user_health -= enemy.GetDamage();
+
+        lgamecontroller.health = user_health;
+
+        Debug.Log("User Health: " + lgamecontroller.health);
+
+        //lgamecontroller.health--;
         Destroy(obj);
 
         //number of enemies killed
@@ -119,6 +132,11 @@ public class WaveSpawner : MonoBehaviour
     //ROUND 1 0-5 DEATHS
     //ROUND 2 5-10 DEATHS
     //ROUND 3 10+ DEATHS
+
+    //REAL VALUES SHOULD BE
+    //ROUND 1 0-20 DEATHS
+    //ROUND 2 20-40 DEATHS
+    //ROUND 3 40+ DEATHS
     public void checkRound()
     {
         if(number_killed < 5)

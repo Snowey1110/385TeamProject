@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 100
   health: 40
+  damage: 15
   waypoints: []
   rb: {fileID: 0}
 --- !u!50 &7517747407426924493

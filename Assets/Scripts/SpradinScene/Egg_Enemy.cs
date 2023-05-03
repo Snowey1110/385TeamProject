@@ -5,8 +5,11 @@ using UnityEngine;
 public class Egg_Enemy : MonoBehaviour
 {
 
+    //Edit in prefab inspector menu
     public float speed;
     public float health;
+    public float damage;
+
     public GameObject[] waypoints;
     private GameObject currWaypoint;
     private int waypointIndex;
@@ -31,8 +34,9 @@ public class Egg_Enemy : MonoBehaviour
         ws = FindObjectOfType<WaveSpawner>();
 
 
+        //SET VARIABLES IN PREFAB MENU
         //set public variables
-        speed = 60f;
+        //speed = 60f;
         minDist = 0.04f;
 
         ////set enemy to random color
@@ -44,10 +48,6 @@ public class Egg_Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-       
-
-
         //if current position is close to the next waypoint
         if (Vector3.Distance(currWaypoint.GetComponent<Transform>().position,transform.position) <= minDist)
         {
@@ -73,13 +73,14 @@ public class Egg_Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         //point to the currWaypoint and move in that direction
         transform.up = currWaypoint.GetComponent<Transform>().position - transform.position;
         rb.velocity = transform.up * speed * Time.smoothDeltaTime;
-
     }
 
-
+    public float GetDamage()
+    {
+        return damage;
+    }
 
 }

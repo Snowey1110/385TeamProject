@@ -125,8 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ccc7912c9d383846b0bd8158687ae6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  health: 0
+  speed: 100
+  health: 40
+  damage: 15
   waypoints: []
   rb: {fileID: 0}
 --- !u!50 &7517747407426924493

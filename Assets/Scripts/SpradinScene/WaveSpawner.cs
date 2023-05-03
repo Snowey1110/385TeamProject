@@ -65,14 +65,14 @@ public class WaveSpawner : MonoBehaviour
                     }
                     else if(obj_decider == 1)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_2") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
                         e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
                     }
                     //33% chance of second enemy type spawning
                     else if(obj_decider == 2)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_3") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_2") as GameObject);
                         timeSinceSpawn = Time.time;
                         e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
                     }
@@ -108,28 +108,50 @@ public class WaveSpawner : MonoBehaviour
     //destroys enemy AND depletes health
     public void destroyEnemy(GameObject obj)
     {
-        lgamecontroller.health--;
+        //accesses the egg's method
+        Egg_Enemy enemy = obj.GetComponent<Egg_Enemy>();
+
+        //get user health
+        float user_health = lgamecontroller.health;
+
+        //subtract the enemy damage from user's health
+        user_health -= enemy.GetDamage();
+
+        lgamecontroller.health = user_health;
+
+        Debug.Log("User Health: " + lgamecontroller.health);
+
+        //lgamecontroller.health--;
         Destroy(obj);
 
         //number of enemies killed
         number_killed++;
     }
 
+    //TESTING PURPOSES
+    //ROUND 1 0-5 DEATHS
+    //ROUND 2 5-10 DEATHS
+    //ROUND 3 10+ DEATHS
+
+    //REAL VALUES SHOULD BE
+    //ROUND 1 0-20 DEATHS
+    //ROUND 2 20-40 DEATHS
+    //ROUND 3 40+ DEATHS
     public void checkRound()
     {
-        if(number_killed < 20)
+        if(number_killed < 5)
         {
             round_1 = true;
             round_2 = false;
             round_3 = false;
         }
-        else if(number_killed >= 20 && number_killed < 40)
+        else if(number_killed >= 5 && number_killed < 10)
         {
             round_1 = false;
             round_2 = true;
             round_3 = false;
         }
-        else if(number_killed >= 40)
+        else if(number_killed >= 10)
         {
             round_1 = false;
             round_2 = false;

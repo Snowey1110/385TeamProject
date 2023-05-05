@@ -156,7 +156,8 @@ public class Shop : MonoBehaviour
         SpriteRenderer spriteRenderer = turretPreview.AddComponent<SpriteRenderer>();
         spriteRenderer.sprite = turretSpriteRenderer.sprite;
         spriteRenderer.color = new Color(turretSpriteRenderer.color.r, turretSpriteRenderer.color.g, turretSpriteRenderer.color.b, 0.5f);
-        spriteRenderer.sortingOrder = 1;
+        spriteRenderer.sortingLayerName = "Tower";
+        spriteRenderer.sortingOrder = 0;
         turretPreview.transform.localScale = turretA.transform.localScale;
 
         // Add a translucent circle
@@ -165,6 +166,7 @@ public class Shop : MonoBehaviour
         SpriteRenderer radiusRenderer = circlePreview.AddComponent<SpriteRenderer>();
         radiusRenderer.sprite = circleRenderer.sprite;
         radiusRenderer.color = new Color(circleRenderer.color.r, circleRenderer.color.g, circleRenderer.color.b, 0.5f);
+        radiusRenderer.sortingLayerName = "RangeCircle";
         radiusRenderer.sortingOrder = 0;
         circlePreview.transform.localPosition = Vector3.zero;
         circlePreview.transform.parent = turretPreview.transform;
@@ -178,7 +180,8 @@ public class Shop : MonoBehaviour
         SpriteRenderer spriteRenderer = turretPreview.AddComponent<SpriteRenderer>();
         spriteRenderer.sprite = turretSpriteRenderer.sprite;
         spriteRenderer.color = new Color(turretSpriteRenderer.color.r, turretSpriteRenderer.color.g, turretSpriteRenderer.color.b, 0.5f);
-        spriteRenderer.sortingOrder = 1;
+        spriteRenderer.sortingLayerName = "Tower";
+        spriteRenderer.sortingOrder = 0;
         turretPreview.transform.localScale = turretB.transform.localScale;
 
         // Add a translucent circle
@@ -187,6 +190,7 @@ public class Shop : MonoBehaviour
         SpriteRenderer radiusRenderer = circlePreview.AddComponent<SpriteRenderer>();
         radiusRenderer.sprite = circleRenderer.sprite;
         radiusRenderer.color = new Color(circleRenderer.color.r, circleRenderer.color.g, circleRenderer.color.b, 0.5f);
+        radiusRenderer.sortingLayerName = "RangeCircle";
         radiusRenderer.sortingOrder = 0;
         circlePreview.transform.localPosition = Vector3.zero;
         circlePreview.transform.parent = turretPreview.transform;
@@ -200,7 +204,8 @@ public class Shop : MonoBehaviour
         SpriteRenderer spriteRenderer = turretPreview.AddComponent<SpriteRenderer>();
         spriteRenderer.sprite = turretSpriteRenderer.sprite;
         spriteRenderer.color = new Color(turretSpriteRenderer.color.r, turretSpriteRenderer.color.g, turretSpriteRenderer.color.b, 0.5f);
-        spriteRenderer.sortingOrder = 1;
+        spriteRenderer.sortingLayerName = "Tower";
+        spriteRenderer.sortingOrder = 0;
         turretPreview.transform.localScale = turretC.transform.localScale;
 
         // Add a translucent circle
@@ -209,6 +214,7 @@ public class Shop : MonoBehaviour
         SpriteRenderer radiusRenderer = circlePreview.AddComponent<SpriteRenderer>();
         radiusRenderer.sprite = circleRenderer.sprite;
         radiusRenderer.color = new Color(circleRenderer.color.r, circleRenderer.color.g, circleRenderer.color.b, 0.5f);
+        radiusRenderer.sortingLayerName = "RangeCircle";
         radiusRenderer.sortingOrder = 0;
         circlePreview.transform.localPosition = Vector3.zero;
         circlePreview.transform.parent = turretPreview.transform;
@@ -222,7 +228,8 @@ public class Shop : MonoBehaviour
         SpriteRenderer spriteRenderer = turretPreview.AddComponent<SpriteRenderer>();
         spriteRenderer.sprite = turretSpriteRenderer.sprite;
         spriteRenderer.color = new Color(turretSpriteRenderer.color.r, turretSpriteRenderer.color.g, turretSpriteRenderer.color.b, 0.5f);
-        spriteRenderer.sortingOrder = 1;
+        spriteRenderer.sortingLayerName = "Tower";
+        spriteRenderer.sortingOrder = 0;
         turretPreview.transform.localScale = turretC.transform.localScale;
 
         // Add a translucent circle
@@ -231,6 +238,7 @@ public class Shop : MonoBehaviour
         SpriteRenderer radiusRenderer = circlePreview.AddComponent<SpriteRenderer>();
         radiusRenderer.sprite = circleRenderer.sprite;
         radiusRenderer.color = new Color(circleRenderer.color.r, circleRenderer.color.g, circleRenderer.color.b, 0.5f);
+        radiusRenderer.sortingLayerName = "RangeCircle";
         radiusRenderer.sortingOrder = 0;
         circlePreview.transform.localPosition = Vector3.zero;
         circlePreview.transform.parent = turretPreview.transform;
@@ -244,7 +252,8 @@ public class Shop : MonoBehaviour
         SpriteRenderer spriteRenderer = turretPreview.AddComponent<SpriteRenderer>();
         spriteRenderer.sprite = turretSpriteRenderer.sprite;
         spriteRenderer.color = new Color(turretSpriteRenderer.color.r, turretSpriteRenderer.color.g, turretSpriteRenderer.color.b, 0.5f);
-        spriteRenderer.sortingOrder = 1;
+        spriteRenderer.sortingLayerName = "Tower";
+        spriteRenderer.sortingOrder = 0;
         turretPreview.transform.localScale = turretC.transform.localScale;
 
         // Add a translucent circle
@@ -253,6 +262,7 @@ public class Shop : MonoBehaviour
         SpriteRenderer radiusRenderer = circlePreview.AddComponent<SpriteRenderer>();
         radiusRenderer.sprite = circleRenderer.sprite;
         radiusRenderer.color = new Color(circleRenderer.color.r, circleRenderer.color.g, circleRenderer.color.b, 0.5f);
+        radiusRenderer.sortingLayerName = "RangeCircle";
         radiusRenderer.sortingOrder = 0;
         circlePreview.transform.localPosition = Vector3.zero;
         circlePreview.transform.parent = turretPreview.transform;
@@ -266,7 +276,8 @@ public class Shop : MonoBehaviour
         SpriteRenderer spriteRenderer = turretPreview.AddComponent<SpriteRenderer>();
         spriteRenderer.sprite = turretSpriteRenderer.sprite;
         spriteRenderer.color = new Color(turretSpriteRenderer.color.r, turretSpriteRenderer.color.g, turretSpriteRenderer.color.b, 0.5f);
-        spriteRenderer.sortingOrder = 1;
+        spriteRenderer.sortingLayerName = "Tower";
+        spriteRenderer.sortingOrder = 0;
         turretPreview.transform.localScale = turretC.transform.localScale;
 
         // Add a translucent circle
@@ -275,6 +286,7 @@ public class Shop : MonoBehaviour
         SpriteRenderer radiusRenderer = circlePreview.AddComponent<SpriteRenderer>();
         radiusRenderer.sprite = circleRenderer.sprite;
         radiusRenderer.color = new Color(circleRenderer.color.r, circleRenderer.color.g, circleRenderer.color.b, 0.5f);
+        radiusRenderer.sortingLayerName = "RangeCircle";
         radiusRenderer.sortingOrder = 0;
         circlePreview.transform.localPosition = Vector3.zero;
         circlePreview.transform.parent = turretPreview.transform;

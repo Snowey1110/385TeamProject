@@ -8,29 +8,27 @@ public class Tower_Behaviour : MonoBehaviour
     // Start is called before the first frame update
 
     public float towerRange = 5f;
-    public float towerFireRate = 1f;
+    public float towerFireRate = 2f;
+    private float towerNextFire = 0;
     private GameObject targetEnemy;
     private Vector3 currPos;
-    
+
+    //private float snowballSpeed = 0;
+
 
     void Start()
     {
         //set variables
-        currPos = transform.position;
-      
-
-
-
-
-        
+        //currPos = transform.position;
+              
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject temp = getTarget(enemyArray);
-        
+        //GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
+        //GameObject temp = getTarget(enemyArray);
+        ThrowSnowball();
 
 
 
@@ -60,5 +58,16 @@ public class Tower_Behaviour : MonoBehaviour
         return min;
     }
 
+    public void ThrowSnowball()
+    {
+        if (Time.time > towerNextFire)
+        {
+            towerNextFire = Time.time + towerFireRate;
+            GameObject snowball = Instantiate(Resources.Load("Prefabs/snowball") as GameObject);
+            //snowball.GetComponent<SnowballBehaviour>().speed = snowballSpeed;
+            snowball.transform.localPosition = transform.localPosition;
+            snowball.transform.rotation = transform.rotation;
+        }
+    }
 
 }

@@ -809,7 +809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736fbb6ce22a49e4d8ee0ef47eb1e749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretA: {fileID: 1338581226}
+  turretA: {fileID: 2072022191688568572, guid: ba0fcd48896ea0547b8e6978925ac7be, type: 3}
   turretB: {fileID: 0}
   turretC: {fileID: 0}
   turretD: {fileID: 0}
@@ -2010,11 +2010,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1338581226 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3094817080013345043, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
-  m_PrefabInstance: {fileID: 3094817079428952529}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1421988950
 GameObject:
   m_ObjectHideFlags: 0

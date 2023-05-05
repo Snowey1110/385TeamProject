@@ -56,11 +56,9 @@ public class SnowballBehaviour : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            Debug.Log("collision");
             Destroy(collision.gameObject);
-            Destroy(gameObject);
-            
-            
-            
+            Destroy(gameObject);            
         }
     }
 }

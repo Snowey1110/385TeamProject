@@ -8,6 +8,7 @@ TagManager:
   - Base
   - Enemy
   - waypoints
+  - Tower
   layers:
   - Default
   - TransparentFX
@@ -53,6 +54,9 @@ TagManager:
     locked: 0
   - name: UI 1
     uniqueID: 3516705419
+    locked: 0
+  - name: RangeCircle
+    uniqueID: 469579755
     locked: 0
   - name: Tower
     uniqueID: 4145595619

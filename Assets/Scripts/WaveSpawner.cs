@@ -1,3 +1,5 @@
+using JetBrains.Annotations;
+//using Packages.Rider.Editor.UnitTesting;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +18,10 @@ public class WaveSpawner : MonoBehaviour
 
     private int number_killed = 0;
 
+    //just send one to test remove later
+   // bool test = true;
+    /////////////////////////////////////
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +31,7 @@ public class WaveSpawner : MonoBehaviour
 
         //get handle on Gamecontroller object
         lgamecontroller = FindObjectOfType<GameController>();
-     
+        
     }
 
     // Update is called once per frame
@@ -39,68 +45,78 @@ public class WaveSpawner : MonoBehaviour
 
         checkRound();
 
-        if(spawnWave)
+
+
+        //if (test)
+        //{
+        //    GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
+        //    e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
+        //    test = false;
+        //}
+
+
+        if (spawnWave)
         {
             //start the enemies; (This will need to become an alogorith that spawns differenty types at specific rates)
             if ((Time.time - timeSinceSpawn) > spawnRate || timeSinceSpawn == 0)
             {
                 //checks what round/difficulty/wave we are on
-                if(round_1)
+                if (round_1)
                 {
                     GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
                     timeSinceSpawn = Time.time;
-                    e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
+                    e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                 }
-                else if(round_2)
+                else if (round_2)
                 {
                     //depending on number, spawn that type of enemy in this particular round
                     int obj_decider = randSpawner();
 
                     //60% chance of basic enemy spawning
-                    if(obj_decider == 0)
+                    if (obj_decider == 0)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
-                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
+                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
-                    else if(obj_decider == 1)
+                    else if (obj_decider == 1)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
-                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
+                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
                     //33% chance of second enemy type spawning
-                    else if(obj_decider == 2)
+                    else if (obj_decider == 2)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_2") as GameObject);
                         timeSinceSpawn = Time.time;
-                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
+                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
                 }
-                else if(round_3)
+                else if (round_3)
                 {
                     int obj_decider = randSpawner();
 
                     //33% chance of all types spawning
-                    if(obj_decider == 0)
+                    if (obj_decider == 0)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
-                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
+                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
-                    else if(obj_decider == 1)
+                    else if (obj_decider == 1)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_2") as GameObject);
                         timeSinceSpawn = Time.time;
-                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
+                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
-                    else if(obj_decider == 2)
+                    else if (obj_decider == 2)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_3") as GameObject);
                         timeSinceSpawn = Time.time;
-                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints; 
+                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
-                }    
+                }
             }
         }
     }

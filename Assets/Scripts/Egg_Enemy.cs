@@ -63,12 +63,19 @@ public class Egg_Enemy : MonoBehaviour
                 ws.destroyEnemy(this.gameObject);
             }
         }
-        
-        //point to the currWaypoint and move in that direction
-       // transform.up = currWaypoint.GetComponent<Transform>().position - transform.position;
-      //  rb.velocity = transform.up * speed * Time.smoothDeltaTime;
 
-       
+        //point to the currWaypoint and move in that direction
+        // transform.up = currWaypoint.GetComponent<Transform>().position - transform.position;
+        //  rb.velocity = transform.up * speed * Time.smoothDeltaTime;
+
+
+        
+
+
+
+
+
+
     }
 
     private void FixedUpdate()

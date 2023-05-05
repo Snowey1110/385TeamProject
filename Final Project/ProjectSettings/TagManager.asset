@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy Path
+  - Base
+  - Enemy
+  - waypoints
+  - Tower
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Enemy Layer
+  - Water
+  - UI
+  - UI_1
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2133659471
+    locked: 0
+  - name: UI Base
+    uniqueID: 2864909581
+    locked: 0
+  - name: UI 1
+    uniqueID: 3516705419
+    locked: 0
+  - name: RangeCircle
+    uniqueID: 469579755
+    locked: 0
+  - name: Tower
+    uniqueID: 4145595619
+    locked: 0
+  - name: Enemy
+    uniqueID: 281412185
+    locked: 0

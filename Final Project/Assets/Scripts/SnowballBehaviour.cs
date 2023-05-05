@@ -11,6 +11,16 @@ public class SnowballBehaviour : MonoBehaviour
 
     void Start()
     {
+        AquireTarget();
+    }
+
+    void Update()
+    {
+        TrackTarget();
+    }
+
+    void AquireTarget()
+    {
         // Find the closest enemy
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         float minDistance = Mathf.Infinity;
@@ -31,8 +41,7 @@ public class SnowballBehaviour : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void TrackTarget()
     {
         if (target != null)
         {
@@ -45,18 +54,17 @@ public class SnowballBehaviour : MonoBehaviour
 
             // Move the bullet towards the target direction
             transform.position += targetDirection * speed * Time.deltaTime;
-        } else
+        }
+        else
         {
             Destroy(gameObject);
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("collision");
             Destroy(collision.gameObject);
             Destroy(gameObject);            
         }

@@ -53,7 +53,8 @@ public class Shop : MonoBehaviour
             {
                 if (turret == 'A')
                 {
-                    Instantiate(turretA, Pos, Quaternion.identity);
+                    turretA = Instantiate(Resources.Load("Prefabs/Snowman_Tower") as GameObject, Pos, Quaternion.identity);
+                    //Instantiate(turretA, Pos, Quaternion.identity);
                 }
                 if (turret == 'B')
                 {
@@ -170,7 +171,10 @@ public class Shop : MonoBehaviour
         radiusRenderer.sortingOrder = 0;
         circlePreview.transform.localPosition = Vector3.zero;
         circlePreview.transform.parent = turretPreview.transform;
-        circlePreview.transform.localScale = Vector3.one * 50f;
+
+        float towerScale = turretA.GetComponent<Snowman_Tower>().towerRange / (turretA.GetComponent<Snowman_Tower>().transform.localScale.x / 2);
+        circlePreview.transform.localScale = new Vector3(towerScale, towerScale, 1);
+        //circlePreview.transform.localScale = Vector3.one * 50f;
     }
 
     void CreateTurretB()

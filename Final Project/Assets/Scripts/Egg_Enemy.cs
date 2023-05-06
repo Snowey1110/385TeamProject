@@ -17,6 +17,7 @@ public class Egg_Enemy : MonoBehaviour
     public Rigidbody2D rb;
     private GameController lgamecontroller;
     private WaveSpawner ws;
+    
 
 
     // Start is called before the first frame update
@@ -63,6 +64,10 @@ public class Egg_Enemy : MonoBehaviour
                 ws.destroyEnemy(this.gameObject);
             }
         }
+
+       
+
+
 
         //point to the currWaypoint and move in that direction
         // transform.up = currWaypoint.GetComponent<Transform>().position - transform.position;

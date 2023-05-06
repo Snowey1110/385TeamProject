@@ -1,23 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 //using UnityEditor.SearchService;
 using UnityEngine;
 
-public class Tower_Behaviour : MonoBehaviour
+public class Snowman_Tower : MonoBehaviour
 {
     // Start is called before the first frame update
 
     public float towerRange = 5f;
     public float towerFireRate = 3f;
     private float towerNextFire = 0;
-    private GameObject targetEnemy;
+   public GameObject targetEnemy;
     private Vector3 currPos;
 
 
     void Start()
     {
         //set variables
-        //currPos = transform.position;
+        currPos = transform.position;
               
     }
 
@@ -25,8 +26,15 @@ public class Tower_Behaviour : MonoBehaviour
     void Update()
     {
         GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject temp = getTarget(enemyArray);
-        ThrowSnowball(temp);
+        targetEnemy = getTarget(enemyArray);
+        if (targetEnemy != null )
+        {
+            Debug.Log("targetEnemy found");
+            GameObject temp = Instantiate(Resources.Load("Prefabs/marker") as GameObject);
+            temp.transform.position = targetEnemy.transform.position;
+        }
+
+        //ThrowSnowball(targetEnemy);
 
 
 

@@ -6,7 +6,7 @@ public class RangeCircle : MonoBehaviour
 {
     private float radius;
     private Color color;
-    private Tower_Behaviour tower;
+    private Snowman_Tower tower;
     public bool showRadius = false;
 
 
@@ -16,7 +16,7 @@ public class RangeCircle : MonoBehaviour
     void Start()
     {
         //get radius of specified tower
-        tower = this.GetComponentInParent<Tower_Behaviour>();
+        tower = this.GetComponentInParent<Snowman_Tower>();
         
         // center range circle on tower
         this.transform.position = tower.transform.position;
@@ -41,7 +41,7 @@ public class RangeCircle : MonoBehaviour
     void Update()
     {
         //get radius of specified tower
-        radius = this.GetComponentInParent<Tower_Behaviour>().towerRange;
+        radius = this.GetComponentInParent<Snowman_Tower>().towerRange;
         
         // center range circle on tower
         this.transform.position = tower.transform.position;

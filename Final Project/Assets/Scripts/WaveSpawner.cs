@@ -18,9 +18,11 @@ public class WaveSpawner : MonoBehaviour
 
     private int number_killed = 0;
 
-    //just send one to test remove later
-   // bool test = true;
-    /////////////////////////////////////
+    /////////////////////////////////////////////////////////////
+    //setting to true will send 1 mob and have then drop markers 
+    //when targeted by a tower
+    //bool test = true;
+    /////////////////////////////////////////////////////////////
 
 
     // Start is called before the first frame update
@@ -46,7 +48,7 @@ public class WaveSpawner : MonoBehaviour
         checkRound();
 
 
-
+        ////for targeting testing of towers
         //if (test)
         //{
         //    GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
@@ -119,6 +121,7 @@ public class WaveSpawner : MonoBehaviour
                 }
             }
         }
+
     }
 
     //destroys enemy AND depletes health

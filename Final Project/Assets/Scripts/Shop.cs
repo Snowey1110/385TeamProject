@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.PlayerSettings;
+using TMPro;
 
 public class Shop : MonoBehaviour
 {
@@ -18,9 +19,18 @@ public class Shop : MonoBehaviour
     public GameObject circlePrefab;
     private GameObject circlePreview;
     private bool isPlacingTurret = false;
-    
-    private Text textComponent;
-    private int balance = 1000;
+
+    private Text bank;
+
+    private Text towerAPrice;
+    private Text towerBPrice;
+    private Text towerCPrice;
+    private Text towerDPrice;
+    private Text towerEPrice;
+    private Text towerFPrice;
+
+
+    private int balance = 500;
     private char turret = ' ';
 
     public Button buttonA;
@@ -30,16 +40,34 @@ public class Shop : MonoBehaviour
     public Button buttonE;
     public Button buttonF;
 
-    private int costA = 200;
-    private int costB = 250;
-    private int costC = 500;
-    private int costD = 200;
-    private int costE = 250;
-    private int costF = 500;
+    private int costA = 200; //Tower A (Snowman)
+    private int costB = 250; //Tower B 
+    private int costC = 500; //Tower C 
+    private int costD = 1000; //Tower D 
+    private int costE = 1000; //Tower E 
+    private int costF = 1000; //Tower F 
 
     private void Start()
     {
-        textComponent = GameObject.Find("Money").GetComponent<Text>();
+        bank = GameObject.Find("Money").GetComponent<Text>();
+
+        towerAPrice = GameObject.Find("CostA").GetComponent<Text>();
+        towerAPrice.text = string.Format("${0}", costA);
+
+        towerBPrice = GameObject.Find("CostB").GetComponent<Text>();
+        towerBPrice.text = string.Format("${0}", costB);
+
+        towerCPrice = GameObject.Find("CostC").GetComponent<Text>();
+        towerCPrice.text = string.Format("${0}", costC);
+
+        towerDPrice = GameObject.Find("CostD").GetComponent<Text>();
+        towerDPrice.text = string.Format("${0}", costD);
+
+        towerEPrice = GameObject.Find("CostE").GetComponent<Text>();
+        towerEPrice.text = string.Format("${0}", costE);
+
+        towerFPrice = GameObject.Find("CostF").GetComponent<Text>();
+        towerFPrice.text = string.Format("${0}", costF);
 
         //Snowman_Turret
         turretA = Instantiate(Resources.Load("Prefabs/Snowman_Tower") as GameObject);
@@ -99,7 +127,7 @@ public class Shop : MonoBehaviour
                 isPlacingTurret = false;
             }
         }
-        textComponent.text = string.Format("${0}", balance);
+        bank.text = string.Format("${0}", balance);
     }
 
     public void OnButtonAClick()

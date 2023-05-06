@@ -7,8 +7,9 @@ public class Egg_Enemy : MonoBehaviour
 
     //Edit in prefab inspector menu
     public float speed;
-    public float health;
+    public float max_health;
     public float damage;
+    private int current_health;
 
     public GameObject[] waypoints;
     private GameObject currWaypoint;
@@ -18,7 +19,7 @@ public class Egg_Enemy : MonoBehaviour
     private GameController lgamecontroller;
     private WaveSpawner ws;
     
-
+    public HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,10 @@ public class Egg_Enemy : MonoBehaviour
         //set public variables
         //speed = 60f;
         minDist = 0.04f;
+
+        //sets the healthbar health
+        current_health = Mathf.RoundToInt(max_health);
+        healthBar.SetMaxHealth(current_health);
 
         ////set enemy to random color
         //Color temp = GetComponent<Renderer>().material.color;

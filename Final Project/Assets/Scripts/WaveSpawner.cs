@@ -160,18 +160,21 @@ public class WaveSpawner : MonoBehaviour
             round_1 = true;
             round_2 = false;
             round_3 = false;
+            //Debug.Log("ROUND 1 " + number_killed);
         }
         else if(number_killed >= 5 && number_killed < 10)
         {
             round_1 = false;
             round_2 = true;
             round_3 = false;
+            //Debug.Log("ROUND 2 " + number_killed);
         }
         else if(number_killed >= 10)
         {
             round_1 = false;
             round_2 = false;
             round_3 = true;
+            //Debug.Log("ROUND 3 " + number_killed);
         }
     }
 
@@ -180,6 +183,12 @@ public class WaveSpawner : MonoBehaviour
     {
         int decider_num = Random.Range(0, 3);
         return decider_num;
+    }
+
+    public void UpdateKilledEnemies()
+    {
+        Debug.Log("KILLED ENEMIES CALLED");
+        number_killed++;
     }
 
 }

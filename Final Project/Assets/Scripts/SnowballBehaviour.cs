@@ -9,8 +9,13 @@ public class SnowballBehaviour : MonoBehaviour
     public GameObject target;
     private Vector3 targetDirection;
 
+    //update the number of enemies killed
+    private WaveSpawner wavespawner;
+
     void Start()
     {
+        //access the wavespawner.cs script
+        wavespawner = FindObjectOfType<WaveSpawner>();
         AquireTarget();
     }
 
@@ -63,10 +68,15 @@ public class SnowballBehaviour : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.CompareTag("Enemy"))
         {
+            //update the number of killed enemies to progress the round/difficulty
+            wavespawner.UpdateKilledEnemies(); 
+
             Destroy(collision.gameObject);
-            Destroy(gameObject);            
+
+            Destroy(gameObject);           
         }
     }
 }

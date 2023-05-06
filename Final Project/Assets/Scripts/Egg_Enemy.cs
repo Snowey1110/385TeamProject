@@ -42,6 +42,7 @@ public class Egg_Enemy : MonoBehaviour
         minDist = 0.04f;
 
         //sets the healthbar health
+        healthBar = FindObjectOfType<HealthBar>();
         current_health = Mathf.RoundToInt(max_health);
         healthBar.SetMaxHealth(current_health);
 
@@ -70,7 +71,13 @@ public class Egg_Enemy : MonoBehaviour
             }
         }
 
-       
+        //TESTING PURPOSES TO TEST HEALTH BAR
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            current_health -= 10;
+            healthBar.SetHealth(current_health); 
+        }
+    
 
 
 

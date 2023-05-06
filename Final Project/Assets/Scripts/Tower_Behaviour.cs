@@ -24,9 +24,9 @@ public class Tower_Behaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
-        //GameObject temp = getTarget(enemyArray);
-        ThrowSnowball();
+        GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject temp = getTarget(enemyArray);
+        ThrowSnowball(temp);
 
 
 
@@ -54,15 +54,21 @@ public class Tower_Behaviour : MonoBehaviour
         return min;
     }
 
-    public void ThrowSnowball()
+    public void ThrowSnowball(GameObject temp)
     {
-        if (Time.time > towerNextFire)
+        if (temp != null)
         {
-            towerNextFire = Time.time + towerFireRate;
-            GameObject snowball = Instantiate(Resources.Load("Prefabs/snowball") as GameObject);
-            snowball.transform.localPosition = transform.localPosition;
-            snowball.transform.rotation = transform.rotation;
+            if (Time.time > towerNextFire)
+            {
+                towerNextFire = Time.time + towerFireRate;
+                GameObject snowball = Instantiate(Resources.Load("Prefabs/snowball") as GameObject);
+                snowball.transform.localPosition = transform.localPosition;
+                snowball.transform.rotation = transform.rotation;
+                snowball.GetComponent<SnowballBehaviour>().target = temp;
+            }
+
         }
+        
     }
 
 }

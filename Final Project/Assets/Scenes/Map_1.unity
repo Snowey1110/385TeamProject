@@ -4146,63 +4146,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105654100}
   m_CullTransparentMesh: 1
---- !u!1001 &846092742286973874
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 846092741903634800, guid: 20d2c26283370a448adfa595f99f43fd, type: 3}
-      propertyPath: m_Name
-      value: snowball
-      objectReference: {fileID: 0}
-    - target: {fileID: 846092741903634806, guid: 20d2c26283370a448adfa595f99f43fd, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 846092741903634806, guid: 20d2c26283370a448adfa595f99f43fd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.5757
-      objectReference: {fileID: 0}
-    - target: {fileID: 846092741903634806, guid: 20d2c26283370a448adfa595f99f43fd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.5757
-      objectReference: {fileID: 0}
-    - target: {fileID: 846092741903634806, guid: 20d2c26283370a448adfa595f99f43fd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 846092741903634806, guid: 20d2c26283370a448adfa595f99f43fd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 846092741903634806, guid: 20d2c26283370a448adfa595f99f43fd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 846092741903634806, guid: 20d2c26283370a448adfa595f99f43fd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 846092741903634806, guid: 20d2c26283370a448adfa595f99f43fd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 846092741903634806, guid: 20d2c26283370a448adfa595f99f43fd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 846092741903634806, guid: 20d2c26283370a448adfa595f99f43fd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 846092741903634806, guid: 20d2c26283370a448adfa595f99f43fd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 20d2c26283370a448adfa595f99f43fd, type: 3}
 --- !u!1001 &3094817079428952529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4210,6 +4153,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1546950734, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
+      propertyPath: towerRange
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3094817080013345043, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
       propertyPath: m_Name
       value: Snowman_Tower

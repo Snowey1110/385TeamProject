@@ -6,7 +6,7 @@ public class SnowballBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed = 10f;
-    private GameObject target;
+    public GameObject target;
     private Vector3 targetDirection;
 
     void Start()
@@ -22,17 +22,17 @@ public class SnowballBehaviour : MonoBehaviour
     void AquireTarget()
     {
         // Find the closest enemy
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        float minDistance = Mathf.Infinity;
-        foreach (GameObject enemy in enemies)
-        {
-            float distance = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distance < minDistance)
-            {
-                minDistance = distance;
-                target = enemy;
-            }
-        }
+        //GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        //float minDistance = Mathf.Infinity;
+        //foreach (GameObject enemy in enemies)
+        //{
+        //    float distance = Vector3.Distance(transform.position, enemy.transform.position);
+        //    if (distance < minDistance)
+        //    {
+        //        minDistance = distance;
+        //        target = enemy;
+        //    }
+        //}
 
         // Set the target direction to the closest enemy
         if (target != null)

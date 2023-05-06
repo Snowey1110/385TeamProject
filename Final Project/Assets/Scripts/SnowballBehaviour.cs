@@ -12,6 +12,7 @@ public class SnowballBehaviour : MonoBehaviour
     //update the number of enemies killed
     private WaveSpawner wavespawner;
     private GameController lgamecontroller;
+    private Egg_Enemy eggEnemy;
 
     void Start()
     {
@@ -74,12 +75,7 @@ public class SnowballBehaviour : MonoBehaviour
 
         if (collision.CompareTag("Enemy"))
         {
-            //update the number of killed enemies to progress the round/difficulty
-            wavespawner.UpdateKilledEnemies(); 
-
-            Destroy(collision.gameObject);
-
-            Destroy(gameObject);           
+            eggEnemy.Hit();           
         }
     }
 }

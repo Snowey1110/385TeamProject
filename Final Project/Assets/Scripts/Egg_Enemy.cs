@@ -9,7 +9,7 @@ public class Egg_Enemy : MonoBehaviour
     public float speed;
     public float max_health;
     public float damage;
-    private int current_health;
+    private float current_health;
 
     public GameObject[] waypoints;
     private GameObject currWaypoint;
@@ -74,7 +74,7 @@ public class Egg_Enemy : MonoBehaviour
         //TESTING PURPOSES TO TEST HEALTH BAR
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            current_health -= 10;
+            current_health -= 10f;
             healthBar.SetHealth(current_health); 
         }
     
@@ -105,6 +105,17 @@ public class Egg_Enemy : MonoBehaviour
     public float GetDamage()
     {
         return damage;
+    }
+
+    public void Hit()
+    {
+        current_health -= damage;
+        if (current_health <= 0)
+        {
+            Destroy(gameObject);
+            //update the number of killed enemies to progress the round/difficulty
+            ws.UpdateKilledEnemies();
+        }
     }
 
 }

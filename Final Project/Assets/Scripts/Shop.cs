@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.PlayerSettings;
 
 public class Shop : MonoBehaviour
 {
+    
     public GameObject turretA;
     public GameObject turretB;
     public GameObject turretC;
@@ -38,6 +40,12 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         textComponent = GameObject.Find("Money").GetComponent<Text>();
+
+        //Snowman_Turret
+        turretA = Instantiate(Resources.Load("Prefabs/Snowman_Tower") as GameObject);
+        turretA.SetActive(false);
+
+
     }
 
     private void Update()
@@ -54,7 +62,11 @@ public class Shop : MonoBehaviour
                 if (turret == 'A')
                 {
                     turretA = Instantiate(Resources.Load("Prefabs/Snowman_Tower") as GameObject, Pos, Quaternion.identity);
-                    Debug.Log("turretA towerRange: " + turretA.GetComponent<Snowman_Tower>().towerRange + "turretA localScale.x: " + turretA.GetComponent<Snowman_Tower>().transform.localScale.x);
+                    //turretA.SetActive (true);
+                    //turretA.transform.position = Pos;
+
+
+                    Debug.Log("turretA towerRange: " + turretA.GetComponent<Snowman_Tower>().towerRange + " turretA localScale.x: " + turretA.GetComponent<Snowman_Tower>().transform.localScale.x);
                     //Instantiate(turretA, Pos, Quaternion.identity);
                 }
                 if (turret == 'B')
@@ -161,6 +173,8 @@ public class Shop : MonoBehaviour
         spriteRenderer.sortingLayerName = "Tower";
         spriteRenderer.sortingOrder = 0;
         turretPreview.transform.localScale = turretA.transform.localScale;
+
+
 
         // Add a translucent circle
         SpriteRenderer circleRenderer = circlePrefab.GetComponent<SpriteRenderer>();

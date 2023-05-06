@@ -8,7 +8,7 @@ public class Snowman_Tower : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public float towerRange = 5f;
+    public float towerRange = 3f;
     public float towerFireRate = 3f;
     private float towerNextFire = 0;
    public GameObject targetEnemy;

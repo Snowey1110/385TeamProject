@@ -25,6 +25,11 @@ public class GameController : MonoBehaviour
 
         //get handle on Map object
         map = FindObjectOfType<MapScript>();
+
+
+
+
+
     }
 
     // Update is called once per frame

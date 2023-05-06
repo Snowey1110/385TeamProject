@@ -14,6 +14,14 @@ public class GameController : MonoBehaviour
     private MapScript map;
     public bool spawnWave = false;
 
+    //wave status
+    public Text currWave;
+    private int curr_wave;
+
+    //enemies killed
+    public Text enemiesKilled;
+    private int enemies_killed;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +29,16 @@ public class GameController : MonoBehaviour
         //set public variables
         health = 1000;
         gameStart = 5f;
+        curr_wave = 0;
+        enemies_killed = 0;
+
+        //set the UI to default values
         timeToWave.text = "Waves start in " + gameStart.ToString("F0") + " seconds.";
+        currWave.text = "Current wave: " + curr_wave;
+        enemiesKilled.text = "Total Mobs Killed: " + enemies_killed;
 
         //get handle on Map object
         map = FindObjectOfType<MapScript>();
-
-
-
-
 
     }
 
@@ -61,7 +71,17 @@ public class GameController : MonoBehaviour
         return spawnWave;
     }
 
+    public void UpdateWaveUI(int wave_num)
+    {
+        curr_wave = wave_num;
+        currWave.text = "Current wave: " + curr_wave;
+    }
 
+    public void UpdateKilledEnemiesUI(int killed_num)
+    {
+        enemies_killed = killed_num;
+        enemiesKilled.text = "Total Mobs Killed: " + enemies_killed;
+    }
 
 
 }

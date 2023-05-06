@@ -11,11 +11,14 @@ public class SnowballBehaviour : MonoBehaviour
 
     //update the number of enemies killed
     private WaveSpawner wavespawner;
+    private GameController lgamecontroller;
 
     void Start()
     {
         //access the wavespawner.cs script
         wavespawner = FindObjectOfType<WaveSpawner>();
+        lgamecontroller = FindObjectOfType<GameController>();
+
         AquireTarget();
     }
 

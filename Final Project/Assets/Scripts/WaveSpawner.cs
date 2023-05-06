@@ -33,6 +33,8 @@ public class WaveSpawner : MonoBehaviour
 
         //get handle on Gamecontroller object
         lgamecontroller = FindObjectOfType<GameController>();
+
+
         
     }
 
@@ -144,7 +146,7 @@ public class WaveSpawner : MonoBehaviour
         Destroy(obj);
 
         //number of enemies killed
-        number_killed++;
+        UpdateKilledEnemies();
     }
 
     //TESTING PURPOSES
@@ -163,6 +165,7 @@ public class WaveSpawner : MonoBehaviour
             round_1 = true;
             round_2 = false;
             round_3 = false;
+            lgamecontroller.UpdateWaveUI(1);
             //Debug.Log("ROUND 1 " + number_killed);
         }
         else if(number_killed >= 5 && number_killed < 10)
@@ -170,6 +173,7 @@ public class WaveSpawner : MonoBehaviour
             round_1 = false;
             round_2 = true;
             round_3 = false;
+            lgamecontroller.UpdateWaveUI(2);
             //Debug.Log("ROUND 2 " + number_killed);
         }
         else if(number_killed >= 10)
@@ -177,6 +181,7 @@ public class WaveSpawner : MonoBehaviour
             round_1 = false;
             round_2 = false;
             round_3 = true;
+            lgamecontroller.UpdateWaveUI(3);
             //Debug.Log("ROUND 3 " + number_killed);
         }
     }
@@ -190,8 +195,10 @@ public class WaveSpawner : MonoBehaviour
 
     public void UpdateKilledEnemies()
     {
-        Debug.Log("KILLED ENEMIES CALLED");
+        //Debug.Log("KILLED ENEMIES CALLED");
         number_killed++;
+
+        lgamecontroller.UpdateKilledEnemiesUI(number_killed);
     }
 
 }

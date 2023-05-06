@@ -27,14 +27,14 @@ public class Snowman_Tower : MonoBehaviour
     {
         GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
         targetEnemy = getTarget(enemyArray);
-        if (targetEnemy != null )
-        {
-            Debug.Log("targetEnemy found");
-            GameObject temp = Instantiate(Resources.Load("Prefabs/marker") as GameObject);
-            temp.transform.position = targetEnemy.transform.position;
-        }
+        //if (targetEnemy != null )
+        //{
+        //    Debug.Log("targetEnemy found");
+        //    GameObject temp = Instantiate(Resources.Load("Prefabs/marker") as GameObject);
+        //    temp.transform.position = targetEnemy.transform.position;
+        //}
 
-        //ThrowSnowball(targetEnemy);
+        ThrowSnowball(targetEnemy);
 
 
 

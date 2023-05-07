@@ -77,7 +77,7 @@ public class Egg_Enemy : MonoBehaviour
         //TESTING PURPOSES TO TEST HEALTH BAR
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            current_health -= 10;
+            current_health -= 10f;
             healthBar.SetHealth(current_health); 
         }
     

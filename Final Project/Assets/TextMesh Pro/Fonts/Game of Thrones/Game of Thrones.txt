@@ -1,0 +1,2 @@
+source: https://fontmeme.com/fonts/game-of-thrones-font/
+license: https://fontmeme.com/read/#license

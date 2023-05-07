@@ -60,7 +60,7 @@ public class Egg_Enemy : MonoBehaviour
         if (Vector3.Distance(currWaypoint.GetComponent<Transform>().position,transform.position) <= minDist)
         {
             //If not at the last waypoint
-            Debug.Log("WaypointIndex: " + waypointIndex + " ArrayLength: " + waypoints.Length);
+            //Debug.Log("WaypointIndex: " + waypointIndex + " ArrayLength: " + waypoints.Length);
             if(waypointIndex < (waypoints.Length - 1))
             {
                 waypointIndex++;

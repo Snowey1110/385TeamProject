@@ -90,8 +90,7 @@ public class Shop : MonoBehaviour
                 if (turret == 'A')
                 {
                     turretA = Instantiate(Resources.Load("Prefabs/Snowman_Tower") as GameObject, Pos, Quaternion.identity);
-                    //turretA.SetActive (true);
-                    //turretA.transform.position = Pos;
+                    
 
 
                     Debug.Log("turretA towerRange: " + turretA.GetComponent<Snowman_Tower>().towerRange + " turretA localScale.x: " + turretA.GetComponent<Snowman_Tower>().transform.localScale.x);

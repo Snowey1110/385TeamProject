@@ -62,8 +62,8 @@ public class Enemy_Attack : MonoBehaviour
             float distanceToTower = (tower.transform.position - this.transform.position).sqrMagnitude;
 
             //only considers enemies that are within the range of the enemy
-            // if(distanceToTower < enemyRange)
-            // {
+            if(distanceToTower < enemyRange)
+            {
                 //compare the distance of the current tower in the array with the smallest distance so far
                 if(distanceToTower < smallestDistance)
                 {
@@ -73,7 +73,7 @@ public class Enemy_Attack : MonoBehaviour
                     //set the tower to the tower variable to return
                     closest_tower = tower;
                 }
-            // }
+            }
         }
 
         return closest_tower;

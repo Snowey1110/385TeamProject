@@ -14,6 +14,8 @@ public class SnowballBehaviour : MonoBehaviour
     private GameController lgamecontroller;
     private Egg_Enemy eggEnemy;
 
+    private float damage = 10;
+
     void Start()
     {
         //access the wavespawner.cs script
@@ -75,7 +77,7 @@ public class SnowballBehaviour : MonoBehaviour
 
         if (collision.CompareTag("Enemy"))
         {
-            eggEnemy.Hit();           
+            eggEnemy.Hit(damage);           
         }
     }
 }

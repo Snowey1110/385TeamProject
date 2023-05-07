@@ -107,9 +107,9 @@ public class Egg_Enemy : MonoBehaviour
         return damage;
     }
 
-    public void Hit()
+    public void Hit(float hitDamage)
     {
-        current_health -= damage;
+        current_health -= hitDamage;
         if (current_health <= 0)
         {
             Destroy(gameObject);

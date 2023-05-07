@@ -374,4 +374,10 @@ public class Shop : MonoBehaviour
             balance -= costF;
         }
     }
+
+    //public method to return how much money user has
+    public int GetBalance()
+    {
+        return balance;
+    }
 }

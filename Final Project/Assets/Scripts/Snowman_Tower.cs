@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 //using UnityEditor.SearchService;
 using UnityEngine;
@@ -41,14 +42,19 @@ public class Snowman_Tower : MonoBehaviour
     void Update()
     {
         //deselect tower after mouse over event
-        if(Input.GetMouseButtonDown(0))
-        {
-            if (selected)
-            {
-                selected = false;
-                this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-            }
-        }
+        //if(Input.GetMouseButtonDown(0))
+        //{
+        //    if (selected)
+        //    {
+        //        selected = false;
+        //        this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        //        //Sidebar temp = FindObjectOfType<Sidebar>();
+        //        //temp.towerName = "";
+        //        //temp.upgradeCost = 0;
+        //        //temp.towerUpgrade = null;
+        //        //temp.PreviewTower();
+        //    }
+        //}
 
         //get list of all enemies and then find closest one
         GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
@@ -67,13 +73,15 @@ public class Snowman_Tower : MonoBehaviour
     private void OnMouseOver()
     {
         
-        if(Input.GetMouseButtonDown(0))
-        {
-            this.GetComponent<SpriteRenderer>().color = new Color(1f, 0.79f, 0.58f, 1f);
-            Sidebar temp = FindObjectOfType<Sidebar>();
-            temp.towerName = NextUpgrade;
-            temp.upgradeCost = NextUpgradeCost;
-        }
+        //if(Input.GetMouseButtonDown(0))
+        //{
+        //    this.GetComponent<SpriteRenderer>().color = new Color(1f, 0.79f, 0.58f, 1f);
+        //    Sidebar temp = FindObjectOfType<Sidebar>();
+        //    temp.towerName = NextUpgrade;
+        //    temp.upgradeCost = NextUpgradeCost;
+        //    temp.towerUpgrade = this.gameObject;
+        //    temp.PreviewTower();
+        //}
     }
     private void OnMouseExit()
     {

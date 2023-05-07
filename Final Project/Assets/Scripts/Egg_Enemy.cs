@@ -126,6 +126,8 @@ public class Egg_Enemy : MonoBehaviour
     //if the current health is less than 0, destroy the enemy
     private void HealthChecker()
     {
+        //IF YOU WANT TO HAVE SOMETHING HAPPEN WHEN AN ENEMY DIES
+        //PUT IT HERE
         //if the enemy health is less or = to zero 
         if(current_health <= 0)
         {

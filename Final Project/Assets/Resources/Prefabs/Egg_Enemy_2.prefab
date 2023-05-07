@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 8123678293155980261}
   - component: {fileID: 5389158272796276029}
   - component: {fileID: 3020173091438759326}
+  - component: {fileID: 7599029939499243526}
   m_Layer: 3
   m_Name: Egg_Enemy_2
   m_TagString: Enemy
@@ -319,8 +320,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  max_health: 250
   damage: 45
+  max_health: 250
   waypoints: []
   rb: {fileID: 0}
   healthBar: {fileID: 0}
@@ -345,6 +346,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7599029939499243526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624334359304560938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59ca8c49a94c406c8edfc7c1805fdd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5136959936341725986
 GameObject:
   m_ObjectHideFlags: 0

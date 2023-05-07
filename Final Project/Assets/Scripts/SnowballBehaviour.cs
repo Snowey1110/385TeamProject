@@ -6,12 +6,14 @@ public class SnowballBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed = 10f;
+    public float damage = 50f;
     public GameObject target;
     private Vector3 targetDirection;
 
     //update the number of enemies killed
     private WaveSpawner wavespawner;
     private GameController lgamecontroller;
+    private Egg_Enemy enemyscript;
 
     void Start()
     {
@@ -71,14 +73,17 @@ public class SnowballBehaviour : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.CompareTag("Enemy"))
         {
             //update the number of killed enemies to progress the round/difficulty
-            wavespawner.UpdateKilledEnemies(); 
+            //wavespawner.UpdateKilledEnemies(); 
 
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+            //do damage to the enemy
+            enemyscript = collision.gameObject.GetComponent<Egg_Enemy>();
+            enemyscript.DamageEnemy(damage);
 
+            //destroy's the snowball bullet itself
             Destroy(gameObject);           
         }
     }

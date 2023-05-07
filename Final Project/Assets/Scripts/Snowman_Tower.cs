@@ -14,6 +14,7 @@ public class Snowman_Tower : MonoBehaviour
     public float towerFireRate = 3f;
     public GameObject targetEnemy;
     public String NextUpgrade;
+    public int NextUpgradeCost;
 
     private float towerNextFire = 0;
     private Vector3 currPos;
@@ -27,6 +28,7 @@ public class Snowman_Tower : MonoBehaviour
         if(this.name == "Snowman_Tower")
         {
             NextUpgrade = "Snowman_Tower1";
+            NextUpgradeCost = 400;
         }
         else if(this.name == "Snowman_Tower1")
         {
@@ -68,11 +70,9 @@ public class Snowman_Tower : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             this.GetComponent<SpriteRenderer>().color = new Color(1f, 0.79f, 0.58f, 1f);
-            
-            
-            
             Sidebar temp = FindObjectOfType<Sidebar>();
             temp.towerName = NextUpgrade;
+            temp.upgradeCost = NextUpgradeCost;
         }
     }
     private void OnMouseExit()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 public class Sidebar : MonoBehaviour
 {
     public string towerName;
+    public int upgradeCost;
     
     // Start is called before the first frame update
     void Start()
@@ -19,13 +21,22 @@ public class Sidebar : MonoBehaviour
     {
         if(towerName != "")
         {
+            if(towerName.Contains("Prefabs/")){}
+            else
+            {
+                towerName = "Prefabs/" + towerName;
+            }
 
-            //towerName = "Prefabs/" + towerName;
-         //   Object temp = Resources.Load(towerName);
-          //  SpriteRenderer temp2 = temp.GetComponent<SpriteRenderer>();
-            //Sprite img = temp2.sprite;
-           // Sprite img = Resources.Load(towerName).GetComponent<SpriteRenderer>().sprite;
-            //this.GetComponent<Button>().image.sprite = img;
+            //set preview picture in sidebar
+            Object loadPrefab = Resources.Load(towerName);
+            SpriteRenderer spriteFromPrefab = loadPrefab.GetComponent<SpriteRenderer>();
+            Sprite sprite = spriteFromPrefab.sprite;
+            this.GetComponent<Button>().image.sprite = sprite;
+
+            //set cost
+            //string temp = this.GetComponentInChildren<TextMeshPro>().text;
+            GetComponentInChildren<TextMeshProUGUI>().text = "Upgrade Cost: $" + upgradeCost; 
+            
         }
        
 

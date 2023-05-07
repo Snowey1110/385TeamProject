@@ -193,14 +193,13 @@ public class WaveSpawner : MonoBehaviour
         return decider_num;
     }
 
-    public void UpdateKilledEnemies()
+    //increases the number of killed enemies by one
+    public void IncreaseKilledEnemies()
     {
-        //Debug.Log("KILLED ENEMIES CALLED");
         number_killed++;
-
-        //lgamecontroller.UpdateKilledEnemiesUI(number_killed);
     }
 
+    //returns the number_killed private variable
     public int GetNumberKilled()
     {
         return number_killed;

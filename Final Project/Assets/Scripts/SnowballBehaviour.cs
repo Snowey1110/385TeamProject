@@ -76,7 +76,7 @@ public class SnowballBehaviour : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             //update the number of killed enemies to progress the round/difficulty
-            wavespawner.UpdateKilledEnemies(); 
+            //wavespawner.UpdateKilledEnemies(); 
 
             //Destroy(collision.gameObject);
             //do damage to the enemy

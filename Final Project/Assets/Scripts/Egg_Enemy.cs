@@ -130,7 +130,7 @@ public class Egg_Enemy : MonoBehaviour
         if(current_health <= 0)
         {
             //add 1 to the number of enemies killed in gamecontroller script
-            //ws.UpdateKilledEnemies();
+            ws.IncreaseKilledEnemies();
 
             //destroy the egg
             Destroy(gameObject);

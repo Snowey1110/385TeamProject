@@ -23,6 +23,9 @@ public class GameController : MonoBehaviour
     private WaveSpawner ws;
     //private int enemies_killed;
 
+    //user health/life UI
+    public Text healthLifeUI;
+
     //money UI
     //public Text moneyUI;
     //private int money;
@@ -42,6 +45,7 @@ public class GameController : MonoBehaviour
         timeToWave.text = "Waves start in " + gameStart.ToString("F0") + " seconds.";
         currWave.text = "Current wave: " + curr_wave;
         enemiesKilled.text = "Total Mobs Killed: 0";
+        healthLifeUI.text = "Health: 1000";
         //moneyUI.text = "Money: $500";
 
         //get handle on Map object
@@ -72,6 +76,7 @@ public class GameController : MonoBehaviour
 
         UpdateKilledEnemiesUI();
         //UpdateMoneyUI();
+        UpdateHealthLifeUI();
     }
 
     //getter to give outside scripts read only access to private array of waypoints
@@ -105,5 +110,10 @@ public class GameController : MonoBehaviour
         moneyUI.text = "Money: $" + user_funds;
     } 
     */
+
+    public void UpdateHealthLifeUI()
+    {
+        healthLifeUI.text = "Health: " + health;
+    }
 
 }

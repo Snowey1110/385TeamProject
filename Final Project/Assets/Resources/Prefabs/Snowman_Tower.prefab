@@ -248,3 +248,5 @@ MonoBehaviour:
   towerRange: 3
   towerFireRate: 1
   targetEnemy: {fileID: 0}
+  NextUpgrade: Snowman_Tower1
+  NextUpgradeCost: 400

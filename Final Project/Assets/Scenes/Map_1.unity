@@ -729,6 +729,7 @@ MonoBehaviour:
   spawnWave: 0
   currWave: {fileID: 290244921}
   enemiesKilled: {fileID: 1244270845}
+  healthLifeUI: {fileID: 1493330257}
 --- !u!4 &559196739
 Transform:
   m_ObjectHideFlags: 0

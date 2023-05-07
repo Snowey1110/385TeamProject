@@ -19,6 +19,7 @@ public class Egg_Enemy : MonoBehaviour
     public Rigidbody2D rb;
     private GameController lgamecontroller;
     private WaveSpawner ws;
+    private Shop shopScript;
     
     public HealthBar healthBar;
 
@@ -36,6 +37,8 @@ public class Egg_Enemy : MonoBehaviour
         lgamecontroller = FindObjectOfType<GameController>();
         ws = FindObjectOfType<WaveSpawner>();
 
+        //get shop script
+        shopScript = FindObjectOfType<Shop>();
 
         //SET VARIABLES IN PREFAB MENU
         //set public variables
@@ -133,6 +136,9 @@ public class Egg_Enemy : MonoBehaviour
         {
             //add 1 to the number of enemies killed in gamecontroller script
             ws.IncreaseKilledEnemies();
+
+            //add 10 to the balance each time enemy is killed
+            shopScript.BalanceDeposit(10);
 
             //destroy the egg
             Destroy(gameObject);

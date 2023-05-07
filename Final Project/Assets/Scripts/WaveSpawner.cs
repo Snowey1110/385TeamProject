@@ -126,7 +126,7 @@ public class WaveSpawner : MonoBehaviour
 
     }
 
-    //destroys enemy AND depletes health
+    //destroys enemy AND depletes the user health
     public void destroyEnemy(GameObject obj)
     {
         //accesses the egg's method

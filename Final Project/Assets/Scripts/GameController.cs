@@ -20,7 +20,8 @@ public class GameController : MonoBehaviour
 
     //enemies killed
     public Text enemiesKilled;
-    private int enemies_killed;
+    private WaveSpawner ws;
+    //private int enemies_killed;
 
 
     // Start is called before the first frame update
@@ -30,15 +31,18 @@ public class GameController : MonoBehaviour
         health = 1000;
         gameStart = 5f;
         curr_wave = 0;
-        enemies_killed = 0;
+        //enemies_killed = 0;
 
         //set the UI to default values
         timeToWave.text = "Waves start in " + gameStart.ToString("F0") + " seconds.";
         currWave.text = "Current wave: " + curr_wave;
-        enemiesKilled.text = "Total Mobs Killed: " + enemies_killed;
+        enemiesKilled.text = "Total Mobs Killed: 0";
 
         //get handle on Map object
         map = FindObjectOfType<MapScript>();
+
+        //access the wavespawner script
+        ws = FindObjectOfType<WaveSpawner>();
 
     }
 
@@ -57,6 +61,8 @@ public class GameController : MonoBehaviour
         {
             timeToWave.text = "Waves start in " + gameStart.ToString("F0") + " seconds.";
         }
+
+        UpdateKilledEnemiesUI();
     }
 
     //getter to give outside scripts read only access to private array of waypoints
@@ -77,9 +83,10 @@ public class GameController : MonoBehaviour
         currWave.text = "Current wave: " + curr_wave;
     }
 
-    public void UpdateKilledEnemiesUI(int killed_num)
+    //pulls the number of enemies killed from the wavespawner script
+    public void UpdateKilledEnemiesUI()
     {
-        enemies_killed = killed_num;
+        int enemies_killed = ws.GetNumberKilled();
         enemiesKilled.text = "Total Mobs Killed: " + enemies_killed;
     }
 

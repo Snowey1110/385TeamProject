@@ -146,7 +146,7 @@ public class WaveSpawner : MonoBehaviour
         Destroy(obj);
 
         //number of enemies killed
-        UpdateKilledEnemies();
+        //UpdateKilledEnemies(); //<- commented it out because not techincally killed
     }
 
     //TESTING PURPOSES
@@ -198,7 +198,12 @@ public class WaveSpawner : MonoBehaviour
         //Debug.Log("KILLED ENEMIES CALLED");
         number_killed++;
 
-        lgamecontroller.UpdateKilledEnemiesUI(number_killed);
+        //lgamecontroller.UpdateKilledEnemiesUI(number_killed);
+    }
+
+    public int GetNumberKilled()
+    {
+        return number_killed;
     }
 
 }

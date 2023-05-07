@@ -7,8 +7,9 @@ public class Egg_Enemy : MonoBehaviour
 
     //Edit in prefab inspector menu
     public float speed;
-    public float max_health;
     public float damage;
+
+    public float max_health;
     private int current_health;
 
     public GameObject[] waypoints;
@@ -71,6 +72,8 @@ public class Egg_Enemy : MonoBehaviour
             }
         }
 
+        HealthChecker();
+
         //TESTING PURPOSES TO TEST HEALTH BAR
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -105,6 +108,33 @@ public class Egg_Enemy : MonoBehaviour
     public float GetDamage()
     {
         return damage;
+    }
+
+    //other script calls this to do damage to the enemy
+    public void DamageEnemy(float damage_val)
+    {
+        //converts the incoming float to an int
+        int damage_int = Mathf.RoundToInt(damage_val);
+
+        //subtract the damage taken from the current enemy health
+        current_health -= damage_int;
+
+        //update the healthbar
+        healthBar.SetHealth(current_health);
+    }
+
+    //if the current health is less than 0, destroy the enemy
+    private void HealthChecker()
+    {
+        //if the enemy health is less or = to zero 
+        if(current_health <= 0)
+        {
+            //add 1 to the number of enemies killed in gamecontroller script
+            //ws.UpdateKilledEnemies();
+
+            //destroy the egg
+            Destroy(gameObject);
+        }
     }
 
 }

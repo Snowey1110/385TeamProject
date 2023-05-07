@@ -19,7 +19,8 @@ public class Sidebar : MonoBehaviour
     {
         if(towerName != "")
         {
-            towerName = "Prefabs/" + towerName;
+
+            //towerName = "Prefabs/" + towerName;
          //   Object temp = Resources.Load(towerName);
           //  SpriteRenderer temp2 = temp.GetComponent<SpriteRenderer>();
             //Sprite img = temp2.sprite;

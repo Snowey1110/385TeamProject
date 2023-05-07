@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    private GameObject target;
+    public GameObject target;
     private Rigidbody2D rb;
 
     //control speed of bullet in editor
@@ -16,7 +16,7 @@ public class EnemyBullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        target = GameObject.FindGameObjectWithTag("Tower"); //might have to change to findgameobjectS
+        //target = GameObject.FindGameObjectWithTag("Tower"); //might have to change to findgameobjectS
 
         Vector3 direction = target.transform.position - transform.position;
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;

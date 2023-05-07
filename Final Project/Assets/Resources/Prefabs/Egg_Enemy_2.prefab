@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 5824975997049206883, guid: a1bbeff17d7e24d80852f4aaa1a9c638, type: 3}
-  bulletPos: {fileID: 728104508767686632}
+  fireRate: 1.75
 --- !u!1 &4649118174748871853
 GameObject:
   m_ObjectHideFlags: 0

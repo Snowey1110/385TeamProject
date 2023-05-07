@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 9abd1f19b6925e7488d0992ca1b5e7c5, type: 3}
     - target: {fileID: 3094817080013345043, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
       propertyPath: m_Name
-      value: Snowman_Tower1 Variant
+      value: Snowman_Tower1
       objectReference: {fileID: 0}
     - target: {fileID: 3094817080013345045, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
       propertyPath: m_RootOrder
@@ -25,11 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3094817080013345045, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.8304188
+      value: 2.7083104
       objectReference: {fileID: 0}
     - target: {fileID: 3094817080013345045, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.9349127
+      value: -3.8278894
       objectReference: {fileID: 0}
     - target: {fileID: 3094817080013345045, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
       propertyPath: m_LocalPosition.z

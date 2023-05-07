@@ -17,7 +17,7 @@ TagManager:
   - Water
   - UI
   - UI_1
-  - 
+  - UI_2
   - 
   - 
   - 
@@ -54,6 +54,9 @@ TagManager:
     locked: 0
   - name: UI 1
     uniqueID: 3516705419
+    locked: 0
+  - name: UI 2
+    uniqueID: 3034977289
     locked: 0
   - name: RangeCircle
     uniqueID: 469579755

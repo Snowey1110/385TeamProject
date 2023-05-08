@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-//using static UnityEditor.PlayerSettings;
-//using TMPro;
 
 public class Shop : MonoBehaviour
 {
@@ -70,8 +68,8 @@ public class Shop : MonoBehaviour
         towerFPrice.text = string.Format("${0}", costF);
 
         //Snowman_Turret
-        turretA = Instantiate(Resources.Load("Prefabs/Snowman_Tower") as GameObject);
-        turretA.SetActive(false);
+        //turretA = Instantiate(Resources.Load("Prefabs/Snowman_Tower") as GameObject);
+        //turretA.SetActive(false);
 
 
     }
@@ -90,15 +88,13 @@ public class Shop : MonoBehaviour
                 if (turret == 'A')
                 {
                     turretA = Instantiate(Resources.Load("Prefabs/Snowman_Tower") as GameObject, Pos, Quaternion.identity);
-                    
-
-
                     Debug.Log("turretA towerRange: " + turretA.GetComponent<Snowman_Tower>().towerRange + " turretA localScale.x: " + turretA.GetComponent<Snowman_Tower>().transform.localScale.x);
                     //Instantiate(turretA, Pos, Quaternion.identity);
                 }
                 if (turret == 'B')
                 {
-                    Instantiate(turretB, Pos, Quaternion.identity);
+                    turretB = Instantiate(Resources.Load("Prefabs/TowerB") as GameObject, Pos, Quaternion.identity);
+                    //Instantiate(turretB, Pos, Quaternion.identity);
                 }
                 if (turret == 'C')
                 {

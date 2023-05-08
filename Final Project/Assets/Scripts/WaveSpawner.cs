@@ -131,6 +131,7 @@ public class WaveSpawner : MonoBehaviour
                     if (springIsComing == false)
                     {
                         GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
+                        timeSinceSpawn = Time.time;
                         s.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                         springIsComing = true;
                     }
@@ -213,7 +214,7 @@ public class WaveSpawner : MonoBehaviour
             lgamecontroller.UpdateWaveUI(2);
             //Debug.Log("ROUND 2 " + number_killed);
         }
-        else if(number_killed >= 40)
+        else if(number_killed >= 40 && number_killed < 100)
         {
             round_1 = false;
             round_2 = false;
@@ -229,6 +230,7 @@ public class WaveSpawner : MonoBehaviour
             round_3 = false;
             round_4 = true;
             lgamecontroller.UpdateWaveUI(4);
+            //Debug.Log("ROUND 4 " + number_killed);
         }
     }
 

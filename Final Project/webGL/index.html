@@ -95,7 +95,6 @@
 
         canvas.style.width = "960px";   
         canvas.style.height = "600px";
-        onclick="unityInstance.SetFullscreen(1)
       }
 
       loadingBar.style.display = "block";
@@ -107,9 +106,10 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
+          // fullscreenButton.onclick = () => { // removing the full screen button
+          //   unityInstance.SetFullscreen(1);
+          // };
+          unityInstance.SetFullscreen(1); // Make it so its fullscreen by default
         }).catch((message) => {
           alert(message);
         });
@@ -118,3 +118,5 @@
     </script>
   </body>
 </html>
+
+

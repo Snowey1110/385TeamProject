@@ -9,6 +9,7 @@ public class EnemyBullet : MonoBehaviour
 
     //control speed of bullet in editor
     public float force;
+    private float damage = 2f;
 
     private float timer;
 
@@ -39,9 +40,20 @@ public class EnemyBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Tower"))
+        if (other.gameObject.CompareTag("Tower"))
         {
             Destroy(gameObject);
+
+            if (other.gameObject.name == "Snowflake_Tower(Clone)")
+            {
+                Snowflake_Tower sft = other.gameObject.GetComponent<Snowflake_Tower>();
+                sft.Hit(damage);
+            }
+            if (other.gameObject.name == "Snowman_Tower(Clone)")
+            {
+                Snowman_Tower smt = other.gameObject.GetComponent<Snowman_Tower>();
+                smt.Hit(damage);
+            }
         }
     }
 }

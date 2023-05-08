@@ -40,9 +40,9 @@ public class Shop : MonoBehaviour
     public Button buttonE;
     public Button buttonF;
 
-    private int costA = 200; //Tower A (Snowman)
-    private int costB = 250; //Tower B 
-    private int costC = 500; //Tower C 
+    private int costA = 150; //Tower A (Snowman)
+    private int costB = 200; //Tower B 
+    private int costC = 1000; //Tower C 
     private int costD = 1000; //Tower D 
     private int costE = 1000; //Tower E 
     private int costF = 1000; //Tower F 
@@ -219,7 +219,6 @@ public class Shop : MonoBehaviour
         Debug.Log("turretA towerRange: " + turretA.GetComponent<Snowman_Tower>().towerRange + "turretA localScale.x: " + turretA.GetComponent<Snowman_Tower>().transform.localScale.x);
         Debug.Log("towerScale = towerRange / tower localscale / 2: " + towerScale);
         circlePreview.transform.localScale = new Vector3(towerScale, towerScale, 1);
-        //circlePreview.transform.localScale = Vector3.one * 50f;
     }
 
     void CreateTurretB()
@@ -243,7 +242,11 @@ public class Shop : MonoBehaviour
         radiusRenderer.sortingOrder = 0;
         circlePreview.transform.localPosition = Vector3.zero;
         circlePreview.transform.parent = turretPreview.transform;
-        circlePreview.transform.localScale = Vector3.one * 50f;
+
+        float towerScale = turretB.GetComponent<Snowflake_Tower>().towerRange / (turretB.GetComponent<Snowflake_Tower>().transform.localScale.x / 2);
+        Debug.Log("turretB towerRange: " + turretB.GetComponent<Snowflake_Tower>().towerRange + "turretB localScale.x: " + turretB.GetComponent<Snowflake_Tower>().transform.localScale.x);
+        Debug.Log("towerScale = towerRange / tower localscale / 2: " + towerScale);
+        circlePreview.transform.localScale = new Vector3(towerScale, towerScale, 1);
     }
 
     void CreateTurretC()

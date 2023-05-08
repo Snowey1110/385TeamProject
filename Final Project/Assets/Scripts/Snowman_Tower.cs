@@ -3,16 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
-//using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Snowman_Tower : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public float towerRange = 3f;
     public float towerFireRate = 3f;
+
+    private float maxHealth = 100f;
+    public float towerHealth = 0f;
+
     public GameObject targetEnemy;
     public String NextUpgrade;
     public int NextUpgradeCost;
@@ -35,7 +36,7 @@ public class Snowman_Tower : MonoBehaviour
         {
             NextUpgrade = null;
         }
-              
+        towerHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -67,12 +68,10 @@ public class Snowman_Tower : MonoBehaviour
         //}
 
         ThrowSnowball(targetEnemy);
-
     }
 
     private void OnMouseOver()
     {
-        
         //if(Input.GetMouseButtonDown(0))
         //{
         //    this.GetComponent<SpriteRenderer>().color = new Color(1f, 0.79f, 0.58f, 1f);
@@ -87,8 +86,6 @@ public class Snowman_Tower : MonoBehaviour
     {
         selected = true;
     }
-
-
 
     private GameObject getTarget(GameObject[] enemies)
     {
@@ -127,4 +124,21 @@ public class Snowman_Tower : MonoBehaviour
         
     }
 
+    public void Heal(float amount)
+    {
+        if (towerHealth <= maxHealth)
+        {
+            towerHealth += amount;
+        }
+    }
+
+    public void Hit(float amount)
+    {
+        towerHealth -= amount;
+
+        if (towerHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

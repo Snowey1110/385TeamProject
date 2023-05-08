@@ -15,6 +15,7 @@ public class WaveSpawner : MonoBehaviour
     private bool round_1 = true;
     private bool round_2 = false;
     private bool round_3 = false;
+    private bool round_4 = false;
 
     private int number_killed = 0;
 
@@ -121,6 +122,30 @@ public class WaveSpawner : MonoBehaviour
                         e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
                 }
+                else if (round_4)
+                {
+                    int obj_decider = randSpawner();
+
+                    //33% chance of all types spawning
+                    if (obj_decider == 0)
+                    {
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
+                        timeSinceSpawn = Time.time;
+                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
+                    }
+                    else if (obj_decider == 1)
+                    {
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_2") as GameObject);
+                        timeSinceSpawn = Time.time;
+                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
+                    }
+                    else if (obj_decider == 2)
+                    {
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_3") as GameObject);
+                        timeSinceSpawn = Time.time;
+                        e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
+                    }
+                }
             }
         }
 
@@ -158,6 +183,7 @@ public class WaveSpawner : MonoBehaviour
     //ROUND 1 0-20 DEATHS
     //ROUND 2 20-40 DEATHS
     //ROUND 3 40+ DEATHS
+    //ROUND 4 100+ KILLS
     public void checkRound()
     {
         if(number_killed < 20)
@@ -165,6 +191,7 @@ public class WaveSpawner : MonoBehaviour
             round_1 = true;
             round_2 = false;
             round_3 = false;
+            round_4 = false;
             lgamecontroller.UpdateWaveUI(1);
             //Debug.Log("ROUND 1 " + number_killed);
         }
@@ -173,6 +200,7 @@ public class WaveSpawner : MonoBehaviour
             round_1 = false;
             round_2 = true;
             round_3 = false;
+            round_4 = false;
             lgamecontroller.UpdateWaveUI(2);
             //Debug.Log("ROUND 2 " + number_killed);
         }
@@ -181,8 +209,17 @@ public class WaveSpawner : MonoBehaviour
             round_1 = false;
             round_2 = false;
             round_3 = true;
+            round_4 = false;
             lgamecontroller.UpdateWaveUI(3);
             //Debug.Log("ROUND 3 " + number_killed);
+        }
+        else if (number_killed >= 100)
+        {
+            round_1 = false;
+            round_2 = false;
+            round_3 = false;
+            round_4 = true;
+            lgamecontroller.UpdateWaveUI(4);
         }
     }
 

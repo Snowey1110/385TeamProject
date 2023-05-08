@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <canvas id="unity-canvas" width=960 height=600 onclick="unityInstance.SetFullscreen(1)"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -97,9 +97,6 @@
         canvas.style.height = "600px";
       }
 
-      <button id="startButton" style="position: absolute; z-index: 2;">Start</button>
-      var startButton = document.getElementById("startButton"); // Add this line to get the start button
-
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
@@ -109,9 +106,8 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          startButton.onclick = () => { // Modify this line to handle the start button click event
+          fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
-            startButton.style.display = "none"; // Hide the start button after clicking it
           };
         }).catch((message) => {
           alert(message);

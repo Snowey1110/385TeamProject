@@ -97,6 +97,9 @@
         canvas.style.height = "600px";
       }
 
+      <button id="startButton" style="position: absolute; z-index: 2;">Start</button>
+      var startButton = document.getElementById("startButton"); // Add this line to get the start button
+
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
@@ -106,10 +109,10 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          // fullscreenButton.onclick = () => { // removing the full screen button
-          //   unityInstance.SetFullscreen(1);
-          // };
-          unityInstance.SetFullscreen(1); // Make it so its fullscreen by default
+          startButton.onclick = () => { // Modify this line to handle the start button click event
+            unityInstance.SetFullscreen(1);
+            startButton.style.display = "none"; // Hide the start button after clicking it
+          };
         }).catch((message) => {
           alert(message);
         });

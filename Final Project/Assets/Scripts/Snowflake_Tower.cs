@@ -5,7 +5,7 @@ using UnityEngine;
 public class Snowflake_Tower : MonoBehaviour
 {
     public float towerRange = 3f;
-    public float healRate = 2f;
+    public float healRate = 3f;
 
     private float maxHealth = 100f;
     public float towerHealth = 0f;

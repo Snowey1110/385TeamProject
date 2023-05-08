@@ -17,6 +17,8 @@ public class WaveSpawner : MonoBehaviour
     private bool round_3 = false;
     private bool round_4 = false;
 
+    private bool springIsComing = false;
+
     private int number_killed = 0;
 
     /////////////////////////////////////////////////////////////
@@ -125,6 +127,13 @@ public class WaveSpawner : MonoBehaviour
                 else if (round_4)
                 {
                     int obj_decider = randSpawner();
+
+                    if (springIsComing == false)
+                    {
+                        GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
+                        s.GetComponent<Egg_Enemy>().waypoints = wayPoints;
+                        springIsComing = true;
+                    }
 
                     //33% chance of all types spawning
                     if (obj_decider == 0)

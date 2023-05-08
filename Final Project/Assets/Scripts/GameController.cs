@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GameController : MonoBehaviour
@@ -79,6 +80,7 @@ public class GameController : MonoBehaviour
         UpdateKilledEnemiesUI();
         //UpdateMoneyUI();
         UpdateHealthLifeUI();
+        CheckIfDead();
     }
 
     //getter to give outside scripts read only access to private array of waypoints
@@ -116,6 +118,15 @@ public class GameController : MonoBehaviour
     public void UpdateHealthLifeUI()
     {
         healthLifeUI.text = "Health: " + health;
+    }
+
+    public void CheckIfDead()
+    {
+        //TESTING PURPOSES, MAKE SURE TO CHANGE BACK TO 0
+        if(health <= 0)
+        {
+            SceneManager.LoadScene("Game Over");
+        }
     }
 
 }

@@ -34,6 +34,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //GameObject.FindGameObjectWithTag("Music").GetComponent<Music>().PlayMusic();
+
         //set public variables
         health = 1000;
         gameStart = 5f;

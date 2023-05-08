@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - waypoints
   - Tower
+  - Music
   layers:
   - Default
   - TransparentFX

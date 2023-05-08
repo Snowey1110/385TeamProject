@@ -20,13 +20,23 @@ public class timer : MonoBehaviour
         DateTime temp = System.DateTime.Now;
         TimeSpan delta = temp - time;
 
-        if (delta.Seconds > 5)
+        if (delta.Seconds > 20)
         {
-            SceneManager.LoadScene("Game Menu");
+            MainMenu();
         }
 
 
 
        // Debug.Log(delta.Seconds);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Game Menu");
+    }
+
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("Map_1");
     }
 }

@@ -160,7 +160,7 @@ public class WaveSpawner : MonoBehaviour
     //ROUND 3 40+ DEATHS
     public void checkRound()
     {
-        if(number_killed < 5)
+        if(number_killed < 20)
         {
             round_1 = true;
             round_2 = false;
@@ -168,7 +168,7 @@ public class WaveSpawner : MonoBehaviour
             lgamecontroller.UpdateWaveUI(1);
             //Debug.Log("ROUND 1 " + number_killed);
         }
-        else if(number_killed >= 5 && number_killed < 10)
+        else if(number_killed >= 20 && number_killed < 40)
         {
             round_1 = false;
             round_2 = true;
@@ -176,7 +176,7 @@ public class WaveSpawner : MonoBehaviour
             lgamecontroller.UpdateWaveUI(2);
             //Debug.Log("ROUND 2 " + number_killed);
         }
-        else if(number_killed >= 10)
+        else if(number_killed >= 40)
         {
             round_1 = false;
             round_2 = false;

@@ -13,14 +13,11 @@ public class Snowflake_Tower : MonoBehaviour
     private Vector3 currPos;
     private bool selected = false;
 
-    // Add these variables for the range circle
-    private CircleCollider2D rangeCollider;
-    public Material rangeMaterial;
-
     void Start()
     {
         towerHealth = maxHealth;
         currPos = transform.position;
+        HealingCircle();
     }
 
     void Update()
@@ -51,4 +48,10 @@ public class Snowflake_Tower : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    // TODO Implement a circle around tower to show tower healing.
+    public void HealingCircle()
+    {
+
+    }
+
 }

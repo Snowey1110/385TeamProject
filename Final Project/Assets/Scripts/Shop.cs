@@ -126,7 +126,7 @@ public class Shop : MonoBehaviour
                 isPlacingTurret = false;
             }
         }
-        bank.text = string.Format("${0}", balance);
+        bank.text = "Money: " + string.Format("${0}", balance);
     }
 
     public void OnButtonAClick()

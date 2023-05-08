@@ -126,6 +126,8 @@ public class GameController : MonoBehaviour
         if(health <= 0)
         {
             SceneManager.LoadScene("Game Over");
+            
+
         }
     }
 

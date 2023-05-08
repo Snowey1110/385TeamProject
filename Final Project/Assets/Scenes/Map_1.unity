@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tower Upgrade Comming Soon!!!
+  m_text: Tower Upgrade Coming Soon!!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -400,8 +400,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 658, y: -152.6}
-  m_SizeDelta: {x: 198.3, y: 30}
+  m_AnchoredPosition: {x: 752.45, y: -144.5}
+  m_SizeDelta: {x: 387.19, y: 39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &290244921
 MonoBehaviour:
@@ -425,7 +425,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 22
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
@@ -436,7 +436,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Current Wave
+  m_Text: 'Current Wave:'
 --- !u!222 &290244922
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -758,7 +758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretA: {fileID: 2072022191688568572, guid: ba0fcd48896ea0547b8e6978925ac7be, type: 3}
-  turretB: {fileID: 0}
+  turretB: {fileID: 2072022191688568572, guid: 2bac815da8c258d449834a94fdcda40c, type: 3}
   turretC: {fileID: 0}
   turretD: {fileID: 0}
   turretE: {fileID: 0}
@@ -1912,8 +1912,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 845.03, y: -152.59999}
-  m_SizeDelta: {x: 202.05, y: 30}
+  m_AnchoredPosition: {x: 752.45, y: -183.71}
+  m_SizeDelta: {x: 387.2, y: 39.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1244270845
 MonoBehaviour:
@@ -1937,7 +1937,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 22
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
@@ -2295,8 +2295,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: f95d089c8cfdde047a62ad14ee2358cf, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2482,8 +2482,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 855.74, y: -103}
-  m_SizeDelta: {x: 180.63, y: 30}
+  m_AnchoredPosition: {x: 855.74, y: -97.11}
+  m_SizeDelta: {x: 180.63, y: 41.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1493330257
 MonoBehaviour:
@@ -2507,7 +2507,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 22
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
@@ -3780,8 +3780,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 658, y: -103}
-  m_SizeDelta: {x: 198.3, y: 30}
+  m_AnchoredPosition: {x: 662.14, y: -97.11}
+  m_SizeDelta: {x: 206.57, y: 41.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1895625236
 MonoBehaviour:
@@ -3805,7 +3805,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 22
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
@@ -3816,7 +3816,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Money: pp'
+  m_Text: 'Money:'
 --- !u!222 &1895625237
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3896,7 +3896,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tower B
+  m_Text: Snowflake
 --- !u!222 &1974149058
 CanvasRenderer:
   m_ObjectHideFlags: 0

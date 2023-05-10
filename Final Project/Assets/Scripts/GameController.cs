@@ -27,6 +27,9 @@ public class GameController : MonoBehaviour
     //user health/life UI
     public Text healthLifeUI;
 
+    //Debug note "FOR DEBUG PRESS P"
+    public GameObject DebugNote;
+
     //money UI
     //public Text moneyUI;
     //private int money;
@@ -71,6 +74,8 @@ public class GameController : MonoBehaviour
         {
             timeToWave.text = "Assault Incomming!";
             spawnWave = true;
+
+            DebugNote.SetActive(false);
         }
         else
         {

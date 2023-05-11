@@ -730,6 +730,7 @@ MonoBehaviour:
   currWave: {fileID: 290244921}
   enemiesKilled: {fileID: 1244270845}
   healthLifeUI: {fileID: 1493330257}
+  DebugNote: {fileID: 1156734601}
 --- !u!4 &559196739
 Transform:
   m_ObjectHideFlags: 0

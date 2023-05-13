@@ -51,7 +51,10 @@ public class Snowflake_Tower : MonoBehaviour
     // TODO Implement a circle around tower to show tower healing.
     public void HealingCircle()
     {
-
+        GameObject healingCircle = Instantiate(Resources.Load("Prefabs/Radius") as GameObject, currPos, Quaternion.identity);
+        healingCircle.transform.localScale = new Vector3(towerRange * 2f, towerRange * 2f, 1f);
+        SpriteRenderer renderer = healingCircle.GetComponent<SpriteRenderer>();
+        renderer.color = new Color(0f, 1f, 0.8f, 0.3f);
     }
 
 }

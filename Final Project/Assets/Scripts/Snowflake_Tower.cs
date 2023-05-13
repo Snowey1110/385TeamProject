@@ -1,41 +1,44 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Snowflake_Tower : MonoBehaviour
 {
-    public float towerRange = 4f;
-    public float healRate = 3f;
+    public float towerRange = 3f;
+    public float towerFireRate = 3f;
 
     private float maxHealth = 100f;
     public float towerHealth = 0f;
 
+    public GameObject targetEnemy;
+    public String NextUpgrade;
+    public int NextUpgradeCost;
+
+    private float towerNextFire = 0;
     private Vector3 currPos;
     private bool selected = false;
 
+    // Start is called before the first frame update
     void Start()
     {
-        towerHealth = maxHealth;
-        currPos = transform.position;
-        HealingCircle();
+        
     }
 
+    // Update is called once per frame
     void Update()
     {
-        Heal();
+        
     }
 
-    void Heal()
+    public void Heal(float amount)
     {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, towerRange);
-
-        foreach (Collider2D hitCollider in hitColliders)
+        if (towerHealth <= maxHealth)
         {
-            Snowman_Tower smt = hitCollider.GetComponent<Snowman_Tower>();
-            if (smt != null)
-            {
-                smt.Heal(healRate * Time.deltaTime);
-            }
+            towerHealth += amount;
         }
     }
 
@@ -48,13 +51,4 @@ public class Snowflake_Tower : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    // TODO Implement a circle around tower to show tower healing.
-    public void HealingCircle()
-    {
-        GameObject healingCircle = Instantiate(Resources.Load("Prefabs/Radius") as GameObject, currPos, Quaternion.identity);
-        healingCircle.transform.localScale = new Vector3(towerRange * 2f, towerRange * 2f, 1f);
-        SpriteRenderer renderer = healingCircle.GetComponent<SpriteRenderer>();
-        renderer.color = new Color(0f, 1f, 0.8f, 0.3f);
-    }
-
 }

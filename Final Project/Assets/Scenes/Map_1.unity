@@ -692,8 +692,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretA: {fileID: 2072022191688568572, guid: ba0fcd48896ea0547b8e6978925ac7be, type: 3}
-  turretB: {fileID: 2072022191688568572, guid: 2bac815da8c258d449834a94fdcda40c, type: 3}
-  turretC: {fileID: 0}
+  turretB: {fileID: 2072022191688568572, guid: e308044f196036a43aaa3aa3768065a1, type: 3}
+  turretC: {fileID: 2072022191688568572, guid: 2bac815da8c258d449834a94fdcda40c, type: 3}
   turretD: {fileID: 0}
   turretE: {fileID: 0}
   turretF: {fileID: 0}
@@ -1493,7 +1493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.000015258789, y: -17.580002}
+  m_AnchoredPosition: {x: -0.000015258789, y: -17.580006}
   m_SizeDelta: {x: 160, y: 37.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1053123392
@@ -2150,8 +2150,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.2, y: 0.3475}
-  m_SizeDelta: {x: 112, y: 112}
+  m_AnchoredPosition: {x: 0.2095, y: 0.3475}
+  m_SizeDelta: {x: 84.5107, y: 112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1462478991
 MonoBehaviour:
@@ -2229,7 +2229,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f95d089c8cfdde047a62ad14ee2358cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 35946f343793d5c4fa61239111f46da6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4017,8 +4017,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.2, y: 0.21}
-  m_SizeDelta: {x: 112, y: 112}
+  m_AnchoredPosition: {x: -0.1958, y: 0.20333}
+  m_SizeDelta: {x: 104.7722, y: 97.54464}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2104483821
 MonoBehaviour:
@@ -4075,7 +4075,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
 --- !u!114 &2104483822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4096,8 +4096,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: f95d089c8cfdde047a62ad14ee2358cf, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

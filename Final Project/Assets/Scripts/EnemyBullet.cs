@@ -44,15 +44,20 @@ public class EnemyBullet : MonoBehaviour
         {
             Destroy(gameObject);
 
-            if (other.gameObject.name == "Snowflake_Tower(Clone)")
-            {
-                Snowflake_Tower sft = other.gameObject.GetComponent<Snowflake_Tower>();
-                sft.Hit(damage);
-            }
             if (other.gameObject.name == "Snowman_Tower(Clone)")
             {
                 Snowman_Tower smt = other.gameObject.GetComponent<Snowman_Tower>();
                 smt.Hit(damage);
+            }
+            if (other.gameObject.name == "TowerB(Clone)")
+            {
+                Medic_Tower mt = other.gameObject.GetComponent<Medic_Tower>();
+                mt.Hit(damage);
+            }
+            if (other.gameObject.name == "TowerC(Clone)")
+            {
+                Snowflake_Tower sft = other.gameObject.GetComponent<Snowflake_Tower>();
+                sft.Hit(damage);
             }
         }
     }

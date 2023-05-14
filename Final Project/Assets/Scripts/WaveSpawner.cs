@@ -81,8 +81,8 @@ public class WaveSpawner : MonoBehaviour
                     //depending on number, spawn that type of enemy in this particular round
                     int obj_decider = randSpawner();
 
-                    //66% chance of basic enemy spawning
-                    if (obj_decider == 0 || obj_decider == 1)
+                    
+                    if (obj_decider == 0 || obj_decider == 1 || obj_decider == 2)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
@@ -90,7 +90,7 @@ public class WaveSpawner : MonoBehaviour
                     }
 
                     //33% chance of second enemy type spawning
-                    else if (obj_decider == 2)
+                    else if (obj_decider == 3 || obj_decider == 4)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_2") as GameObject);
                         timeSinceSpawn = Time.time;
@@ -101,20 +101,19 @@ public class WaveSpawner : MonoBehaviour
                 {
                     int obj_decider = randSpawner();
 
-                    //33% chance of all types spawning
-                    if (obj_decider == 0)
+                    if (obj_decider == 0 || obj_decider == 1)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
                         e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
-                    else if (obj_decider == 1)
+                    else if (obj_decider == 2 || obj_decider == 3)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_2") as GameObject);
                         timeSinceSpawn = Time.time;
                         e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
-                    else if (obj_decider == 2)
+                    else if (obj_decider == 4)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_3") as GameObject);
                         timeSinceSpawn = Time.time;
@@ -133,20 +132,19 @@ public class WaveSpawner : MonoBehaviour
                         springIsComing = true;
                     }
 
-                    //33% chance of all types spawning
                     if (obj_decider == 0)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
                         e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
-                    else if (obj_decider == 1)
+                    else if (obj_decider == 1 || obj_decider == 2)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_2") as GameObject);
                         timeSinceSpawn = Time.time;
                         e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
-                    else if (obj_decider == 2)
+                    else if (obj_decider == 3 || obj_decider == 4)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_3") as GameObject);
                         timeSinceSpawn = Time.time;
@@ -194,48 +192,78 @@ public class WaveSpawner : MonoBehaviour
     //ROUND 4 100+ KILLS
     public void checkRound()
     {
-        if(number_killed < 20)
+        if(number_killed <= 40)
         {
             round_1 = true;
             round_2 = false;
             round_3 = false;
             round_4 = false;
             lgamecontroller.UpdateWaveUI(1);
-            //Debug.Log("ROUND 1 " + number_killed);
+
+            if(number_killed == 40)
+            {
+                lgamecontroller.RestartGameStartTimer();
+                lgamecontroller.UpdateWaveUI(2);
+            }
         }
-        else if(number_killed >= 20 && number_killed < 40)
+        else if(number_killed > 40 && number_killed <= 100)
         {
             round_1 = false;
             round_2 = true;
             round_3 = false;
             round_4 = false;
-            lgamecontroller.UpdateWaveUI(2);
-            //Debug.Log("ROUND 2 " + number_killed);
+            //lgamecontroller.UpdateWaveUI(2);
+
+            if(number_killed == 100)
+            {
+                lgamecontroller.RestartGameStartTimer();
+                lgamecontroller.UpdateWaveUI(3);
+            }
         }
-        else if(number_killed >= 40 && number_killed < 150)
+        else if(number_killed > 100 && number_killed <= 200)
         {
             round_1 = false;
             round_2 = false;
             round_3 = true;
             round_4 = false;
-            lgamecontroller.UpdateWaveUI(3);
-            //Debug.Log("ROUND 3 " + number_killed);
+            //lgamecontroller.UpdateWaveUI(3);
+
+            if(number_killed == 200)
+            {
+                lgamecontroller.RestartGameStartTimer();
+                lgamecontroller.UpdateWaveUI(4);
+            }
         }
-        else if (number_killed >= 150)
+        else if(number_killed > 200)
         {
             round_1 = false;
             round_2 = false;
             round_3 = false;
             round_4 = true;
-            lgamecontroller.UpdateWaveUI(4);
-            //Debug.Log("ROUND 4 " + number_killed);
+            //lgamecontroller.UpdateWaveUI(4);
+        }
+    }
+
+    //checks if any enemies are still present on the map
+    public bool AreEnemiesPresent()
+    {
+        GameObject[] enemies_present = GameObject.FindGameObjectsWithTag("Enemy");
+
+        //if array is empty, no enemies are present
+        if(enemies_present.Length <= 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
         }
     }
 
     //picks random number between 1-3
     private int randSpawner()
     {
-        int decider_num = Random.Range(0, 3);
+        int decider_num = Random.Range(0, 5);
         return decider_num;
     }
 

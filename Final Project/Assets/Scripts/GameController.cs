@@ -72,7 +72,6 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         //Dont spawn waves until time has surpassed gameStart.
         gameStart -= Time.deltaTime;
         if (gameStart <= 0)
@@ -133,7 +132,7 @@ public class GameController : MonoBehaviour
     public void CheckIfDead()
     {
         //TESTING PURPOSES, MAKE SURE TO CHANGE BACK TO 0
-        if(health <= 999)
+        if(health <= 0)
         {
             //get the number of enemies the person has killed
             int max_killed = ws.GetNumberKilled();
@@ -143,6 +142,20 @@ public class GameController : MonoBehaviour
 
             SceneManager.LoadScene("Game Over");
         }
+    }
+
+    //restarts the timer wave spawner timer
+    public void RestartGameStartTimer()
+    {
+        //Debug.Log("RestartGameTimerCalled");
+        gameStart = 20f;
+        spawnWave = false;
+    }
+
+    //disable wavespawner
+    public void StopSpawning()
+    {
+        spawnWave = false;
     }
 
 }

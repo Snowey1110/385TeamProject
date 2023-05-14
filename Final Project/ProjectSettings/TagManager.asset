@@ -10,6 +10,7 @@ TagManager:
   - waypoints
   - Tower
   - Music
+  - noPlace
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - UI
   - UI_1
   - UI_2
-  - 
+  - UI_3
   - 
   - 
   - 
@@ -67,4 +68,7 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 281412185
+    locked: 0
+  - name: NoPlace
+    uniqueID: 3062854155
     locked: 0

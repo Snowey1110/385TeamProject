@@ -8,6 +8,7 @@ using UnityEngine;
 public class MapScript : MonoBehaviour
 {
     private GameObject[] tagItems;
+    private GameObject[] noPlaceItems;
     public bool showDebug;
 
     // Start is called before the first frame update
@@ -17,11 +18,18 @@ public class MapScript : MonoBehaviour
         tagItems = GameObject.FindGameObjectsWithTag("waypoints");
         tagItems = sort(tagItems); //sort by numeric in object name
         
-
         foreach (GameObject tagItem in tagItems)
         {
             tagItem.GetComponent<Renderer>().enabled = false;
         }
+
+        noPlaceItems = GameObject.FindGameObjectsWithTag("noPlace");
+        foreach (GameObject noPlaceItem in noPlaceItems)
+        {
+            noPlaceItem.GetComponent<Renderer>().enabled = false;
+        }
+
+
         showDebug = false;
     }
 
@@ -37,6 +45,10 @@ public class MapScript : MonoBehaviour
                 {
                     tagItem.GetComponent<Renderer>().enabled = false;
                 }
+                foreach (GameObject noPlaceItem in noPlaceItems)
+                {
+                    noPlaceItem.GetComponent<Renderer>().enabled = false;
+                }
                 showDebug = false;
             }
             else
@@ -44,6 +56,10 @@ public class MapScript : MonoBehaviour
                 foreach (GameObject tagItem in tagItems)
                 {
                     tagItem.GetComponent<Renderer>().enabled = true;
+                }
+                foreach (GameObject noPlaceItem in noPlaceItems)
+                {
+                    noPlaceItem.GetComponent<Renderer>().enabled = true;
                 }
                 showDebug = true;
             }
@@ -54,6 +70,11 @@ public class MapScript : MonoBehaviour
     public GameObject[] getWaypoints()
     {
         return tagItems;
+    }
+
+    public GameObject[] getNoPlace()
+    {
+        return noPlaceItems;
     }
 
     private GameObject[] sort(GameObject[] tag)

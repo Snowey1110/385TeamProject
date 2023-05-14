@@ -30,6 +30,7 @@ public class Shop : MonoBehaviour
 
     private int balance = 500;
     private char turret = ' ';
+    private MapScript lmap;
 
     public Button buttonA;
     public Button buttonB;
@@ -47,6 +48,8 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
+        lmap = FindObjectOfType<MapScript>();
+
         bank = GameObject.Find("Money").GetComponent<Text>();
 
         towerAPrice = GameObject.Find("CostA").GetComponent<Text>();
@@ -70,6 +73,10 @@ public class Shop : MonoBehaviour
 
     private void Update()
     {
+
+        
+       // Debug.Log(checkPlacement(lmap.getNoPlace()));
+
         if (isPlacingTurret)
         {
             Vector3 Pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -77,7 +84,7 @@ public class Shop : MonoBehaviour
 
             turretPreview.transform.position = Pos;
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && checkPlacement(lmap.getNoPlace()))
             {
                 if (turret == 'A')
                 {
@@ -383,5 +390,20 @@ public class Shop : MonoBehaviour
     public void BalanceDeposit(int deposit)
     {
         balance += deposit;
+    }
+
+    //check where placement of a tower here is possible
+    public bool checkPlacement(GameObject[] barriers)
+    {
+        foreach (GameObject go in barriers)
+        {
+            noPlace temp = go.GetComponent<noPlace>();
+           // Debug.Log(temp.name + " : " + temp.getMouseOver());
+            if (temp.getMouseOver())
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

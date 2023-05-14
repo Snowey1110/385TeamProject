@@ -165,9 +165,30 @@ public class Snowman_Tower : MonoBehaviour
     {
         towerHealth -= amount;
 
+        Flash tmp = this.gameObject.GetComponent<Flash>();
+        tmp.hit();
+
         if (towerHealth <= 0)
         {
             Destroy(gameObject);
         }
     }
+
+    //public void dmgFlash()
+    //{
+    //    float flashTime = 100f;
+    //    GameObject temp = this.gameObject;
+    //    Color currColor = temp.GetComponent<SpriteRenderer>().color;
+    //    Color flashCol = new Color(1, 0, 0, 1);
+
+    //    while (flashTime >= 0) 
+    //    {
+    //        temp.GetComponent<SpriteRenderer>().color = flashCol;
+    //        flashTime -= Time.deltaTime;
+    //        Debug.Log(flashTime);
+    //    }
+
+    //    temp.GetComponent<SpriteRenderer>().color = currColor;
+    //}
+
 }

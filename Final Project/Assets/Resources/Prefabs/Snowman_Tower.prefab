@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 2160367708198219808}
   - component: {fileID: 4512932896118810162}
   - component: {fileID: 1546950734}
+  - component: {fileID: 454003849404910727}
   m_Layer: 0
   m_Name: Snowman_Tower
   m_TagString: Tower
@@ -311,6 +312,18 @@ MonoBehaviour:
   targetEnemy: {fileID: 0}
   NextUpgrade: Snowman_Tower1
   NextUpgradeCost: 400
+--- !u!114 &454003849404910727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094817080013345043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c0457dfd4bd494eab5d587c31c2f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5202629045009843195
 GameObject:
   m_ObjectHideFlags: 0

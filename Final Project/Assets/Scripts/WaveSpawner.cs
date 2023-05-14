@@ -82,7 +82,7 @@ public class WaveSpawner : MonoBehaviour
                     int obj_decider = randSpawner();
 
                     //66% chance of basic enemy spawning
-                    if (obj_decider == 0)
+                    if (obj_decider == 0 || obj_decider == 1)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;

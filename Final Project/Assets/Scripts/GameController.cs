@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     //enemies killed UI
     public Text enemiesKilled;
     private WaveSpawner ws;
-    //private int enemies_killed;
+    //private int enemies_killed = 0;
 
     //user health/life UI
     public Text healthLifeUI;
@@ -133,11 +133,15 @@ public class GameController : MonoBehaviour
     public void CheckIfDead()
     {
         //TESTING PURPOSES, MAKE SURE TO CHANGE BACK TO 0
-        if(health <= 0)
+        if(health <= 999)
         {
-            SceneManager.LoadScene("Game Over");
-            
+            //get the number of enemies the person has killed
+            int max_killed = ws.GetNumberKilled();
 
+            //store it in the player prefab
+            PlayerPrefs.SetInt("Total Number of Mobs Killed", max_killed);
+
+            SceneManager.LoadScene("Game Over");
         }
     }
 

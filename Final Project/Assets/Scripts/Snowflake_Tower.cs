@@ -8,13 +8,11 @@ using UnityEngine.UI;
 
 public class Snowflake_Tower : MonoBehaviour
 {
-    public float towerRange = 3f;
-    public float towerFireRate = 3f;
+    public float towerRange = 2f;
 
     private float maxHealth = 100f;
     public float towerHealth = 0f;
 
-    public GameObject targetEnemy;
     public String NextUpgrade;
     public int NextUpgradeCost;
 
@@ -25,13 +23,32 @@ public class Snowflake_Tower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        towerHealth = maxHealth;
+        currPos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Freeze();
+    }
+
+    void Freeze()
+    {
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, towerRange);
+
+        foreach (Collider2D hitCollider in hitColliders)
+        {
+            Egg_Enemy enemy = hitCollider.GetComponent<Egg_Enemy>();
+            if (enemy != null)
+            {
+                float dist = Vector3.Distance(enemy.transform.position, currPos);
+                if (dist < towerRange)
+                {
+                    enemy.Freeze(Time.time);
+                }
+            }
+        }
     }
 
     public void Heal(float amount)

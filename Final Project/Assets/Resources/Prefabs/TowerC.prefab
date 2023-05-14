@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2072022191688568571}
   - component: {fileID: 2072022191688568551}
   - component: {fileID: 2072022191688568568}
-  - component: {fileID: -995083827952227194}
   - component: {fileID: 3726052127657524732}
+  - component: {fileID: -9073621067664613829}
   m_Layer: 0
   m_Name: TowerC
   m_TagString: Tower
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072022191688568572}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -135,22 +135,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &-995083827952227194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072022191688568572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b4a904364d6ca54e9247178d646e559, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerRange: 2
-  healRate: 1
-  towerHealth: 0
-  circlePrefab: {fileID: 6623839201182512691, guid: ba432e37bfcac2945a438f2e01e403ad, type: 3}
 --- !u!58 &3726052127657524732
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -167,3 +151,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5
+--- !u!114 &-9073621067664613829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072022191688568572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6837f4c5abffa3a44b452faee0c067c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerRange: 2
+  towerHealth: 0
+  NextUpgrade: 
+  NextUpgradeCost: 0

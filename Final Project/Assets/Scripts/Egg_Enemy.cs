@@ -23,6 +23,9 @@ public class Egg_Enemy : MonoBehaviour
     
     public HealthBar healthBar;
 
+    private float freezeTime;
+    public bool isFrozen = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,35 +80,27 @@ public class Egg_Enemy : MonoBehaviour
 
         HealthChecker();
 
+        Freeze(freezeTime);
+
         //TESTING PURPOSES TO TEST HEALTH BAR
         if (Input.GetKeyDown(KeyCode.Space))
         {
             current_health -= 10;
             healthBar.SetHealth(current_health); 
         }
-    
-
-
-
-        //point to the currWaypoint and move in that direction
-        // transform.up = currWaypoint.GetComponent<Transform>().position - transform.position;
-        //  rb.velocity = transform.up * speed * Time.smoothDeltaTime;
-
-
-        
-
-
-
-
-
-
     }
 
     private void FixedUpdate()
     {
-        //point to the currWaypoint and move in that direction
         transform.up = currWaypoint.GetComponent<Transform>().position - transform.position;
-        rb.velocity = transform.up * speed * Time.smoothDeltaTime;
+        if (isFrozen == true)
+        {
+            rb.velocity = transform.up * (0.375f * speed) * Time.smoothDeltaTime;
+        }
+        else
+        {
+            rb.velocity = transform.up * speed * Time.smoothDeltaTime;
+        }
     }
 
     public float GetDamage()
@@ -126,6 +121,20 @@ public class Egg_Enemy : MonoBehaviour
         healthBar.SetHealth(current_health);
     }
 
+    public void Freeze(float curTime)
+    {
+        freezeTime = curTime;
+        if (Time.time - freezeTime >= 5f)
+        {
+            isFrozen = false;
+        }
+        else
+        {
+            isFrozen = true;
+            return;
+        }
+    }
+
     //if the current health is less than 0, destroy the enemy
     private void HealthChecker()
     {
@@ -144,5 +153,4 @@ public class Egg_Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }

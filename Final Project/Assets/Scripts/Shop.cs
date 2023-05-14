@@ -192,8 +192,6 @@ public class Shop : MonoBehaviour
         spriteRenderer.sortingOrder = 0;
         turretPreview.transform.localScale = turretA.transform.localScale;
 
-
-
         // Add a translucent circle
         SpriteRenderer circleRenderer = circlePrefab.GetComponent<SpriteRenderer>();
         circlePreview = new GameObject("Radius");
@@ -205,7 +203,6 @@ public class Shop : MonoBehaviour
         circlePreview.transform.localPosition = Vector3.zero;
         circlePreview.transform.parent = turretPreview.transform;
 
-       
         float towerScale = turretA.GetComponent<Snowman_Tower>().towerRange / (turretA.GetComponent<Snowman_Tower>().transform.localScale.x / 2);
         //Debug.Log("turretA towerRange: " + turretA.GetComponent<Snowman_Tower>().towerRange + "turretA localScale.x: " + turretA.GetComponent<Snowman_Tower>().transform.localScale.x);
         //Debug.Log("towerScale = towerRange / tower localscale / 2: " + towerScale);
@@ -263,8 +260,8 @@ public class Shop : MonoBehaviour
         circlePreview.transform.parent = turretPreview.transform;
         circlePreview.transform.localScale = Vector3.one * 50f;
 
-        float towerScale = turretB.GetComponent<Snowflake_Tower>().towerRange / (turretB.GetComponent<Snowflake_Tower>().transform.localScale.x / 2);
-        //Debug.Log("turretB towerRange: " + turretB.GetComponent<Snowflake_Tower>().towerRange + "turretB localScale.x: " + turretB.GetComponent<Snowflake_Tower>().transform.localScale.x);
+        float towerScale = turretC.GetComponent<Snowflake_Tower>().towerRange / (turretC.GetComponent<Snowflake_Tower>().transform.localScale.x / 2);
+        //Debug.Log("turretC towerRange: " + turretC.GetComponent<Snowflake_Tower>().towerRange + "turretC localScale.x: " + turretC.GetComponent<Snowflake_Tower>().transform.localScale.x);
         //Debug.Log("towerScale = towerRange / tower localscale / 2: " + towerScale);
         circlePreview.transform.localScale = new Vector3(towerScale, towerScale, 1);
     }

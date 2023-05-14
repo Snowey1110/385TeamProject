@@ -558,71 +558,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &491928411
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4684753510792077104, guid: 7415671b9c1313948a4205e318d784db, type: 3}
-      propertyPath: NextUpgrade
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4684753510792077104, guid: 7415671b9c1313948a4205e318d784db, type: 3}
-      propertyPath: NextUpgradeCost
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778114320372848235, guid: 7415671b9c1313948a4205e318d784db, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778114320372848235, guid: 7415671b9c1313948a4205e318d784db, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778114320372848235, guid: 7415671b9c1313948a4205e318d784db, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778114320372848235, guid: 7415671b9c1313948a4205e318d784db, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778114320372848235, guid: 7415671b9c1313948a4205e318d784db, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778114320372848235, guid: 7415671b9c1313948a4205e318d784db, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778114320372848235, guid: 7415671b9c1313948a4205e318d784db, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778114320372848235, guid: 7415671b9c1313948a4205e318d784db, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778114320372848235, guid: 7415671b9c1313948a4205e318d784db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778114320372848235, guid: 7415671b9c1313948a4205e318d784db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778114320372848235, guid: 7415671b9c1313948a4205e318d784db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7778114320372848237, guid: 7415671b9c1313948a4205e318d784db, type: 3}
-      propertyPath: m_Name
-      value: Snowman_Tower1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7415671b9c1313948a4205e318d784db, type: 3}
 --- !u!1 &559196737
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +612,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &559196740
 MonoBehaviour:
@@ -998,7 +933,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &876832416
 GameObject:
@@ -1529,7 +1464,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tower C
+  m_Text: Freezer
 --- !u!222 &1053123393
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1796,7 +1731,7 @@ Transform:
   - {fileID: 1634872910}
   - {fileID: 1574919751}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1243909620
 MonoBehaviour:
@@ -1933,7 +1868,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1421988950
 GameObject:
@@ -3374,7 +3309,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1662366952
 GameObject:
@@ -3829,7 +3764,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Healing  Tower
+  m_Text: Medic
 --- !u!222 &1974149058
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3838,63 +3773,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974149055}
   m_CullTransparentMesh: 1
---- !u!1001 &2050144485
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3094817080013345043, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
-      propertyPath: m_Name
-      value: Snowman_Tower
-      objectReference: {fileID: 0}
-    - target: {fileID: 3094817080013345045, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3094817080013345045, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 3094817080013345045, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 3094817080013345045, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3094817080013345045, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3094817080013345045, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3094817080013345045, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3094817080013345045, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3094817080013345045, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3094817080013345045, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3094817080013345045, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
 --- !u!1 &2092112070
 GameObject:
   m_ObjectHideFlags: 0

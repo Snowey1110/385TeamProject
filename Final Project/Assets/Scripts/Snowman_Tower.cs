@@ -23,12 +23,11 @@ public class Snowman_Tower : MonoBehaviour
     private Vector3 currPos;
    // private bool selected = false;
 
-
+    //healthbar scripts
+    private HealthBar healthBar;
     void Start()
     {
         lgamecontroller = FindObjectOfType<GameController>();
-
-
 
         //set variables
         currPos = transform.position;
@@ -45,7 +44,12 @@ public class Snowman_Tower : MonoBehaviour
         }
         towerHealth = maxHealth;
 
+        //healthbar code
+        //get the healthbar script
+        healthBar = FindObjectOfType<HealthBar>();
 
+        //set the health bar to max
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -153,12 +157,18 @@ public class Snowman_Tower : MonoBehaviour
         if (towerHealth <= maxHealth)
         {
             towerHealth += amount;
+
+            //update the health bar
+            healthBar.SetHealth(towerHealth);
         }
     }
 
     public void Hit(float amount)
     {
         towerHealth -= amount;
+
+        //update the health bar
+        healthBar.SetHealth(towerHealth);
 
         if (towerHealth <= 0)
         {

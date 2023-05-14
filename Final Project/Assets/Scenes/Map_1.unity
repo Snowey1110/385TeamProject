@@ -2897,6 +2897,7 @@ MonoBehaviour:
   towerName: 
   upgradeCost: 0
   lgamecontroller: {fileID: 0}
+  lshop: {fileID: 0}
 --- !u!114 &1571695792
 MonoBehaviour:
   m_ObjectHideFlags: 0

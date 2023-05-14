@@ -7,7 +7,7 @@ public class Flash : MonoBehaviour
 {
 
     
-    public float flashTime = 10;
+    public float flashTime = 1;
     private float startFlash;
     private UnityEngine.Color flashColor;
     private UnityEngine.Color curColor;

@@ -20,11 +20,19 @@ public class Snowflake_Tower : MonoBehaviour
     private Vector3 currPos;
     private bool selected = false;
 
+    private HealthBar healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
         towerHealth = maxHealth;
         currPos = transform.position;
+
+        //finds the healthbar script
+        healthBar = FindObjectOfType<HealthBar>();
+
+        //sets the healthbar to full
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -56,12 +64,18 @@ public class Snowflake_Tower : MonoBehaviour
         if (towerHealth <= maxHealth)
         {
             towerHealth += amount;
+
+            //update the healthbar
+            healthBar.SetHealth(towerHealth);
         }
     }
 
     public void Hit(float amount)
     {
         towerHealth -= amount;
+
+        //update the healthbar
+        healthBar.SetHealth(towerHealth);
 
         if (towerHealth <= 0)
         {

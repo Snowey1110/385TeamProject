@@ -13,11 +13,20 @@ public class Medic_Tower : MonoBehaviour
     private Vector3 currPos;
     private bool selected = false;
 
+    //healthbar variable
+    private HealthBar healthBar;
+
     void Start()
     {
         towerHealth = maxHealth;
         currPos = transform.position;
         HealingCircle();
+
+        //finds the healthbar script
+        healthBar = FindObjectOfType<HealthBar>();
+
+        //sets the healthbar to full
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     void Update()
@@ -56,6 +65,9 @@ public class Medic_Tower : MonoBehaviour
     {
         towerHealth -= amount;
 
+        //update the healthbar
+        healthBar.SetHealth(towerHealth);
+
         if (towerHealth <= 0)
         {
             Destroy(gameObject);
@@ -75,6 +87,9 @@ public class Medic_Tower : MonoBehaviour
         if (towerHealth <= maxHealth)
         {
             towerHealth += amount;
+
+            //update the healthbar
+            healthBar.SetHealth(towerHealth);
         }
     }
 }

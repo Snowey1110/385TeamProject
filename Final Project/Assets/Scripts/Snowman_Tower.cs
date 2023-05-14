@@ -61,6 +61,7 @@ public class Snowman_Tower : MonoBehaviour
         targetEnemy = getTarget(enemyArray);
         
         ThrowSnowball(targetEnemy);
+        healthBar.SetHealth(towerHealth);
     }
 
     private void OnMouseOver()
@@ -157,18 +158,12 @@ public class Snowman_Tower : MonoBehaviour
         if (towerHealth <= maxHealth)
         {
             towerHealth += amount;
-
-            //update the health bar
-            healthBar.SetHealth(towerHealth);
         }
     }
 
     public void Hit(float amount)
     {
         towerHealth -= amount;
-
-        //update the health bar
-        healthBar.SetHealth(towerHealth);
 
         if (towerHealth <= 0)
         {

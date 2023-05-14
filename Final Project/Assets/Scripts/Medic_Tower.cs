@@ -32,12 +32,13 @@ public class Medic_Tower : MonoBehaviour
     void Update()
     {
         Heal();
+        healthBar.SetHealth(towerHealth);
     }
 
+    //function to handle healing other towers
     void Heal()
     {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, towerRange);
-
 
         foreach (Collider2D hitCollider in hitColliders)
         {
@@ -65,9 +66,6 @@ public class Medic_Tower : MonoBehaviour
     {
         towerHealth -= amount;
 
-        //update the healthbar
-        healthBar.SetHealth(towerHealth);
-
         if (towerHealth <= 0)
         {
             Destroy(gameObject);
@@ -79,17 +77,15 @@ public class Medic_Tower : MonoBehaviour
         GameObject healingCircle = Instantiate(Resources.Load("Prefabs/Radius") as GameObject, currPos, Quaternion.identity);
         healingCircle.transform.localScale = new Vector3(towerRange * 2f, towerRange * 2f, 1f);
         SpriteRenderer renderer = healingCircle.GetComponent<SpriteRenderer>();
-        renderer.color = new Color(0f, 1f, 0.8f, 0.3f);
+        renderer.color = new Color(0f, 1f, 0.8f, 0.25f);
     }
 
+    //function to handle receiving healing
     public void Heal(float amount)
     {
         if (towerHealth <= maxHealth)
         {
             towerHealth += amount;
-
-            //update the healthbar
-            healthBar.SetHealth(towerHealth);
         }
     }
 }

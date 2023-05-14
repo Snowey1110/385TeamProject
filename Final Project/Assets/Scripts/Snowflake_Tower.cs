@@ -39,6 +39,7 @@ public class Snowflake_Tower : MonoBehaviour
     void Update()
     {
         Freeze();
+        healthBar.SetHealth(towerHealth);
     }
 
     void Freeze()
@@ -64,18 +65,12 @@ public class Snowflake_Tower : MonoBehaviour
         if (towerHealth <= maxHealth)
         {
             towerHealth += amount;
-
-            //update the healthbar
-            healthBar.SetHealth(towerHealth);
         }
     }
 
     public void Hit(float amount)
     {
         towerHealth -= amount;
-
-        //update the healthbar
-        healthBar.SetHealth(towerHealth);
 
         if (towerHealth <= 0)
         {

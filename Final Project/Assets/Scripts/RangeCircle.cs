@@ -28,7 +28,6 @@ public class RangeCircle : MonoBehaviour
         //set size of circle
         float towerScale = tower.towerRange / (tower.transform.localScale.x / 2);
 
-        Debug.Log("towerScale " + towerScale + "range " + tower.towerRange);
         this.transform.localScale = new Vector3(towerScale, towerScale, 1);
 
         this.GetComponent<SpriteRenderer>().enabled = false;

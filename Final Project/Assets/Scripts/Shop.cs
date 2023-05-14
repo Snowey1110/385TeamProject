@@ -82,18 +82,14 @@ public class Shop : MonoBehaviour
                 if (turret == 'A')
                 {
                     turretA = Instantiate(Resources.Load("Prefabs/Snowman_Tower") as GameObject, Pos, Quaternion.identity);
-                    Debug.Log("turretA towerRange: " + turretA.GetComponent<Snowman_Tower>().towerRange + " turretA localScale.x: " + turretA.GetComponent<Snowman_Tower>().transform.localScale.x);
-                    //Instantiate(turretA, Pos, Quaternion.identity);
                 }
                 if (turret == 'B')
                 {
                     turretB = Instantiate(Resources.Load("Prefabs/TowerB") as GameObject, Pos, Quaternion.identity);
-                    //Instantiate(turretB, Pos, Quaternion.identity);
                 }
                 if (turret == 'C')
                 {
                     turretC = Instantiate(Resources.Load("Prefabs/TowerC") as GameObject, Pos, Quaternion.identity);
-                    //Instantiate(turretC, Pos, Quaternion.identity);
                 }
                 if (turret == 'D')
                 {

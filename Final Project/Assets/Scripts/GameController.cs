@@ -77,7 +77,7 @@ public class GameController : MonoBehaviour
         gameStart -= Time.deltaTime;
         if (gameStart <= 0)
         {
-            timeToWave.text = "Assault Incomming!";
+            timeToWave.text = "Assault Incoming!";
             spawnWave = true;
 
             DebugNote.SetActive(false);

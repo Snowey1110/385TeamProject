@@ -21,7 +21,7 @@ public class Snowman_Tower : MonoBehaviour
 
     private float towerNextFire = 0;
     private Vector3 currPos;
-    private bool selected = false;
+   // private bool selected = false;
 
 
     void Start()
@@ -51,31 +51,11 @@ public class Snowman_Tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //deselect tower after mouse over event
-        //if(Input.GetMouseButtonDown(0))
-        //{
-        //    if (selected)
-        //    {
-        //        selected = false;
-        //        this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-        //        //Sidebar temp = FindObjectOfType<Sidebar>();
-        //        //temp.towerName = "";
-        //        //temp.upgradeCost = 0;
-        //        //temp.towerUpgrade = null;
-        //        //temp.PreviewTower();
-        //    }
-        //}
-
+        
         //get list of all enemies and then find closest one
         GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
         targetEnemy = getTarget(enemyArray);
-        //if (targetEnemy != null )
-        //{
-        //    Debug.Log("targetEnemy found");
-        //    GameObject temp = Instantiate(Resources.Load("Prefabs/marker") as GameObject);
-        //    temp.transform.position = targetEnemy.transform.position;
-        //}
-
+        
         ThrowSnowball(targetEnemy);
     }
 
@@ -124,23 +104,12 @@ public class Snowman_Tower : MonoBehaviour
                 //remove highlight
                 this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
             }
-
-            //this.GetComponent<SpriteRenderer>().color = new Color(1f, 0.79f, 0.58f, 1f);
-            //lgamecontroller = GetComponent<GameController>();
-            //lgamecontroller.selectedTower = this.gameObject;
-
-
-            //; Sidebar temp = FindObjectOfType<Sidebar>();
-            //; temp.towerName = NextUpgrade;
-            //; temp.upgradeCost = NextUpgradeCost;
-            //; temp.towerUpgrade = this.gameObject;
-            //; temp.PreviewTower();
         }
     }
-    private void OnMouseExit()
-    {
-        selected = true;
-    }
+    //private void OnMouseExit()
+    //{
+    //    selected = true;
+    //}
 
     private GameObject getTarget(GameObject[] enemies)
     {

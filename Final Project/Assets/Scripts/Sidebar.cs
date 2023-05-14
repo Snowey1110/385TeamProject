@@ -64,7 +64,7 @@ public class Sidebar : MonoBehaviour
                 //update purchase price 
                 GetComponentInChildren<TextMeshProUGUI>().text = "Upgrade Cost: $" + NextUpgradeCost;
 
-                PreviewTower();
+               // PreviewTower();
             }
             else
             {
@@ -92,30 +92,33 @@ public class Sidebar : MonoBehaviour
 
     public void UpgradeTower()
     {
+
+
+
         GameObject e = Instantiate(Resources.Load("Prefabs/" + lgamecontroller.TowerUpgrade) as GameObject);
         e.transform.position = lgamecontroller.selectedTower.transform.position;
             //towerUpgrade.transform.position;
         Destroy(lgamecontroller.selectedTower);
     }
 
-    public void PreviewTower()
-    {
-        //if (towerName.Contains("Prefabs/")) { }
-        //else
-        //{
-        //    towerName = "Prefabs/" + towerName;
-        //}
+    //public void PreviewTower()
+    //{
+    //    //if (towerName.Contains("Prefabs/")) { }
+    //    //else
+    //    //{
+    //    //    towerName = "Prefabs/" + towerName;
+    //    //}
 
-        ////set preview picture in sidebar
-        //Object loadPrefab = Resources.Load(towerName);
-        //SpriteRenderer spriteFromPrefab = loadPrefab.GetComponent<SpriteRenderer>();
-        //Sprite sprite = spriteFromPrefab.sprite;
-        //this.GetComponent<Button>().image.sprite = sprite;
+    //    ////set preview picture in sidebar
+    //    //Object loadPrefab = Resources.Load(towerName);
+    //    //SpriteRenderer spriteFromPrefab = loadPrefab.GetComponent<SpriteRenderer>();
+    //    //Sprite sprite = spriteFromPrefab.sprite;
+    //    //this.GetComponent<Button>().image.sprite = sprite;
 
-        ////set cost
-        ////string temp = this.GetComponentInChildren<TextMeshPro>().text;
-        //GetComponentInChildren<TextMeshProUGUI>().text = "Upgrade Cost: $" + upgradeCost;
-    }
+    //    ////set cost
+    //    ////string temp = this.GetComponentInChildren<TextMeshPro>().text;
+    //    //GetComponentInChildren<TextMeshProUGUI>().text = "Upgrade Cost: $" + upgradeCost;
+    //}
 
 
 }

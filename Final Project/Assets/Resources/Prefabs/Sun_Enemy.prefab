@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 2846339441906476388}
   - component: {fileID: 2159196869597131708}
   - component: {fileID: 9139192968538704671}
+  - component: {fileID: 670024280538764945}
   m_Layer: 3
   m_Name: Sun_Enemy
   m_TagString: Enemy
@@ -208,6 +209,7 @@ MonoBehaviour:
   waypoints: []
   rb: {fileID: 0}
   healthBar: {fileID: 0}
+  isFrozen: 0
 --- !u!50 &9139192968538704671
 Rigidbody2D:
   serializedVersion: 4
@@ -229,6 +231,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &670024280538764945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662337752406075307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566f8882ef07f6b45b84ce565e490be3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4919705416598762783
 GameObject:
   m_ObjectHideFlags: 0

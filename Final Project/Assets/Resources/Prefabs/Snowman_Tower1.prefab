@@ -8,8 +8,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1546950734, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
+      propertyPath: NextUpgrade
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546950734, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
       propertyPath: towerFireRate
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546950734, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
+      propertyPath: NextUpgradeCost
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3094817080013345042, guid: e50ca413a0719114e9a05eacbe26177d, type: 3}
       propertyPath: m_Sprite

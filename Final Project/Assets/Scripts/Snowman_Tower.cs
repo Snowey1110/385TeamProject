@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class Snowman_Tower : MonoBehaviour
 {
+    private GameController lgamecontroller;
     public float towerRange = 3f;
     public float towerFireRate = 3f;
 
@@ -25,8 +26,13 @@ public class Snowman_Tower : MonoBehaviour
 
     void Start()
     {
+        lgamecontroller = FindObjectOfType<GameController>();
+
+
+
         //set variables
         currPos = transform.position;
+
         if(this.name == "Snowman_Tower")
         {
             NextUpgrade = "Snowman_Tower1";
@@ -34,9 +40,12 @@ public class Snowman_Tower : MonoBehaviour
         }
         else if(this.name == "Snowman_Tower1")
         {
-            NextUpgrade = null;
+            NextUpgrade = "";
+            NextUpgradeCost = 0;
         }
         towerHealth = maxHealth;
+
+
     }
 
     // Update is called once per frame
@@ -72,15 +81,61 @@ public class Snowman_Tower : MonoBehaviour
 
     private void OnMouseOver()
     {
-        //if(Input.GetMouseButtonDown(0))
-        //{
-        //    this.GetComponent<SpriteRenderer>().color = new Color(1f, 0.79f, 0.58f, 1f);
-        //    Sidebar temp = FindObjectOfType<Sidebar>();
-        //    temp.towerName = NextUpgrade;
-        //    temp.upgradeCost = NextUpgradeCost;
-        //    temp.towerUpgrade = this.gameObject;
-        //    temp.PreviewTower();
-        //}
+        if (Input.GetMouseButtonDown(0))
+        {
+            //lgamecontroller = GetComponent<GameController>();
+
+            //if no tower is selcted
+            if (lgamecontroller.selectedTower == null)
+            {
+                //set gamecontroller to tower
+                lgamecontroller.selectedTower = this.gameObject;
+                lgamecontroller.TowerUpgrade = NextUpgrade;
+                lgamecontroller.TowerCost = NextUpgradeCost;
+
+                //highlight tower
+                this.GetComponent<SpriteRenderer>().color = new Color(1f, 0.79f, 0.58f, 1f);
+            }
+
+            //if a different tower is selected
+            else if(this.gameObject != lgamecontroller.selectedTower) 
+            {
+                //get current selected tower
+                GameObject temp = lgamecontroller.selectedTower;
+                //remove highlight
+                temp.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+                //set selected tower to this tower
+                lgamecontroller.selectedTower = this.gameObject;
+                lgamecontroller.TowerUpgrade = NextUpgrade;
+                lgamecontroller.TowerCost = NextUpgradeCost;
+
+                //highlight tower
+                this.GetComponent<SpriteRenderer>().color = new Color(1f, 0.79f, 0.58f, 1f);
+            }
+
+            //is this tower is selected
+            else
+            {
+                //set selected tower to null
+                lgamecontroller.selectedTower = null;
+                lgamecontroller.TowerUpgrade = "";
+                lgamecontroller.TowerCost = 0;
+
+                //remove highlight
+                this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            }
+
+            //this.GetComponent<SpriteRenderer>().color = new Color(1f, 0.79f, 0.58f, 1f);
+            //lgamecontroller = GetComponent<GameController>();
+            //lgamecontroller.selectedTower = this.gameObject;
+
+
+            //; Sidebar temp = FindObjectOfType<Sidebar>();
+            //; temp.towerName = NextUpgrade;
+            //; temp.upgradeCost = NextUpgradeCost;
+            //; temp.towerUpgrade = this.gameObject;
+            //; temp.PreviewTower();
+        }
     }
     private void OnMouseExit()
     {

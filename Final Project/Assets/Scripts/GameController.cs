@@ -30,6 +30,11 @@ public class GameController : MonoBehaviour
     //Debug note "FOR DEBUG PRESS P"
     public GameObject DebugNote;
 
+    //tower selection
+    public String TowerUpgrade;
+    public int TowerCost;
+    public GameObject selectedTower;
+
     //money UI
     //public Text moneyUI;
     //private int money;

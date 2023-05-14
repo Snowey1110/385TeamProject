@@ -11,11 +11,13 @@ public class Sidebar : MonoBehaviour
     public string towerName;
     public int upgradeCost;
     public GameController lgamecontroller;
+    public Shop lshop;
 
     // Start is called before the first frame update
     void Start()
     {
         lgamecontroller = FindObjectOfType<GameController>();
+        lshop = FindObjectOfType<Shop>();
     }
 
     // Update is called once per frame
@@ -94,11 +96,20 @@ public class Sidebar : MonoBehaviour
     {
 
 
+        if (lgamecontroller.TowerUpgrade != "")
+        {
+            if (lshop.GetBalance() >= lgamecontroller.TowerCost)
+            {
+                GameObject e = Instantiate(Resources.Load("Prefabs/" + lgamecontroller.TowerUpgrade) as GameObject);
+                e.transform.position = lgamecontroller.selectedTower.transform.position;
+                Destroy(lgamecontroller.selectedTower);
+                lshop.subFromBalance(lgamecontroller.TowerCost);
+            }
+        }
 
-        GameObject e = Instantiate(Resources.Load("Prefabs/" + lgamecontroller.TowerUpgrade) as GameObject);
-        e.transform.position = lgamecontroller.selectedTower.transform.position;
-            //towerUpgrade.transform.position;
-        Destroy(lgamecontroller.selectedTower);
+            
+
+        
     }
 
     //public void PreviewTower()

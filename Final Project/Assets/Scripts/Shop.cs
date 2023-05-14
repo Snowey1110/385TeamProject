@@ -377,6 +377,12 @@ public class Shop : MonoBehaviour
         return balance;
     }
 
+    //public method to return how much money user has
+    public void subFromBalance(int i)
+    {
+        balance -= i;
+    }
+
     //public method to deposit an amount each time enemy killed or whatever else
     public void BalanceDeposit(int deposit)
     {

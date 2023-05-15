@@ -78,7 +78,7 @@ public class SnowballBehaviour : MonoBehaviour
         {
             //update the number of killed enemies to progress the round/difficulty
 
-            if (collision.gameObject.tag == "Enemy")
+            if (collision.gameObject.tag == "Enemy" && collision.gameObject.name != "Sun_Enemy(Clone)")
             {
                 egg = collision.gameObject.GetComponent<Egg_Enemy>();
                 egg.DamageEnemy(damage);

@@ -10,7 +10,7 @@ public class Sun_Enemy : MonoBehaviour
     public float damage;
 
     public float max_health;
-    private int current_health;
+    public int current_health;
 
     public GameObject[] waypoints;
     private GameObject currWaypoint;
@@ -47,13 +47,8 @@ public class Sun_Enemy : MonoBehaviour
 
         //sets the healthbar health
         healthBar = FindObjectOfType<HealthBar>();
-        current_health = Mathf.RoundToInt(max_health);
-        healthBar.SetMaxHealth(current_health);
-
-        ////set enemy to random color
-        //Color temp = GetComponent<Renderer>().material.color;
-        //temp = new Color(Random.Range(0.5f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1);
-        //GetComponent<Renderer>().material.SetColor("_Color", temp);
+        healthBar.SetMaxHealth(max_health);
+        healthBar.SetHealth(max_health);
     }
 
     // Update is called once per frame
@@ -133,14 +128,20 @@ public class Sun_Enemy : MonoBehaviour
         //if the enemy health is less or = to zero 
         if (current_health <= 0)
         {
-            //add 1 to the number of enemies killed in gamecontroller script
             ss.IncreaseKilledEnemies();
+            ss.springDelay();
 
-            //add 10 to the balance each time enemy is killed
-            shopScript.BalanceDeposit(500);
+            //add 100 to the balance each time enemy is killed
+            shopScript.BalanceDeposit(100);
 
-            //destroy the egg
+            //destroy the sun
             Destroy(gameObject);
         }
+    }
+
+    public void SetHealth(float health)
+    {
+        max_health = health;
+        current_health = Mathf.RoundToInt(max_health);
     }
 }

@@ -9,6 +9,7 @@ public class WaveSpawner : MonoBehaviour
 {
     private bool spawnWave = false;
     private GameController lgamecontroller;
+    private GameObject[] wayPoints;
     private float timeSinceSpawn = 0;
     private float spawnRate;  
 
@@ -17,7 +18,9 @@ public class WaveSpawner : MonoBehaviour
     private bool round_3 = false;
     private bool round_4 = false;
 
+    private Sun_Enemy sun;
     private bool springIsComing = false;
+    private bool bossSpawn = false;
 
     private int number_killed = 0;
 
@@ -36,52 +39,123 @@ public class WaveSpawner : MonoBehaviour
 
         //get handle on Gamecontroller object
         lgamecontroller = FindObjectOfType<GameController>();
-
-
-        
+        wayPoints = lgamecontroller.getWaypoints();
     }
 
     // Update is called once per frame
     void Update()
     {
+        checkRound();
+        roundSpawner();
+        bossSpawner();
+    }
+
+    //destroys enemy AND depletes the user health
+    public void destroyEnemy(GameObject obj)
+    {
+        //accesses the egg's method
+        Egg_Enemy enemy = obj.GetComponent<Egg_Enemy>();
+
+        //get user health
+        float user_health = lgamecontroller.health;
+
+        //subtract the enemy damage from user's health
+        user_health -= enemy.GetDamage();
+
+        lgamecontroller.health = user_health;
+
+        Debug.Log("User Health: " + lgamecontroller.health);
+
+        //lgamecontroller.health--;
+        Destroy(obj);
+
+        //number of enemies killed
+        //UpdateKilledEnemies(); //<- commented it out because not techincally killed
+    }
+
+    //TESTING PURPOSES
+    //ROUND 1 0-5 DEATHS
+    //ROUND 2 5-10 DEATHS
+    //ROUND 3 10+ DEATHS
+    //SUN ROUND 1000+ DEATHS
+
+    //REAL VALUES SHOULD BE
+    //ROUND 1 0-20 DEATHS
+    //ROUND 2 20-40 DEATHS
+    //ROUND 3 40+ DEATHS
+    //ROUND 4 100+ KILLS
+    public void checkRound()
+    {
+        if(number_killed <= 40)
+        {
+            round_1 = true;
+            lgamecontroller.UpdateWaveUI(1);
+
+            if (number_killed == 40)
+            {
+                springIsComing = true;
+                lgamecontroller.RestartGameStartTimer();
+                lgamecontroller.UpdateWaveUI(2);
+            }
+        }
+
+
+        else if(number_killed > 40 && number_killed <= 100)
+        {
+            if (number_killed == 41)
+            {
+                round_1 = false;
+                round_2 = true;
+            }
+
+            if(number_killed == 100)
+            {
+                lgamecontroller.RestartGameStartTimer();
+                lgamecontroller.UpdateWaveUI(3);
+            }
+        }
+        else if(number_killed > 100 && number_killed <= 200)
+        {
+            round_3 = true;
+            //lgamecontroller.UpdateWaveUI(3);
+
+            if(number_killed == 200)
+            {
+                lgamecontroller.RestartGameStartTimer();
+                lgamecontroller.UpdateWaveUI(4);
+            }
+        }
+        else if(number_killed > 200)
+        {
+            round_4 = true;
+            //lgamecontroller.UpdateWaveUI(4);
+        }
+    }
+
+    public void roundSpawner()
+    {
         //get bool from game controller to start spawning
         spawnWave = lgamecontroller.spawnWave;
 
-        //get array of test points from map
-        GameObject[] wayPoints = lgamecontroller.getWaypoints();
-
-        checkRound();
-
-
-        ////for targeting testing of towers
-        //if (test)
-        //{
-        //    GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
-        //    e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
-        //    test = false;
-        //}
-
-
-        //TESTING PURPOSES
-        //ONLY SPAWNS BUTTERFLY, IF YOU SEE THIS PLS CHANGE BACK TO REGULAR
         if (spawnWave)
         {
             //start the enemies; (This will need to become an alogorith that spawns differenty types at specific rates)
             if ((Time.time - timeSinceSpawn) > spawnRate || timeSinceSpawn == 0)
             {
                 //checks what round/difficulty/wave we are on
-                if (round_1)
+                if (round_1 == true && bossSpawn == false)
                 {
                     GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
                     timeSinceSpawn = Time.time;
                     e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
+
                 }
                 else if (round_2)
                 {
                     //depending on number, spawn that type of enemy in this particular round
                     int obj_decider = randSpawner();
 
-                    
+
                     if (obj_decider == 0 || obj_decider == 1 || obj_decider == 2)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
@@ -124,14 +198,6 @@ public class WaveSpawner : MonoBehaviour
                 {
                     int obj_decider = randSpawner();
 
-                    if (springIsComing == false)
-                    {
-                        GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
-                        timeSinceSpawn = Time.time;
-                        s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
-                        springIsComing = true;
-                    }
-
                     if (obj_decider == 0)
                     {
                         GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
@@ -153,94 +219,19 @@ public class WaveSpawner : MonoBehaviour
                 }
             }
         }
-
     }
 
-    //destroys enemy AND depletes the user health
-    public void destroyEnemy(GameObject obj)
+    public void bossSpawner()
     {
-        //accesses the egg's method
-        Egg_Enemy enemy = obj.GetComponent<Egg_Enemy>();
-
-        //get user health
-        float user_health = lgamecontroller.health;
-
-        //subtract the enemy damage from user's health
-        user_health -= enemy.GetDamage();
-
-        lgamecontroller.health = user_health;
-
-        Debug.Log("User Health: " + lgamecontroller.health);
-
-        //lgamecontroller.health--;
-        Destroy(obj);
-
-        //number of enemies killed
-        //UpdateKilledEnemies(); //<- commented it out because not techincally killed
-    }
-
-    //TESTING PURPOSES
-    //ROUND 1 0-5 DEATHS
-    //ROUND 2 5-10 DEATHS
-    //ROUND 3 10+ DEATHS
-    //SUN ROUND 1000+ DEATHS
-
-    //REAL VALUES SHOULD BE
-    //ROUND 1 0-20 DEATHS
-    //ROUND 2 20-40 DEATHS
-    //ROUND 3 40+ DEATHS
-    //ROUND 4 100+ KILLS
-    public void checkRound()
-    {
-        if(number_killed <= 40)
+        if (springIsComing == true)
         {
-            round_1 = true;
-            round_2 = false;
-            round_3 = false;
-            round_4 = false;
-            lgamecontroller.UpdateWaveUI(1);
-
-            if(number_killed == 40)
+            if (round_1 == true && bossSpawn == false)
             {
-                lgamecontroller.RestartGameStartTimer();
-                lgamecontroller.UpdateWaveUI(2);
+                bossSpawn = true;
+                GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
+                s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
+                s.GetComponent<Sun_Enemy>().SetHealth(1000f);
             }
-        }
-        else if(number_killed > 40 && number_killed <= 100)
-        {
-            round_1 = false;
-            round_2 = true;
-            round_3 = false;
-            round_4 = false;
-            //lgamecontroller.UpdateWaveUI(2);
-
-            if(number_killed == 100)
-            {
-                lgamecontroller.RestartGameStartTimer();
-                lgamecontroller.UpdateWaveUI(3);
-            }
-        }
-        else if(number_killed > 100 && number_killed <= 200)
-        {
-            round_1 = false;
-            round_2 = false;
-            round_3 = true;
-            round_4 = false;
-            //lgamecontroller.UpdateWaveUI(3);
-
-            if(number_killed == 200)
-            {
-                lgamecontroller.RestartGameStartTimer();
-                lgamecontroller.UpdateWaveUI(4);
-            }
-        }
-        else if(number_killed > 200)
-        {
-            round_1 = false;
-            round_2 = false;
-            round_3 = false;
-            round_4 = true;
-            //lgamecontroller.UpdateWaveUI(4);
         }
     }
 
@@ -279,4 +270,10 @@ public class WaveSpawner : MonoBehaviour
         return number_killed;
     }
 
+    public void springDelay()
+    {
+        springIsComing = false;
+        bossSpawn = false;
+
+    }
 }

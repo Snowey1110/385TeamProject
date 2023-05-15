@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   damage: 5000
-  max_health: 5000
+  max_health: 10000
   waypoints: []
   rb: {fileID: 0}
   healthBar: {fileID: 0}

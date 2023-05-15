@@ -94,13 +94,6 @@ public class GameController : MonoBehaviour
             timeToWave.text = "Waves start in " + gameStart.ToString("F0") + " seconds.";
         }
 
-        //TESTING PURPOSES TO TEST HEALTH BAR
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            health -= 10;
-            healthBar.SetHealth(health); 
-        }
-
         UpdateKilledEnemiesUI();
         //UpdateMoneyUI();
         UpdateHealthLifeUI();

@@ -12,10 +12,10 @@ public class WaveSpawner : MonoBehaviour
     private float timeSinceSpawn = 0;
     private float spawnRate;  
 
-    private bool round_1 = false;
+    private bool round_1 = true;
     private bool round_2 = false;
     private bool round_3 = false;
-    private bool round_4 = true;
+    private bool round_4 = false;
 
     private bool springIsComing = false;
 
@@ -72,7 +72,7 @@ public class WaveSpawner : MonoBehaviour
                 //checks what round/difficulty/wave we are on
                 if (round_1)
                 {
-                    GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_3") as GameObject);
+                    GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
                     timeSinceSpawn = Time.time;
                     e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                 }
@@ -194,10 +194,10 @@ public class WaveSpawner : MonoBehaviour
     {
         if(number_killed <= 40)
         {
-            round_1 = false;
+            round_1 = true;
             round_2 = false;
             round_3 = false;
-            round_4 = true;
+            round_4 = false;
             lgamecontroller.UpdateWaveUI(1);
 
             if(number_killed == 40)

@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Medic_Tower : MonoBehaviour
 {
+    private GameController lgamecontroller;
+
     public float towerRange = 4f;
     public float healRate = 3f;
 
@@ -11,13 +14,21 @@ public class Medic_Tower : MonoBehaviour
     public float towerHealth = 0f;
 
     private Vector3 currPos;
-    private bool selected = false;
+
+    public String NextUpgrade;
+    public int NextUpgradeCost;
+    //private bool selected = false;
 
     //healthbar variable
     private HealthBar healthBar;
 
     void Start()
     {
+        lgamecontroller = FindObjectOfType<GameController>();
+
+        NextUpgrade = "";
+        NextUpgradeCost = 0;
+
         towerHealth = maxHealth;
         currPos = transform.position;
         HealingCircle();
@@ -33,6 +44,11 @@ public class Medic_Tower : MonoBehaviour
     {
         Heal();
         healthBar.SetHealth(towerHealth);
+
+        if ((lgamecontroller.selectedTower == this.gameObject) && Input.GetKeyDown(KeyCode.Delete))
+        {
+            Destroy(gameObject);
+        }
     }
 
     //function to handle healing other towers
@@ -66,6 +82,9 @@ public class Medic_Tower : MonoBehaviour
     {
         towerHealth -= amount;
 
+        Flash tmp = this.gameObject.GetComponent<Flash>();
+        tmp.hit();
+
         if (towerHealth <= 0)
         {
             Destroy(gameObject);
@@ -88,4 +107,57 @@ public class Medic_Tower : MonoBehaviour
             towerHealth += amount;
         }
     }
+
+    private void OnMouseOver()
+    {
+        Debug.Log("Healing tower MouseOver");
+        if (Input.GetMouseButtonDown(0))
+        {
+            //lgamecontroller = GetComponent<GameController>();
+
+            //if no tower is selcted
+            if (lgamecontroller.selectedTower == null)
+            {
+                //set gamecontroller to tower
+                lgamecontroller.selectedTower = this.gameObject;
+                lgamecontroller.TowerUpgrade = NextUpgrade;
+                lgamecontroller.TowerCost = NextUpgradeCost;
+
+                //highlight tower
+                this.GetComponent<SpriteRenderer>().color = new Color(1f, 0.79f, 0.58f, 1f);
+            }
+
+            //if a different tower is selected
+            else if (this.gameObject != lgamecontroller.selectedTower)
+            {
+                //get current selected tower
+                GameObject temp = lgamecontroller.selectedTower;
+                //remove highlight
+                temp.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+                //set selected tower to this tower
+                lgamecontroller.selectedTower = this.gameObject;
+                lgamecontroller.TowerUpgrade = NextUpgrade;
+                lgamecontroller.TowerCost = NextUpgradeCost;
+
+                //highlight tower
+                this.GetComponent<SpriteRenderer>().color = new Color(1f, 0.79f, 0.58f, 1f);
+            }
+
+            //is this tower is selected
+            else
+            {
+                //set selected tower to null
+                lgamecontroller.selectedTower = null;
+                lgamecontroller.TowerUpgrade = "";
+                lgamecontroller.TowerCost = 0;
+
+                //remove highlight
+                this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            }
+        }
+    }
+
+
+
+
 }

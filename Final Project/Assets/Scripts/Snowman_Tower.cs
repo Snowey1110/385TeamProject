@@ -62,6 +62,12 @@ public class Snowman_Tower : MonoBehaviour
         
         ThrowSnowball(targetEnemy);
         healthBar.SetHealth(towerHealth);
+
+        if ((lgamecontroller.selectedTower == this.gameObject) && Input.GetKeyDown(KeyCode.Delete))
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     private void OnMouseOver()

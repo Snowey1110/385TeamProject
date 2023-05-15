@@ -7,7 +7,7 @@ public class Sun_Enemy : MonoBehaviour
 
     //Edit in prefab inspector menu
     public float speed;
-    public float damage;
+    public float damage = 1000;
 
     public float max_health;
     public int current_health;

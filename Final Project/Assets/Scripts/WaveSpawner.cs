@@ -21,6 +21,8 @@ public class WaveSpawner : MonoBehaviour
     private Sun_Enemy sun;
     private bool springIsComing = false;
     private bool bossSpawn = false;
+    private bool finalBoss = false;
+    private int finalCount = 0;
 
     private int number_killed = 0;
 
@@ -54,13 +56,21 @@ public class WaveSpawner : MonoBehaviour
     public void destroyEnemy(GameObject obj)
     {
         //accesses the egg's method
-        Egg_Enemy enemy = obj.GetComponent<Egg_Enemy>();
+        Egg_Enemy egg = obj.GetComponent<Egg_Enemy>();
+        Sun_Enemy sun = obj.GetComponent<Sun_Enemy>();
 
         //get user health
         float user_health = lgamecontroller.health;
 
         //subtract the enemy damage from user's health
-        user_health -= enemy.GetDamage();
+        if (obj.gameObject.name == "Egg_Enemy(Clone)")
+        { 
+            user_health -= egg.GetDamage();
+        }
+        if (obj.gameObject.name == "Sun_Enemy(Clone)")
+        {
+            user_health -= sun.GetDamage();
+        }
 
         lgamecontroller.health = user_health;
 
@@ -134,12 +144,9 @@ public class WaveSpawner : MonoBehaviour
             round_4 = true;
             springIsComing = true;
 
-            if (number_killed == 300)
+            if (number_killed == 300 && finalBoss == false)
             {
-                GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
-                timeSinceSpawn = Time.time;
-                s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
-                s.GetComponent<Sun_Enemy>().SetHealth(30000f);
+                finalBoss = true;
             }
         }
     }
@@ -249,14 +256,14 @@ public class WaveSpawner : MonoBehaviour
                 bossSpawn = true;
                 GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
                 s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
-                s.GetComponent<Sun_Enemy>().SetHealth(2500f);
+                s.GetComponent<Sun_Enemy>().SetHealth(3000f);
             }
             if (round_3 == true && bossSpawn == false)
             {
                 bossSpawn = true;
                 GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
                 s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
-                s.GetComponent<Sun_Enemy>().SetHealth(5000f);
+                s.GetComponent<Sun_Enemy>().SetHealth(7000f);
             }
             if (round_4 == true)
             {
@@ -265,8 +272,17 @@ public class WaveSpawner : MonoBehaviour
                     GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
                     timeSinceSpawn = Time.time;
                     s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
-                    s.GetComponent<Sun_Enemy>().SetHealth(10000f);
+                    s.GetComponent<Sun_Enemy>().SetHealth(12000f);
                 }
+            }
+            if (finalBoss == true && finalCount < 1)
+            {
+                GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
+                timeSinceSpawn = Time.time;
+                s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
+                s.GetComponent<Sun_Enemy>().SetHealth(100000f);
+                finalBoss = false;
+                finalCount++;
             }
         }
     }

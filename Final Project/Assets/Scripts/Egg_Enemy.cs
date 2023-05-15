@@ -81,13 +81,6 @@ public class Egg_Enemy : MonoBehaviour
         HealthChecker();
 
         Freeze(freezeTime);
-
-        /* //TESTING PURPOSES TO TEST HEALTH BAR
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            current_health -= 10;
-            healthBar.SetHealth(current_health); 
-        } */
     }
 
     private void FixedUpdate()

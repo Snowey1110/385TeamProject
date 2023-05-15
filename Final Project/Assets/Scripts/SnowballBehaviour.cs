@@ -13,7 +13,8 @@ public class SnowballBehaviour : MonoBehaviour
     //update the number of enemies killed
     private WaveSpawner wavespawner;
     private GameController lgamecontroller;
-    private Egg_Enemy enemyscript;
+    private Egg_Enemy egg;
+    private Sun_Enemy sun;
 
     void Start()
     {
@@ -76,12 +77,18 @@ public class SnowballBehaviour : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             //update the number of killed enemies to progress the round/difficulty
-            //wavespawner.UpdateKilledEnemies(); 
 
-            //Destroy(collision.gameObject);
-            //do damage to the enemy
-            enemyscript = collision.gameObject.GetComponent<Egg_Enemy>();
-            enemyscript.DamageEnemy(damage);
+            if (collision.gameObject.name == "Egg_Enemy(Clone)")
+            {
+                egg = collision.gameObject.GetComponent<Egg_Enemy>();
+                egg.DamageEnemy(damage);
+            }
+
+            if (collision.gameObject.name == "Sun_Enemy(Clone)")
+            {
+                sun = collision.gameObject.GetComponent<Sun_Enemy>();
+                sun.DamageEnemy(damage);
+            }
 
             //destroy's the snowball bullet itself
             Destroy(gameObject);           

@@ -18,7 +18,7 @@ public class Sun_Enemy : MonoBehaviour
     private float minDist;
     public Rigidbody2D rb;
     private GameController lgamecontroller;
-    private WaveSpawner ws;
+    private WaveSpawner ss;
     private Shop shopScript;
 
     public HealthBar healthBar;
@@ -38,14 +38,11 @@ public class Sun_Enemy : MonoBehaviour
         //get a handle on the rigidbody2D component to use later
         rb = GetComponent<Rigidbody2D>();
         lgamecontroller = FindObjectOfType<GameController>();
-        ws = FindObjectOfType<WaveSpawner>();
+        ss = FindObjectOfType<WaveSpawner>();
 
         //get shop script
         shopScript = FindObjectOfType<Shop>();
 
-        //SET VARIABLES IN PREFAB MENU
-        //set public variables
-        //speed = 60f;
         minDist = 0.04f;
 
         //sets the healthbar health
@@ -74,20 +71,13 @@ public class Sun_Enemy : MonoBehaviour
             }
             else
             {
-                ws.destroyEnemy(this.gameObject);
+                ss.destroyEnemy(this.gameObject);
             }
         }
 
         HealthChecker();
 
         Freeze(freezeTime);
-
-        //TESTING PURPOSES TO TEST HEALTH BAR
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            current_health -= 10;
-            healthBar.SetHealth(current_health);
-        }
     }
 
     private void FixedUpdate()
@@ -95,7 +85,7 @@ public class Sun_Enemy : MonoBehaviour
         transform.up = currWaypoint.GetComponent<Transform>().position - transform.position;
         if (isFrozen == true)
         {
-            rb.velocity = transform.up * (0.7f * speed) * Time.smoothDeltaTime;
+            rb.velocity = transform.up * (0.375f * speed) * Time.smoothDeltaTime;
         }
         else
         {
@@ -144,10 +134,10 @@ public class Sun_Enemy : MonoBehaviour
         if (current_health <= 0)
         {
             //add 1 to the number of enemies killed in gamecontroller script
-            ws.IncreaseKilledEnemies();
+            ss.IncreaseKilledEnemies();
 
             //add 10 to the balance each time enemy is killed
-            shopScript.BalanceDeposit(10);
+            shopScript.BalanceDeposit(500);
 
             //destroy the egg
             Destroy(gameObject);

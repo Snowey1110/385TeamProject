@@ -12,10 +12,10 @@ public class WaveSpawner : MonoBehaviour
     private float timeSinceSpawn = 0;
     private float spawnRate;  
 
-    private bool round_1 = true;
+    private bool round_1 = false;
     private bool round_2 = false;
     private bool round_3 = false;
-    private bool round_4 = false;
+    private bool round_4 = true;
 
     private bool springIsComing = false;
 
@@ -194,10 +194,10 @@ public class WaveSpawner : MonoBehaviour
     {
         if(number_killed <= 40)
         {
-            round_1 = true;
+            round_1 = false;
             round_2 = false;
             round_3 = false;
-            round_4 = false;
+            round_4 = true;
             lgamecontroller.UpdateWaveUI(1);
 
             if(number_killed == 40)

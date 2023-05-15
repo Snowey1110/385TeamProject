@@ -28,7 +28,7 @@ public class Flash : MonoBehaviour
         if (select)
         {
             startFlash = startFlash + Time.deltaTime;
-            Debug.Log(startFlash);
+            //Debug.Log(startFlash);
 
             if(startFlash > flashTime)
             {

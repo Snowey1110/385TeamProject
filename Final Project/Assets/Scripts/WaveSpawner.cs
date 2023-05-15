@@ -21,8 +21,6 @@ public class WaveSpawner : MonoBehaviour
 
     private int number_killed = 0;
 
-    bool a = true;
-
     /////////////////////////////////////////////////////////////
     //setting to true will send 1 mob and have then drop markers 
     //when targeted by a tower

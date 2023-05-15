@@ -9,4 +9,12 @@ public class SceneSelector : MonoBehaviour
     {
         SceneManager.LoadScene(sceneID);
     }
+    public void SoundMenu()
+    {
+        SceneManager.LoadScene("Sound");
+    }
+    public void MainMenu() 
+    { 
+        SceneManager.LoadScene("Game Menu");
+    }
 }

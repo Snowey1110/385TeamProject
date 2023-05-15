@@ -7,7 +7,7 @@ public class Flash : MonoBehaviour
 {
 
     
-    public float flashTime = 1;
+    public float flashTime;
     private float startFlash;
     private UnityEngine.Color flashColor;
     private UnityEngine.Color curColor;
@@ -18,6 +18,7 @@ public class Flash : MonoBehaviour
         curColor = this.gameObject.GetComponent<SpriteRenderer>().color;
         flashColor =  new UnityEngine.Color(1, 0, 0, 1);
         select = false;
+        
     }
 
     // Update is called once per frame
@@ -26,10 +27,10 @@ public class Flash : MonoBehaviour
         //if in color flash (ie is red)
         if (select)
         {
-            float temp = startFlash + Time.deltaTime;
-            Debug.Log(temp);
+            startFlash = startFlash + Time.deltaTime;
+            Debug.Log(startFlash);
 
-            if(temp > flashTime)
+            if(startFlash > flashTime)
             {
                 setColor(curColor);
                 select = false;

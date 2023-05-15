@@ -55,13 +55,14 @@ public class Snowman_Tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         //get list of all enemies and then find closest one
         GameObject[] enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
         targetEnemy = getTarget(enemyArray);
         
         ThrowSnowball(targetEnemy);
         healthBar.SetHealth(towerHealth);
+
+        //Debug.Log("Array Size: " + enemyArray.Length);
 
         if ((lgamecontroller.selectedTower == this.gameObject) && Input.GetKeyDown(KeyCode.Delete))
         {
@@ -148,6 +149,7 @@ public class Snowman_Tower : MonoBehaviour
         {
             if (Time.time > towerNextFire)
             {
+                //Debug.Log("shot a snowball");
                 towerNextFire = Time.time + towerFireRate;
                 GameObject snowball = Instantiate(Resources.Load("Prefabs/snowball") as GameObject);
                 snowball.transform.localPosition = transform.localPosition;

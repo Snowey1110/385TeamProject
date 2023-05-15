@@ -28,10 +28,10 @@ public class timer : MonoBehaviour
         DateTime temp = System.DateTime.Now;
         TimeSpan delta = temp - time;
 
-        //if (delta.Seconds > 20)
-        //{
-        //    MainMenu();
-        //}
+        if (delta.Seconds > 20)
+        {
+            MainMenu();
+        }
 
 
 
@@ -41,21 +41,6 @@ public class timer : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("Game Menu");
-    }
-
-    public void SoundMenu()
-    {
-        SceneManager.LoadScene("Sound");
-    }
-
-    public void ControlMenu()
-    {
-        SceneManager.LoadScene("Control");
-    }
-
-    public void CreditsMenu()
-    {
-        SceneManager.LoadScene("Credits");
     }
 
     public void LoadGame()

@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
 
     //user health/life UI
     public Text healthLifeUI;
+    public HealthBar healthBar;
 
     //Debug note "FOR DEBUG PRESS P"
     public GameObject DebugNote;
@@ -39,6 +40,8 @@ public class GameController : MonoBehaviour
     //public Text moneyUI;
     //private int money;
     private Shop shopScript;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +70,10 @@ public class GameController : MonoBehaviour
 
         //access the shop script
         shopScript = FindObjectOfType<Shop>();
+
+        //set the healthbar health
+        healthBar = FindObjectOfType<HealthBar>();
+        healthBar.SetMaxHealth(health);
     }
 
     // Update is called once per frame
@@ -87,10 +94,20 @@ public class GameController : MonoBehaviour
             timeToWave.text = "Waves start in " + gameStart.ToString("F0") + " seconds.";
         }
 
+        //TESTING PURPOSES TO TEST HEALTH BAR
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            health -= 10;
+            healthBar.SetHealth(health); 
+        }
+
         UpdateKilledEnemiesUI();
         //UpdateMoneyUI();
         UpdateHealthLifeUI();
         CheckIfDead();
+
+        //update the healthbar
+        healthBar.SetHealth(health);
     }
 
     //getter to give outside scripts read only access to private array of waypoints

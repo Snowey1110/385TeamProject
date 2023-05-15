@@ -72,7 +72,7 @@ public class WaveSpawner : MonoBehaviour
                 //checks what round/difficulty/wave we are on
                 if (round_1)
                 {
-                    GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy") as GameObject);
+                    GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_3") as GameObject);
                     timeSinceSpawn = Time.time;
                     e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                 }

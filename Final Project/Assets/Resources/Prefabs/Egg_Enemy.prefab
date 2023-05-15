@@ -129,9 +129,11 @@ MonoBehaviour:
   speed: 60
   damage: 25
   max_health: 100
+  deposit: 0
   waypoints: []
   rb: {fileID: 0}
   healthBar: {fileID: 0}
+  isFrozen: 0
 --- !u!50 &7517747407426924493
 Rigidbody2D:
   serializedVersion: 4
@@ -315,7 +317,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

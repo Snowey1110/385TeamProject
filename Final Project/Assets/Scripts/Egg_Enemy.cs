@@ -12,6 +12,8 @@ public class Egg_Enemy : MonoBehaviour
     public float max_health;
     private int current_health;
 
+    public int deposit;
+
     public GameObject[] waypoints;
     private GameObject currWaypoint;
     private int waypointIndex;
@@ -57,6 +59,12 @@ public class Egg_Enemy : MonoBehaviour
         //Color temp = GetComponent<Renderer>().material.color;
         //temp = new Color(Random.Range(0.5f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1);
         //GetComponent<Renderer>().material.SetColor("_Color", temp);
+
+        //just in case there is no value already set in
+        if(deposit == 0)
+        {
+            deposit = 10;
+        }
     }
 
     // Update is called once per frame
@@ -140,7 +148,7 @@ public class Egg_Enemy : MonoBehaviour
             ws.IncreaseKilledEnemies();
 
             //add 10 to the balance each time enemy is killed
-            shopScript.BalanceDeposit(10);
+            shopScript.BalanceDeposit(deposit);
 
             //destroy the egg
             Destroy(gameObject);

@@ -80,10 +80,10 @@ public class WaveSpawner : MonoBehaviour
     //SUN ROUND 1000+ DEATHS
 
     //REAL VALUES SHOULD BE
-    //ROUND 1 0-20 DEATHS
-    //ROUND 2 20-40 DEATHS
-    //ROUND 3 40+ DEATHS
-    //ROUND 4 100+ KILLS
+    //ROUND 1 0-40 KILLS
+    //ROUND 2 40-100 KILLS
+    //ROUND 3 100-200 KILLS
+    //ROUND 4 200+ KILLS
     public void checkRound()
     {
         if(number_killed <= 40)
@@ -99,7 +99,6 @@ public class WaveSpawner : MonoBehaviour
             }
         }
 
-
         else if(number_killed > 40 && number_killed <= 100)
         {
             if (number_killed == 41)
@@ -110,25 +109,38 @@ public class WaveSpawner : MonoBehaviour
 
             if(number_killed == 100)
             {
+                springIsComing = true;
                 lgamecontroller.RestartGameStartTimer();
                 lgamecontroller.UpdateWaveUI(3);
             }
         }
         else if(number_killed > 100 && number_killed <= 200)
         {
-            round_3 = true;
-            //lgamecontroller.UpdateWaveUI(3);
+            if (number_killed == 101)
+            {
+                round_2 = false;
+                round_3 = true;
+            }
 
             if(number_killed == 200)
             {
+                springIsComing = true;
                 lgamecontroller.RestartGameStartTimer();
                 lgamecontroller.UpdateWaveUI(4);
             }
         }
-        else if(number_killed > 200)
+        else
         {
             round_4 = true;
-            //lgamecontroller.UpdateWaveUI(4);
+            springIsComing = true;
+
+            if (number_killed == 300)
+            {
+                GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
+                timeSinceSpawn = Time.time;
+                s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
+                s.GetComponent<Sun_Enemy>().SetHealth(30000f);
+            }
         }
     }
 
@@ -231,6 +243,30 @@ public class WaveSpawner : MonoBehaviour
                 GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
                 s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
                 s.GetComponent<Sun_Enemy>().SetHealth(1000f);
+            }
+            if (round_2 == true && bossSpawn == false)
+            {
+                bossSpawn = true;
+                GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
+                s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
+                s.GetComponent<Sun_Enemy>().SetHealth(2500f);
+            }
+            if (round_3 == true && bossSpawn == false)
+            {
+                bossSpawn = true;
+                GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
+                s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
+                s.GetComponent<Sun_Enemy>().SetHealth(5000f);
+            }
+            if (round_4 == true)
+            {
+                if ((Time.time - timeSinceSpawn) > 10f || timeSinceSpawn == 0)
+                {
+                    GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
+                    timeSinceSpawn = Time.time;
+                    s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
+                    s.GetComponent<Sun_Enemy>().SetHealth(10000f);
+                }
             }
         }
     }

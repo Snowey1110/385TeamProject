@@ -7,8 +7,8 @@ public class Medic_Tower : MonoBehaviour
 {
     private GameController lgamecontroller;
 
-    public float towerRange = 4f;
-    public float healRate = 3f;
+    public float towerRange = 2f;
+    public float healRate = 2f;
 
     private float maxHealth = 100f;
     public float towerHealth = 0f;
@@ -110,7 +110,6 @@ public class Medic_Tower : MonoBehaviour
 
     private void OnMouseOver()
     {
-        Debug.Log("Healing tower MouseOver");
         if (Input.GetMouseButtonDown(0))
         {
             //lgamecontroller = GetComponent<GameController>();

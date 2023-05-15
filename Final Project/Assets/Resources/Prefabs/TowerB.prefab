@@ -207,8 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b4a904364d6ca54e9247178d646e559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerRange: 4
-  healRate: 3
+  towerRange: 2
+  healRate: 2
   towerHealth: 0
   NextUpgrade: 
   NextUpgradeCost: 0

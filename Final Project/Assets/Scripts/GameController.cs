@@ -159,7 +159,7 @@ public class GameController : MonoBehaviour
     public void RestartGameStartTimer()
     {
         //Debug.Log("RestartGameTimerCalled");
-        gameStart = 20f;
+        gameStart = 10f;
         spawnWave = false;
     }
 

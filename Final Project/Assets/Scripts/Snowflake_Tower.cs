@@ -20,7 +20,7 @@ public class Snowflake_Tower : MonoBehaviour
     private Vector3 currPos;
     private bool selected = false;
 
-    private HealthBar healthBar;
+    private HealthBarStatic healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class Snowflake_Tower : MonoBehaviour
         currPos = transform.position;
 
         //finds the healthbar script
-        healthBar = FindObjectOfType<HealthBar>();
+        healthBar = FindObjectOfType<HealthBarStatic>();
 
         //sets the healthbar to full
         healthBar.SetMaxHealth(maxHealth);

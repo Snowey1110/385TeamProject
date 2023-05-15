@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
 
     //user health/life UI
     public Text healthLifeUI;
-    public HealthBar healthBar;
+    public HealthBarStatic healthBar;
 
     //Debug note "FOR DEBUG PRESS P"
     public GameObject DebugNote;
@@ -72,7 +72,7 @@ public class GameController : MonoBehaviour
         shopScript = FindObjectOfType<Shop>();
 
         //set the healthbar health
-        healthBar = FindObjectOfType<HealthBar>();
+        healthBar = FindObjectOfType<HealthBarStatic>();
         healthBar.SetMaxHealth(health);
     }
 

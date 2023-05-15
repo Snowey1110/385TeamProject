@@ -132,6 +132,7 @@ MonoBehaviour:
   waypoints: []
   rb: {fileID: 0}
   healthBar: {fileID: 0}
+  isFrozen: 0
 --- !u!50 &7517747407426924493
 Rigidbody2D:
   serializedVersion: 4
@@ -362,6 +363,7 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 6856051777419673720}
+  enemyTransform: {fileID: 896451287321133128}
 --- !u!1 &7862706509639707931
 GameObject:
   m_ObjectHideFlags: 0

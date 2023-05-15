@@ -24,7 +24,7 @@ public class Snowman_Tower : MonoBehaviour
    // private bool selected = false;
 
     //healthbar scripts
-    private HealthBar healthBar;
+    private HealthBarStatic healthBar;
     void Start()
     {
         lgamecontroller = FindObjectOfType<GameController>();
@@ -46,7 +46,7 @@ public class Snowman_Tower : MonoBehaviour
 
         //healthbar code
         //get the healthbar script
-        healthBar = FindObjectOfType<HealthBar>();
+        healthBar = FindObjectOfType<HealthBarStatic>();
 
         //set the health bar to max
         healthBar.SetMaxHealth(maxHealth);

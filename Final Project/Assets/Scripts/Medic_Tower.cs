@@ -20,7 +20,7 @@ public class Medic_Tower : MonoBehaviour
     //private bool selected = false;
 
     //healthbar variable
-    private HealthBar healthBar;
+    private HealthBarStatic healthBar;
 
     void Start()
     {
@@ -34,7 +34,7 @@ public class Medic_Tower : MonoBehaviour
         HealingCircle();
 
         //finds the healthbar script
-        healthBar = FindObjectOfType<HealthBar>();
+        healthBar = FindObjectOfType<HealthBarStatic>();
 
         //sets the healthbar to full
         healthBar.SetMaxHealth(maxHealth);

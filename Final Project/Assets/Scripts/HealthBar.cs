@@ -7,6 +7,24 @@ public class HealthBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
+    /* private Vector3 parentPosition;
+
+    void Start()
+    {
+        parentPosition = transform.parent.position;
+    } */
+
+    void Update()
+    {
+        // Calculate the target position for the child object to look at
+        Vector3 targetPosition = transform.position + transform.forward;
+
+        // Make the child object look at the target position
+        transform.LookAt(targetPosition);
+
+        //
+    }
+
     public void SetMaxHealth(float health)
     {
         slider.maxValue = health;

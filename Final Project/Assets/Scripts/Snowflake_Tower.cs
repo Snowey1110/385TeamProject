@@ -16,9 +16,7 @@ public class Snowflake_Tower : MonoBehaviour
     public String NextUpgrade;
     public int NextUpgradeCost;
 
-    private float towerNextFire = 0;
     private Vector3 currPos;
-    private bool selected = false;
 
     private HealthBar healthBar;
 

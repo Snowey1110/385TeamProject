@@ -21,6 +21,8 @@ public class WaveSpawner : MonoBehaviour
 
     private int number_killed = 0;
 
+    bool a = true;
+
     /////////////////////////////////////////////////////////////
     //setting to true will send 1 mob and have then drop markers 
     //when targeted by a tower
@@ -128,7 +130,7 @@ public class WaveSpawner : MonoBehaviour
                     {
                         GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
-                        s.GetComponent<Egg_Enemy>().waypoints = wayPoints;
+                        s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
                         springIsComing = true;
                     }
 

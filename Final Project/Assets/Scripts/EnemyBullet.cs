@@ -49,6 +49,11 @@ public class EnemyBullet : MonoBehaviour
                 Snowman_Tower smt = other.gameObject.GetComponent<Snowman_Tower>();
                 smt.Hit(damage);
             }
+            if (other.gameObject.name == "Snowman_Tower1(Clone)")
+            {
+                Snowman_Tower smt = other.gameObject.GetComponent<Snowman_Tower>();
+                smt.Hit(damage);
+            }
             if (other.gameObject.name == "TowerB(Clone)")
             {
                 Medic_Tower mt = other.gameObject.GetComponent<Medic_Tower>();

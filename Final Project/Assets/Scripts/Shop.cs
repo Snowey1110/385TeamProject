@@ -73,8 +73,6 @@ public class Shop : MonoBehaviour
 
     private void Update()
     {
-
-        
        // Debug.Log(checkPlacement(lmap.getNoPlace()));
 
         if (isPlacingTurret)

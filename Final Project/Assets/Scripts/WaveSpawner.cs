@@ -63,10 +63,11 @@ public class WaveSpawner : MonoBehaviour
         float user_health = lgamecontroller.health;
 
         //subtract the enemy damage from user's health
-        if (obj.gameObject.name == "Egg_Enemy(Clone)")
+        if (obj.gameObject.tag == "Enemy")
         { 
             user_health -= egg.GetDamage();
         }
+
         if (obj.gameObject.name == "Sun_Enemy(Clone)")
         {
             user_health -= sun.GetDamage();

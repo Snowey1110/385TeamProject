@@ -11,7 +11,7 @@ public class WaveSpawner : MonoBehaviour
     private GameController lgamecontroller;
     private GameObject[] wayPoints;
     private float timeSinceSpawn = 0;
-    private float spawnRate;  
+    private float spawnRate;
 
     private bool round_1 = true;
     private bool round_2 = false;
@@ -63,25 +63,21 @@ public class WaveSpawner : MonoBehaviour
         float user_health = lgamecontroller.health;
 
         //subtract the enemy damage from user's health
-        if (obj.gameObject.tag == "Enemy")
-        { 
-            user_health -= egg.GetDamage();
-        }
-
         if (obj.gameObject.name == "Sun_Enemy(Clone)")
         {
             user_health -= sun.GetDamage();
         }
+        else if ((obj.gameObject.name == "Egg_Enemy(Clone)") || (obj.gameObject.name == "Bee_Enemy(Clone)") || (obj.gameObject.name == "Butterfly_Enemy(Clone)"))
+        { 
+            user_health -= egg.GetDamage();
+        }
 
+        
         lgamecontroller.health = user_health;
 
         Debug.Log("User Health: " + lgamecontroller.health);
 
-        //lgamecontroller.health--;
         Destroy(obj);
-
-        //number of enemies killed
-        //UpdateKilledEnemies(); //<- commented it out because not techincally killed
     }
 
     //TESTING PURPOSES
@@ -186,7 +182,7 @@ public class WaveSpawner : MonoBehaviour
                     //33% chance of second enemy type spawning
                     else if (obj_decider == 3 || obj_decider == 4)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_2") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Bee_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
                         e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
@@ -203,13 +199,13 @@ public class WaveSpawner : MonoBehaviour
                     }
                     else if (obj_decider == 2 || obj_decider == 3)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_2") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Bee_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
                         e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
                     else if (obj_decider == 4)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_3") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Butterfly_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
                         e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
@@ -226,13 +222,13 @@ public class WaveSpawner : MonoBehaviour
                     }
                     else if (obj_decider == 1 || obj_decider == 2)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_2") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Bee_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
                         e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
                     else if (obj_decider == 3 || obj_decider == 4)
                     {
-                        GameObject e = Instantiate(Resources.Load("Prefabs/Egg_Enemy_3") as GameObject);
+                        GameObject e = Instantiate(Resources.Load("Prefabs/Butterfly_Enemy") as GameObject);
                         timeSinceSpawn = Time.time;
                         e.GetComponent<Egg_Enemy>().waypoints = wayPoints;
                     }
@@ -281,7 +277,7 @@ public class WaveSpawner : MonoBehaviour
                 GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
                 timeSinceSpawn = Time.time;
                 s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
-                s.GetComponent<Sun_Enemy>().SetHealth(100000f);
+                s.GetComponent<Sun_Enemy>().SetHealth(70000f);
                 finalBoss = false;
                 finalCount++;
             }

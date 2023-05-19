@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 5973190201760398637}
   - component: {fileID: 3586806349109003662}
   m_Layer: 3
-  m_Name: Egg_Enemy_3
+  m_Name: Butterfly_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
-  damage: 10
+  damage: 50
   max_health: 100
   deposit: 15
   waypoints: []

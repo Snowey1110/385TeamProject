@@ -95,7 +95,6 @@ public class GameController : MonoBehaviour
         }
 
         UpdateKilledEnemiesUI();
-        //UpdateMoneyUI();
         UpdateHealthLifeUI();
         CheckIfDead();
 
@@ -127,13 +126,6 @@ public class GameController : MonoBehaviour
         int enemies_killed = ws.GetNumberKilled();
         enemiesKilled.text = "Total Mobs Killed: " + enemies_killed;
     }
-
-    /* public void UpdateMoneyUI()
-    {
-        int user_funds = shopScript.GetBalance();
-        moneyUI.text = "Money: $" + user_funds;
-    } 
-    */
 
     public void UpdateHealthLifeUI()
     {

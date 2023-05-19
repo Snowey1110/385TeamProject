@@ -35,7 +35,7 @@ public class Snowman_Tower : MonoBehaviour
         if(this.name == "Snowman_Tower")
         {
             NextUpgrade = "Snowman_Tower1";
-            NextUpgradeCost = 400;
+            NextUpgradeCost = 300;
         }
         else if(this.name == "Snowman_Tower1")
         {

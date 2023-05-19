@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 3020173091438759326}
   - component: {fileID: 7599029939499243526}
   m_Layer: 3
-  m_Name: Egg_Enemy_2
+  m_Name: Bee_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -126,7 +126,7 @@ public class Shop : MonoBehaviour
         if (!isPlacingTurret && balance >= costA)
         {
             isPlacingTurret = true;
-            CreateTurretA();
+            CreateTurretA(); //initial error
             turret = 'A';
         }
     }
@@ -184,7 +184,7 @@ public class Shop : MonoBehaviour
     //Snowman Tower
     void CreateTurretA()
     {
-        SpriteRenderer turretSpriteRenderer = turretA.GetComponent<SpriteRenderer>();
+        SpriteRenderer turretSpriteRenderer = turretA.GetComponent<SpriteRenderer>(); //initial error
         turretPreview = new GameObject("Turret Preview A");
         SpriteRenderer spriteRenderer = turretPreview.AddComponent<SpriteRenderer>();
         spriteRenderer.sprite = turretSpriteRenderer.sprite;

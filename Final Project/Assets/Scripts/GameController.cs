@@ -74,6 +74,8 @@ public class GameController : MonoBehaviour
         //set the healthbar health
         healthBar = FindObjectOfType<HealthBarStatic>();
         healthBar.SetMaxHealth(health);
+
+        //FirstSpawnCountDown();
     }
 
     // Update is called once per frame
@@ -93,7 +95,7 @@ public class GameController : MonoBehaviour
         {
             timeToWave.text = "Waves start in " + gameStart.ToString("F0") + " seconds.";
         }
-
+        
         UpdateKilledEnemiesUI();
         UpdateHealthLifeUI();
         CheckIfDead();
@@ -161,4 +163,21 @@ public class GameController : MonoBehaviour
         spawnWave = false;
     }
 
+    public void FirstSpawnCountDown()
+    {
+        //Dont spawn waves until time has surpassed gameStart.
+        gameStart -= Time.deltaTime;
+        if (gameStart <= 0)
+        {
+            // timeToWave.text = "Assault Incoming!";
+            timeToWave.text = "Wave " + curr_wave;
+            spawnWave = true;
+
+            DebugNote.SetActive(false);
+        }
+        else
+        {
+            timeToWave.text = "Waves start in " + gameStart.ToString("F0") + " seconds.";
+        }
+    }
 }

@@ -323,7 +323,7 @@ MonoBehaviour:
   speed: 45
   damage: 100
   max_health: 600
-  deposit: 25
+  deposit: 20
   waypoints: []
   rb: {fileID: 0}
   healthBar: {fileID: 0}

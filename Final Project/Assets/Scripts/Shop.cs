@@ -28,7 +28,7 @@ public class Shop : MonoBehaviour
     private Text towerFPrice;
 
 
-    private int balance = 500;
+    private int balance = 300;
     private char turret = ' ';
     private MapScript lmap;
 

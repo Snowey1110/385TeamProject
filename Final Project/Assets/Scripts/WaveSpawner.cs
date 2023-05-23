@@ -32,6 +32,8 @@ public class WaveSpawner : MonoBehaviour
     //bool test = true;
     /////////////////////////////////////////////////////////////
 
+    //to fix round3 bug with regards to spawning algorithim
+    private bool round3_fixed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,9 @@ public class WaveSpawner : MonoBehaviour
         //get handle on Gamecontroller object
         lgamecontroller = FindObjectOfType<GameController>();
         wayPoints = lgamecontroller.getWaypoints();
+
+        //to fix round3 bug with regards to spawning algorithim
+        round3_fixed = false;
     }
 
     // Update is called once per frame
@@ -244,6 +249,10 @@ public class WaveSpawner : MonoBehaviour
             if (round_1 == true && bossSpawn == false)
             {
                 bossSpawn = true;
+
+                //disables enemies from spawning, countdown does not start
+                lgamecontroller.DisableSpawnAllow();
+
                 GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
                 s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
                 s.GetComponent<Sun_Enemy>().SetHealth(1000f);
@@ -251,6 +260,10 @@ public class WaveSpawner : MonoBehaviour
             if (round_2 == true && bossSpawn == false)
             {
                 bossSpawn = true;
+
+                //disables enemies from spawning, countdown does not start
+                lgamecontroller.DisableSpawnAllow();
+
                 GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
                 s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
                 s.GetComponent<Sun_Enemy>().SetHealth(3000f);
@@ -258,6 +271,15 @@ public class WaveSpawner : MonoBehaviour
             if (round_3 == true && bossSpawn == false)
             {
                 bossSpawn = true;
+
+                //disables enemies from spawning, countdown does not start <---- bugged on round three so disabled it. 
+                if(!round3_fixed)
+                {
+                    Debug.Log("round 3 disable spawn allow called");
+                    lgamecontroller.DisableSpawnAllow();
+                    round3_fixed = true;
+                }
+
                 GameObject s = Instantiate(Resources.Load("Prefabs/Sun_Enemy") as GameObject);
                 s.GetComponent<Sun_Enemy>().waypoints = wayPoints;
                 s.GetComponent<Sun_Enemy>().SetHealth(7000f);
@@ -324,5 +346,7 @@ public class WaveSpawner : MonoBehaviour
         springIsComing = false;
         bossSpawn = false;
 
+        //re-enables the countdown to start when the sun/boss dies
+        lgamecontroller.EnableSpawnAllow();
     }
 }

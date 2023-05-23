@@ -41,7 +41,8 @@ public class GameController : MonoBehaviour
     //private int money;
     private Shop shopScript;
 
-    
+    //new spawning algorhtim mechanic
+    private bool spawnAllow = true;
 
     // Start is called before the first frame update
     void Start()
@@ -76,24 +77,30 @@ public class GameController : MonoBehaviour
         healthBar.SetMaxHealth(health);
 
         //FirstSpawnCountDown();
+
+        spawnAllow = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         //Dont spawn waves until time has surpassed gameStart.
-        gameStart -= Time.deltaTime;
-        if (gameStart <= 0)
-        {
-            // timeToWave.text = "Assault Incoming!";
-            timeToWave.text = "Wave " + curr_wave;
-            spawnWave = true;
 
-            DebugNote.SetActive(false);
-        }
-        else
+        if(spawnAllow)
         {
-            timeToWave.text = "Waves start in " + gameStart.ToString("F0") + " seconds.";
+            gameStart -= Time.deltaTime;
+            if (gameStart <= 0)
+            {
+                // timeToWave.text = "Assault Incoming!";
+                timeToWave.text = "Wave " + curr_wave;
+                spawnWave = true;
+
+                DebugNote.SetActive(false);
+            }
+            else
+            {
+                timeToWave.text = "Waves start in " + gameStart.ToString("F0") + " seconds.";
+            }
         }
         
         UpdateKilledEnemiesUI();
@@ -157,7 +164,7 @@ public class GameController : MonoBehaviour
         spawnWave = false;
     }
 
-    //disable wavespawner
+    //disable wavespawner (does nothing dont call)
     public void StopSpawning()
     {
         spawnWave = false;
@@ -179,5 +186,17 @@ public class GameController : MonoBehaviour
         {
             timeToWave.text = "Waves start in " + gameStart.ToString("F0") + " seconds.";
         }
+    }
+
+    //disables the countdown in putdate
+    public void DisableSpawnAllow()
+    {
+        spawnAllow = false;
+    }
+
+    //enables the countdown in putdate
+    public void EnableSpawnAllow()
+    {
+        spawnAllow = true;
     }
 }

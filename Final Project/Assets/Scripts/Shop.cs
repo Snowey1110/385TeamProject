@@ -75,11 +75,16 @@ public class Shop : MonoBehaviour
     {
        // Debug.Log(checkPlacement(lmap.getNoPlace()));
 
-        if (isPlacingTurret)
+        if (isPlacingTurret && turretPreview!= null)
         {
             Vector3 Pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Pos.z = 0;
 
+
+            if(Pos == null || turretPreview == null)
+            {
+                Debug.Log("Caught it");
+            }
             turretPreview.transform.position = Pos;
 
             if (Input.GetMouseButtonDown(0) && checkPlacement(lmap.getNoPlace()))

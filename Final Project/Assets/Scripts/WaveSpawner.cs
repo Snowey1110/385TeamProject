@@ -275,7 +275,7 @@ public class WaveSpawner : MonoBehaviour
                 //disables enemies from spawning, countdown does not start <---- bugged on round three so disabled it. 
                 if(!round3_fixed)
                 {
-                    Debug.Log("round 3 disable spawn allow called");
+                    //Debug.Log("round 3 disable spawn allow called");
                     lgamecontroller.DisableSpawnAllow();
                     round3_fixed = true;
                 }

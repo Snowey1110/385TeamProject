@@ -17,4 +17,8 @@ public class SceneSelector : MonoBehaviour
     { 
         SceneManager.LoadScene("Game Menu");
     }
+    public void CreditMenu()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 }

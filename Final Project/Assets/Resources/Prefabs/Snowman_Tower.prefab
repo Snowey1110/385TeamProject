@@ -311,7 +311,7 @@ MonoBehaviour:
   towerHealth: 0
   targetEnemy: {fileID: 0}
   NextUpgrade: Snowman_Tower1
-  NextUpgradeCost: 400
+  NextUpgradeCost: 300
 --- !u!114 &454003849404910727
 MonoBehaviour:
   m_ObjectHideFlags: 0

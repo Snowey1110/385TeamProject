@@ -62,13 +62,16 @@ public class Shop : MonoBehaviour
         towerCPrice.text = string.Format("${0}", costC);
 
         towerDPrice = GameObject.Find("CostD").GetComponent<Text>();
-        towerDPrice.text = string.Format("${0}", costD);
+        // towerDPrice.text = string.Format("${0}", costD);
+        towerDPrice.text = "";
 
         towerEPrice = GameObject.Find("CostE").GetComponent<Text>();
-        towerEPrice.text = string.Format("${0}", costE);
+        //towerEPrice.text = string.Format("${0}", costE);
+        towerEPrice.text = "";
 
         towerFPrice = GameObject.Find("CostF").GetComponent<Text>();
-        towerFPrice.text = string.Format("${0}", costF);
+        //towerFPrice.text = string.Format("${0}", costF);
+        towerFPrice.text = "";
     }
 
     private void Update()

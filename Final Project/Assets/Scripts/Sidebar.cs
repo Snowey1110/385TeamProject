@@ -71,7 +71,8 @@ public class Sidebar : MonoBehaviour
             else
             {
                 this.GetComponent<Button>().image.sprite = Resources.Load("Prefabs/No").GetComponent<SpriteRenderer>().sprite;
-                GetComponentInChildren<TextMeshProUGUI>().text = "No Upgrade Available";
+                //this.GetComponent<Button>().image.sprite = Resources.Load("Texture/Empty").GetComponent<Sprite>();
+            GetComponentInChildren<TextMeshProUGUI>().text = "No Upgrade Available";
 
 
             }
@@ -80,8 +81,9 @@ public class Sidebar : MonoBehaviour
         else
         {
              this.GetComponent<Button>().image.sprite = Resources.Load("Prefabs/No").GetComponent<SpriteRenderer>().sprite;
+            //this.GetComponent<Button>().image.sprite = Resources.Load("Texture/Empty").GetComponent<Sprite>();
             //this.GetComponent<Button>().gameObject.SetActive(false);
-            
+
             //GetComponentInChildren<TextMeshProUGUI>().text = "No Upgrade Available";
             GetComponentInChildren<TextMeshProUGUI>().text = "";
 

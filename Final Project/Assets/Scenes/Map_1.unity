@@ -757,7 +757,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tower E
+  m_Text: 
 --- !u!222 &383446631
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1562,7 +1562,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tower F
+  m_Text: 
 --- !u!222 &876832419
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1776,7 +1776,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2c439318f0c073541a20dfbbcf83d3be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da0f1bfadde57fe4e918cea89cdc30b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1934,7 +1934,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tower D
+  m_Text: 
 --- !u!222 &969451873
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4686,7 +4686,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2c439318f0c073541a20dfbbcf83d3be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da0f1bfadde57fe4e918cea89cdc30b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5339,7 +5339,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2c439318f0c073541a20dfbbcf83d3be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da0f1bfadde57fe4e918cea89cdc30b1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

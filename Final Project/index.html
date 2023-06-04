@@ -75,6 +75,8 @@
         <input type="text" id="youtubeVideoID" value="bmexbfqIX3E" style="display:none">
         <!-- Replace 'https://link_to_game' with the link to your game -->
         <input type="text" id="gameLink" value="https://snowey1110.github.io/385TeamProject/Final%20Project/webGL/Build/" style="display:none">
+        <!-- Add the link to the final deliverable -->
+        <input type="text" id="finalDeliverableLink" value="https://docs.google.com/document/d/1uXwPMRpiCJ0-Y1sVB0YCF0Va3aSDS2wMjcCWLsLduvQ/edit?usp=sharing" style="display:none">
 
         <h2>Watch the Game Trailer</h2>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/" title="Tower Defense - Group 3 Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -83,15 +85,21 @@
         <h2>Source Code on GitHub</h2>
         <p>Interested in exploring our code? Check out our GitHub repository to dive into the project and see how we made this tower defense game a reality!</p>
         <a href="https://github.com/Snowey1110/385TeamProject" target="_blank">Visit the GitHub Repository</a>
+        
+        <!-- Final Deliverable section -->
+        <h2>Final Deliverable</h2>
+        <p>Check out our final deliverable document, which outlines our entire project, its development process, and the final outcome. Click the button below to access it:</p>
+        <a href="#" target="_blank" id="finalDeliverable">View Final Deliverable</a>
     </main>
     <footer>
         &copy; Made by Lixiao Kuang, Jesse Owens, Jonathan Spradlin, Jonathan Ha
     </footer>
 
     <script>
-        // Get YouTube video ID and game link from input fields
+        // Get YouTube video ID, game link, and final deliverable link from input fields
         const youtubeVideoID = document.getElementById('youtubeVideoID').value;
         const gameLink = document.getElementById('gameLink').value;
+        const finalDeliverableLink = document.getElementById('finalDeliverableLink').value;
 
         // Set the YouTube video source
         const youtubeIframe = document.querySelector('iframe');
@@ -100,6 +108,10 @@
         // Set the Play Game link
         const playGameLink = document.getElementById('playGame');
         playGameLink.setAttribute('href', gameLink);
+
+        // Set the Final Deliverable link
+        const finalDeliverableBtn = document.getElementById('finalDeliverable');
+        finalDeliverableBtn.setAttribute('href', finalDeliverableLink);
     </script>
 </body>
 
